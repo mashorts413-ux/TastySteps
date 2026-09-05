@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Foodie Recipes</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf5;
+    color: #222;
+}
+
+header {
+    background: #ff6b35;
+    color: white;
+    padding: 25px 18px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 15px;
+}
+
+.search-box {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 5px 15px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.category {
+    border: none;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.category:hover {
+    background: #ff6b35;
+    color: white;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px 15px 40px;
+}
+
+.container h2 {
+    margin: 10px 0 20px;
+}
+
+.recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.view-btn {
+    flex: 1;
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 11px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.favorite {
+    width: 45px;
+    background: #fff0eb;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.favorite.active {
+    background: #ffe0d6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-box {
+    background: white;
+    max-width: 650px;
+    margin: 30px auto;
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-box img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-box h2 {
+    margin-bottom: 15px;
+}
+
+.modal-box h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-box ul,
+.modal-box ol {
+    padding-left: 22px;
+    line-height: 1.8;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 27px;
+    }
+
+    .recipes {
+        grid-template-columns: 1fr;
+    }
+
+    .card-img {
+        height: 210px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍴 Foodie Recipes</h1>
+    <p>Delicious recipes made simple</p>
+</header>
+
+<div class="search-box">
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search recipes..."
+        onkeyup="searchRecipes()"
+    >
+</div>
+
+<div class="categories">
+    <button class="category" onclick="filterCategory('All')">All</button>
+    <button class="category" onclick="filterCategory('Breakfast')">🍳 Breakfast</button>
+    <button class="category" onclick="filterCategory('Lunch')">🍛 Lunch</button>
+    <button class="category" onclick="filterCategory('Dinner')">🍗 Dinner</button>
+    <button class="category" onclick="filterCategory('Dessert')">🍰 Dessert</button>
+</div>
+
+<div class="container">
+
+    <h2>Popular Recipes</h2>
+
+    <div class="recipes" id="recipeContainer"></div>
+
+</div>
+
+<div class="modal" id="recipeModal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeModal()">×</button>
+
+        <img id="modalImage">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDescription"></p>
+
+        <h3>🥘 Ingredients</h3>
+
+        <ul id="ingredients"></ul>
+
+        <h3>👨‍🍳 Instructions</h3>
+
+        <ol id="instructions"></ol>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Foodie Recipes</p>
+    <p>Made with ❤️ for food lovers</p>
+</footer>
+
+<script>
+
+const recipes = [
+
+{
+    title: "Chicken Biryani",
+    category: "Lunch",
+    image: "https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80",
+    description: "Aromatic Pakistani-style chicken biryani.",
+    ingredients: [
+        "Chicken - 500g",
+        "Basmati rice - 2 cups",
+        "Onions - 2",
+        "Tomatoes - 2",
+        "Yogurt - 1 cup",
+        "Biryani spices",
+        "Cooking oil"
+    ],
+    instructions: [
+        "Wash and soak the rice.",
+        "Cook onions until golden brown.",
+        "Add chicken, tomatoes, yogurt and spices.",
+        "Cook until the chicken is tender.",
+        "Cook rice separately until almost done.",
+        "Layer rice and chicken together.",
+        "Cover and cook on low heat for 15 minutes.",
+        "Serve hot."
+    ]
+},
+
+{
+    title: "Pancakes",
+    category: "Breakfast",
+    image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80",
+    description: "Soft and fluffy pancakes for breakfast.",
+    ingredients: [
+        "Flour - 1 cup",
+        "Milk - 1 cup",
+        "Egg - 1",
+        "Sugar - 2 tablespoons",
+        "Baking powder - 1 teaspoon",
+        "Butter"
+    ],
+    instructions: [
+        "Mix flour, sugar and baking powder.",
+        "Add milk and egg.",
+        "Mix until smooth.",
+        "Heat a pan and add butter.",
+        "Pour the batter into the pan.",
+        "Cook both sides until golden.",
+        "Serve with honey or fruit."
+    ]
+},
+
+{
+    title: "Chicken Karahi",
+    category: "Dinner",
+    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80",
+    description: "Spicy and delicious chicken karahi.",
+    ingredients: [
+        "Chicken - 500g",
+        "Tomatoes - 4",
+        "Green chilies",
+        "Ginger",
+        "Garlic",
+        "Cooking oil",
+        "Karahi spices"
+    ],
+    instructions: [
+        "Heat oil in a karahi.",
+        "Add chicken and cook until lightly brown.",
+        "Add ginger and garlic.",
+        "Add tomatoes and spices.",
+        "Cook until the oil separates.",
+        "Add green chilies.",
+        "Cook for another 5 minutes.",
+        "Serve with naan."
+    ]
+},
+
+{
+    title: "Chocolate Cake",
+    category: "Dessert",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
+    description: "Rich and delicious chocolate cake.",
+    ingredients: [
+        "Flour - 1½ cups",
+        "Cocoa powder - ½ cup",
+        "Sugar - 1 cup",
+        "Eggs - 2",
+        "Milk - 1 cup",
+        "Baking powder",
+        "Butter"
+    ],
+    instructions: [
+        "Mix flour, cocoa and baking powder.",
+        "Add sugar and eggs.",
+        "Add milk and melted butter.",
+        "Mix until smooth.",
+        "Pour into a baking pan.",
+        "Bake at 180°C for about 30 minutes.",
+        "Allow to cool before serving."
+    ]
+},
+
+{
+    title: "Fresh Salad",
+    category: "Lunch",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
+    description: "Fresh and healthy vegetable salad.",
+    ingredients: [
+        "Cucumber",
+        "Tomatoes",
+        "Lettuce",
+        "Onion",
+        "Lemon juice",
+        "Salt",
+        "Black pepper"
+    ],
+    instructions: [
+        "Wash all vegetables.",
+        "Cut vegetables into small pieces.",
+        "Place everything in a bowl.",
+        "Add lemon juice.",
+        "Add salt and black pepper.",
+        "Mix well and serve."
+    ]
+},
+
+{
+    title: "French Toast",
+    category: "Breakfast",
+    image: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
+    description: "Quick and tasty French toast.",
+    ingredients: [
+        "Bread - 4 slices",
+        "Eggs - 2",
+        "Milk - ½ cup",
+        "Sugar",
+        "Cinnamon",
+        "Butter"
+    ],
+    instructions: [
+        "Beat eggs with milk.",
+        "Add sugar and cinnamon.",
+        "Dip bread into the mixture.",
+        "Heat butter in a pan.",
+        "
