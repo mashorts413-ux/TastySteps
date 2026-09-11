@@ -255,7 +255,18 @@ footer {
     <button class="category" onclick="filterCategory('Dinner')">🍗 Dinner</button>
     <button class="category" onclick="filterCategory('Dessert')">🍰 Dessert</button>
 </div>
-
+<div class="community-post-box">
+  <h2>Share Your Cooked Dish</h2>
+  <form id="userRecipeForm">
+    <input type="text" id="postTitle" placeholder="Recipe Title (e.g., Spicy Karahi)" required>
+    <input type="text" id="postAuthor" placeholder="Your Name" required>
+    <textarea id="postIngredients" placeholder="Ingredients list..." required></textarea>
+    <textarea id="postInstructions" placeholder="Cooking steps..." required></textarea>
+    <input type="file" id="postImage" accept="image/*" required>
+    <button type="submit">Publish Dish</button>
+  </form>
+</div>
+    
 <div class="container">
 
     <h2>Popular Recipes</h2>
