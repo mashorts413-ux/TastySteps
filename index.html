@@ -474,8 +474,9 @@ function displayRecipes(list) {
     `).join("");
 }
 
-function viewRecipe(index) {
-    const recipe = recipes[index];
+function viewRecipeByName(title) {
+    const recipe = recipes.find(r => r.title === title);
+
 
     document.getElementById("modalImage").src = recipe.image;
     document.getElementById("modalTitle").textContent = recipe.title;
