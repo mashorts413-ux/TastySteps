@@ -440,4 +440,100 @@ const recipes = [
         "Add sugar and cinnamon.",
         "Dip bread into the mixture.",
         "Heat butter in a pan.",
+        "Cook the bread on both sides until golden.",
+"Serve warm."
+]
+}
+];
+
+function displayRecipes(list) {
+    const container = document.getElementById("recipeContainer");
+
+    if (list.length === 0) {
+        container.innerHTML = '<div class="no-results">No recipes found 😔</div>';
+        return;
+    }
+
+    container.innerHTML = list.map((recipe, index) => `
+        <div class="card">
+            <img class="card-img" src="${recipe.image}" alt="${recipe.title}">
+            <div class="card-content">
+                <h3>${recipe.title}</h3>
+                <p>${recipe.description}</p>
+                <div class="buttons">
+                    <button class="view-btn" onclick="viewRecipe(${index})">
+                        View Recipe
+                    </button>
+                    <button class="favorite" onclick="toggleFavorite(this)">
+                        ♡
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join("");
+}
+
+function viewRecipe(index) {
+    const recipe = recipes[index];
+
+    document.getElementById("modalImage").src = recipe.image;
+    document.getElementById("modalTitle").textContent = recipe.title;
+    document.getElementById("modalDescription").textContent = recipe.description;
+
+    document.getElementById("ingredients").innerHTML =
+        recipe.ingredients.map(item => `<li>${item}</li>`).join("");
+
+    document.getElementById("instructions").innerHTML =
+        recipe.instructions.map(item => `<li>${item}</li>`).join("");
+
+    document.getElementById("recipeModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("recipeModal").style.display = "none";
+}
+
+function toggleFavorite(button) {
+    button.classList.toggle("active");
+    button.textContent = button.classList.contains("active") ? "♥" : "♡";
+}
+
+function searchRecipes() {
+    const search = document.getElementById("search").value.toLowerCase();
+
+    const filtered = recipes.filter(recipe =>
+        recipe.title.toLowerCase().includes(search) ||
+        recipe.description.toLowerCase().includes(search) ||
+        recipe.category.toLowerCase().includes(search)
+    );
+
+    displayRecipes(filtered);
+}
+
+function filterCategory(category) {
+    if (category === "All") {
+        displayRecipes(recipes);
+        return;
+    }
+
+    const filtered = recipes.filter(recipe =>
+        recipe.category === category
+    );
+
+    displayRecipes(filtered);
+}
+
+displayRecipes(recipes);
+
+window.onclick = function(event) {
+    const modal = document.getElementById("recipeModal");
+
+    if (event.target === modal) {
+        closeModal();
+    }
+};
+</script>
+
+</body>
+</html>
         "
