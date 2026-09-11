@@ -461,7 +461,8 @@ function displayRecipes(list) {
                 <h3>${recipe.title}</h3>
                 <p>${recipe.description}</p>
                 <div class="buttons">
-                    <button class="view-btn" onclick="viewRecipe(${index})">
+                    <button class="view-btn" onclick="viewRecipeByName('${recipe.title.replace(/'/g, "\\'")}')">
+                    
                         View Recipe
                     </button>
                     <button class="favorite" onclick="toggleFavorite(this)">
