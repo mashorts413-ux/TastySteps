@@ -216,6 +216,47 @@ footer {
     color: #777;
 }
 
+.community-post-box {
+    background: #ffffff;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.community-post-box h2 {
+    font-size: 20px;
+    color: #ff6b35;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#userRecipeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#userRecipeForm input, 
+#userRecipeForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#userRecipeForm button {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 27px;
@@ -228,47 +269,6 @@ footer {
     .card-img {
         height: 210px;
     }
-    .community-post-box {
-  background: #ffffff;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-}
-.community-post-box h2 {
-  font-size: 20px;
-  color: #ff6b35;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-#userRecipeForm {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#userRecipeForm input, 
-#userRecipeForm textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-#userRecipeForm button {
-  background: #ff6b35;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 }
 </style>
 </head>
@@ -296,48 +296,35 @@ footer {
     <button class="category" onclick="filterCategory('Dinner')">🍗 Dinner</button>
     <button class="category" onclick="filterCategory('Dessert')">🍰 Dessert</button>
 </div>
+
 <div class="community-post-box">
   <h2>Share Your Cooked Dish</h2>
   <form id="userRecipeForm">
     <input type="text" id="postTitle" placeholder="Recipe Title (e.g., Spicy Karahi)" required>
     <input type="text" id="postAuthor" placeholder="Your Name" required>
-    <textarea id="postIngredients" placeholder="Ingredients list..." required></textarea>
-    <textarea id="postInstructions" placeholder="Cooking steps..." required></textarea>
-    <input type="file" id="postImage" accept="image/*" required>
+    <textarea id="postIngredients" placeholder="Ingredients list (separated by commas)..." required></textarea>
+    <textarea id="postInstructions" placeholder="Cooking steps (separated by commas)..." required></textarea>
+    <input type="text" id="postImage" placeholder="Image URL (e.g., https://...)" required>
     <button type="submit">Publish Dish</button>
   </form>
 </div>
     
 <div class="container">
-
     <h2>Popular Recipes</h2>
-
     <div class="recipes" id="recipeContainer"></div>
-
 </div>
 
 <div class="modal" id="recipeModal">
-
     <div class="modal-box">
-
         <button class="close" onclick="closeModal()">×</button>
-
         <img id="modalImage">
-
         <h2 id="modalTitle"></h2>
-
         <p id="modalDescription"></p>
-
         <h3>🥘 Ingredients</h3>
-
         <ul id="ingredients"></ul>
-
         <h3>👨‍🍳 Instructions</h3>
-
         <ol id="instructions"></ol>
-
     </div>
-
 </div>
 
 <footer>
@@ -346,9 +333,7 @@ footer {
 </footer>
 
 <script>
-
 const recipes = [
-
 {
     title: "Chicken Biryani",
     category: "Lunch",
@@ -374,7 +359,6 @@ const recipes = [
         "Serve hot."
     ]
 },
-
 {
     title: "Pancakes",
     category: "Breakfast",
@@ -398,7 +382,6 @@ const recipes = [
         "Serve with honey or fruit."
     ]
 },
-
 {
     title: "Chicken Karahi",
     category: "Dinner",
@@ -424,7 +407,6 @@ const recipes = [
         "Serve with naan."
     ]
 },
-
 {
     title: "Chocolate Cake",
     category: "Dessert",
@@ -449,7 +431,6 @@ const recipes = [
         "Allow to cool before serving."
     ]
 },
-
 {
     title: "Fresh Salad",
     category: "Lunch",
@@ -473,7 +454,6 @@ const recipes = [
         "Mix well and serve."
     ]
 },
-
 {
     title: "French Toast",
     category: "Breakfast",
@@ -493,35 +473,34 @@ const recipes = [
         "Dip bread into the mixture.",
         "Heat butter in a pan.",
         "Cook the bread on both sides until golden.",
-"Serve warm."
-]
+        "Serve warm."
+    ]
+},
+{
+    title: "Gulab Jamun",
+    category: "Dessert",
+    image: "gulab-jamun.jpg",
+    description: "Soft and sweet milk-based fried dumplings soaked in rose syrup.",
+    ingredients: [
+        "Milk powder - 1 cup",
+        "All-purpose flour - 1/4 cup",
+        "Ghee - 2 tbsp",
+        "Milk - 3-4 tbsp",
+        "Baking powder - 1/4 tsp",
+        "Sugar - 1.5 cups",
+        "Water - 1.5 cups",
+        "Cardamom pods - 3",
+        "Oil for frying"
+    ],
+    instructions: [
+        "Prepare sugar syrup by boiling sugar, water, and crushed cardamom until sticky.",
+        "Mix milk powder, flour, baking powder, ghee, and milk to form a soft dough.",
+        "Shape into small smooth balls without any cracks.",
+        "Heat oil on low flame and deep fry balls until golden brown.",
+        "Soak fried jamuns in warm sugar syrup for at least 2 hours before serving."
+    ]
 }
-,
-    {
-        title: "Gulab Jamun",
-        category: "Dessert",
-      image: "gulab-jamun.jpg",
-        description: "Soft and sweet milk-based fried dumplings soaked in rose syrup.",
-        ingredients: [
-            "Milk powder - 1 cup",
-            "All-purpose flour - 1/4 cup",
-            "Ghee - 2 tbsp",
-            "Milk - 3-4 tbsp",
-            "Baking powder - 1/4 tsp",
-            "Sugar - 1.5 cups",
-            "Water - 1.5 cups",
-            "Cardamom pods - 3",
-            "Oil for frying"
-        ],
-        instructions: [
-            "Prepare sugar syrup by boiling sugar, water, and crushed cardamom until sticky.",
-            "Mix milk powder, flour, baking powder, ghee, and milk to form a soft dough.",
-            "Shape into small smooth balls without any cracks.",
-            "Heat oil on low flame and deep fry balls until golden brown.",
-            "Soak fried jamuns in warm sugar syrup for at least 2 hours before serving."
-        ]
-    }
-    ];
+];
     
 function displayRecipes(list) {
     const container = document.getElementById("recipeContainer");
@@ -531,15 +510,14 @@ function displayRecipes(list) {
         return;
     }
 
-    container.innerHTML = list.map((recipe, index) => `
+    container.innerHTML = list.map((recipe) => `
         <div class="card">
             <img class="card-img" src="${recipe.image}" alt="${recipe.title}">
             <div class="card-content">
                 <h3>${recipe.title}</h3>
-                <p>${recipe.description}</p>
+                <p>${recipe.description || 'Shared by community member'}</p>
                 <div class="buttons">
                     <button class="view-btn" onclick="viewRecipeByName('${recipe.title.replace(/'/g, "\\'")}')">
-                    
                         View Recipe
                     </button>
                     <button class="favorite" onclick="toggleFavorite(this)">
@@ -553,11 +531,11 @@ function displayRecipes(list) {
 
 function viewRecipeByName(title) {
     const recipe = recipes.find(r => r.title === title);
-
+    if (!recipe) return;
 
     document.getElementById("modalImage").src = recipe.image;
     document.getElementById("modalTitle").textContent = recipe.title;
-    document.getElementById("modalDescription").textContent = recipe.description;
+    document.getElementById("modalDescription").textContent = recipe.description || "";
 
     document.getElementById("ingredients").innerHTML =
         recipe.ingredients.map(item => `<li>${item}</li>`).join("");
@@ -582,8 +560,8 @@ function searchRecipes() {
 
     const filtered = recipes.filter(recipe =>
         recipe.title.toLowerCase().includes(search) ||
-        recipe.description.toLowerCase().includes(search) ||
-        recipe.category.toLowerCase().includes(search)
+        (recipe.description && recipe.description.toLowerCase().includes(search)) ||
+        (recipe.category && recipe.category.toLowerCase().includes(search))
     );
 
     displayRecipes(filtered);
@@ -606,19 +584,17 @@ displayRecipes(recipes);
 
 window.onclick = function(event) {
     const modal = document.getElementById("recipeModal");
-
     if (event.target === modal) {
         closeModal();
     }
 };
 </script>
+
 <script type="module">
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
   import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-  // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyDXEFY2B59eSL1L4v_mZ1B4HI2340rd8U8",
     authDomain: "tastysteps-9219e.firebaseapp.com",
@@ -629,12 +605,58 @@ window.onclick = function(event) {
     measurementId: "G-9KLTXT4KNB"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-  
-  // Initialize Cloud Firestore
   const db = getFirestore(app);
+
+  // Load recipes stored in Firestore on launch
+  async function loadCommunityRecipes() {
+    try {
+      const querySnapshot = await getDocs(collection(db, "recipes"));
+      querySnapshot.forEach((doc) => {
+        const item = doc.data();
+        recipes.push(item);
+      });
+      displayRecipes(recipes);
+    } catch (e) {
+      console.error("Error fetching recipes from Firestore:", e);
+    }
+  }
+
+  // Handle HTML Form Submission to save data to Firestore
+  const form = document.getElementById("userRecipeForm");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const title = document.getElementById("postTitle").value;
+    const author = document.getElementById("postAuthor").value;
+    const ingredients = document.getElementById("postIngredients").value.split(",").map(i => i.trim());
+    const instructions = document.getElementById("postInstructions").value.split(",").map(i => i.trim());
+    const image = document.getElementById("postImage").value;
+
+    const newRecipe = {
+      title: title,
+      category: "Dinner",
+      description: `Submitted by ${author}`,
+      ingredients: ingredients,
+      instructions: instructions,
+      image: image,
+      createdAt: new Date()
+    };
+
+    try {
+      await addDoc(collection(db, "recipes"), newRecipe);
+      recipes.push(newRecipe);
+      displayRecipes(recipes);
+      form.reset();
+      alert("Dish shared successfully!");
+    } catch (error) {
+      console.error("Error publishing recipe: ", error);
+      alert("Failed to share dish. Check console for details.");
+    }
+  });
+
+  loadCommunityRecipes();
 </script>
  
 </body>
