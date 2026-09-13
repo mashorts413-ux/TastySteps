@@ -965,7 +965,16 @@ import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.
   const db = getFirestore(app);
   const ai = getAI(app, { backend: new GoogleAIBackend() });
 const model = getGenerativeModel(ai, { model: "gemini-3.8-flash" });
+async function testAI() {
+    try {
+        const result = await model.generateContent("Say hello to TastySteps.");
+        console.log("AI TEST:", result.response.text());
+    } catch (error) {
+        console.error("AI TEST ERROR:", error);
+    }
+}
 
+testAI();
   // Analytics only works over http(s) with third-party cookies allowed; guard so it never breaks the page.
   analyticsIsSupported().then((supported) => {
     if (supported) getAnalytics(app);
