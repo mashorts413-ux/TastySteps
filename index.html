@@ -3,597 +3,953 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie Recipes — Delicious recipes made simple</title>
 
-<title>TastySteps|Delecious Recipes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    box-sizing: border-box;
+  :root{
+    --ink: #241c15;
+    --ink-soft: #55493c;
+    --paper: #f7f1e4;
+    --card: #fffdf8;
+    --line: #e4d8c0;
+    --saffron: #e2a63b;
+    --saffron-dark: #b9822a;
+    --chili: #b23a2e;
+    --chili-dark: #8f2e24;
+    --cardamom: #4f6b4a;
+    --shadow: 0 10px 28px rgba(36, 28, 21, 0.10);
+    --radius-card: 4px 16px 4px 16px;
+    --focus: 3px solid #2b6cb0;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
     margin: 0;
-    padding: 0;
-}
+    font-family: "Work Sans", Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+  }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #fffaf5;
-    color: #222;
-}
+  h1, h2, h3{
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
 
-header {
-    background: #ff6b35;
-    color: white;
-    padding: 25px 18px;
-    text-align: center;
-}
+  a{ color: inherit; }
 
-header h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-}
+  :focus-visible{
+    outline: var(--focus);
+    outline-offset: 2px;
+  }
 
-header p {
-    font-size: 15px;
-}
+  /* ---------- Header / hero ---------- */
 
-.search-box {
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 15px 18px;
-    border: 2px solid #eee;
-    border-radius: 30px;
-    font-size: 16px;
-    outline: none;
-}
-
-.categories {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 5px 15px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.category {
-    border: none;
-    background: white;
-    padding: 10px 18px;
-    border-radius: 25px;
-    cursor: pointer;
-    white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.category:hover {
-    background: #ff6b35;
-    color: white;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 10px 15px 40px;
-}
-
-.container h2 {
-    margin: 10px 0 20px;
-}
-
-.recipes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 18px;
+  .hero{
+    background:
+      radial-gradient(1100px 420px at 12% -20%, rgba(226,166,59,0.35), transparent 60%),
+      var(--ink);
+    color: #f4ead6;
+    padding: 56px 20px 64px;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.2s;
-}
+  }
 
-.card:hover {
-    transform: translateY(-4px);
-}
+  .hero-inner{
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-.card-img {
+  .hero-kicker{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--saffron);
+    margin-bottom: 10px;
+  }
+
+  .hero h1{
+    font-size: clamp(34px, 6vw, 54px);
+    line-height: 1.08;
+    color: #fbf3e2;
+    max-width: 14ch;
+    margin: 0 auto 14px;
+  }
+
+  .hero p{
+    font-size: 17px;
+    color: #d9cbb2;
+    max-width: 46ch;
+    margin: 0 auto;
+  }
+
+  /* ---------- Search ---------- */
+
+  .search-box{
+    max-width: 620px;
+    margin: -28px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .search-box input{
     width: 100%;
-    height: 190px;
-    object-fit: cover;
-}
+    padding: 16px 20px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font: inherit;
+    font-size: 16px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    outline: none;
+    color: var(--ink);
+  }
 
-.card-content {
-    padding: 16px;
-}
+  .search-box input::placeholder{ color: #9c8c74; }
+  .search-box input:focus-visible{ outline: var(--focus); outline-offset: 2px; }
 
-.card-content h3 {
-    margin-bottom: 8px;
-}
+  /* ---------- Category tabs ---------- */
 
-.card-content p {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.buttons {
+  .categories{
     display: flex;
     gap: 8px;
-}
+    overflow-x: auto;
+    padding: 26px 20px 6px;
+    max-width: 1040px;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.view-btn {
+  .category{
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink-soft);
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .category:hover{
+    border-color: var(--saffron-dark);
+  }
+
+  .category.active{
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fbf3e2;
+  }
+
+  /* ---------- Layout shell ---------- */
+
+  .container{
+    max-width: 1040px;
+    margin: auto;
+    padding: 20px 20px 10px;
+  }
+
+  .section-heading{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 18px 0 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+  }
+
+  .section-heading h2{ font-size: 24px; }
+  .section-heading .count{
+    font-size: 14px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  /* ---------- Recipe cards ---------- */
+
+  .recipes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+  }
+
+  .card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-img-wrap{
+    position: relative;
+    height: 180px;
+  }
+
+  .card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #ece1c8;
+  }
+
+  .card-tag{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(36, 28, 21, 0.82);
+    color: #fbf3e2;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 11px;
+    border-radius: 999px;
+  }
+
+  .card-content{
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    background: #ff6b35;
-    color: white;
+  }
+
+  .card-content h3{
+    font-size: 19px;
+    margin-bottom: 6px;
+  }
+
+  .card-content p{
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 16px;
+    flex: 1;
+  }
+
+  .buttons{
+    display: flex;
+    gap: 8px;
+  }
+
+  .view-btn{
+    flex: 1;
+    background: var(--chili);
+    color: #fdf3e7;
     border: none;
     padding: 11px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-}
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s ease;
+  }
 
-.favorite {
-    width: 45px;
-    background: #fff0eb;
-    border: none;
-    border-radius: 10px;
+  .view-btn:hover{ background: var(--chili-dark); }
+
+  .favorite{
+    width: 46px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 19px;
+    cursor: pointer;
+    color: var(--chili);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .favorite.active{
+    background: #f6e2dd;
+    border-color: var(--chili);
+  }
+
+  .no-results{
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  .no-results strong{
+    display: block;
+    font-family: "Fraunces", serif;
     font-size: 20px;
-    cursor: pointer;
-}
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
 
-.favorite.active {
-    background: #ffe0d6;
-}
+  /* ---------- Modal ---------- */
 
-.modal {
+  .modal{
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.65);
-    padding: 20px;
+    background: rgba(24, 18, 12, 0.6);
+    padding: 24px 16px;
     z-index: 1000;
     overflow-y: auto;
-}
+  }
 
-.modal-box {
-    background: white;
-    max-width: 650px;
-    margin: 30px auto;
-    border-radius: 20px;
-    padding: 25px;
+  .modal.open{ display: block; }
+
+  .modal-box{
+    background: var(--card);
+    max-width: 640px;
+    margin: 24px auto;
+    border-radius: 6px 22px 6px 22px;
+    padding: 28px;
     position: relative;
-}
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  }
 
-.close {
+  .close{
     position: absolute;
-    right: 18px;
+    right: 16px;
     top: 12px;
     border: none;
     background: none;
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 1;
     cursor: pointer;
-}
+    color: var(--ink-soft);
+    padding: 6px;
+  }
 
-.modal-box img {
+  .close:hover{ color: var(--chili); }
+
+  .modal-box img{
     width: 100%;
-    max-height: 300px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 4px 14px 4px 14px;
     margin-bottom: 20px;
-}
+    background: #ece1c8;
+  }
 
-.modal-box h2 {
-    margin-bottom: 15px;
-}
+  .modal-box h2{ font-size: 27px; margin-bottom: 6px; }
+  .modal-box .modal-desc{ color: var(--ink-soft); font-size: 15px; margin-bottom: 4px; }
 
-.modal-box h3 {
-    margin-top: 20px;
+  .modal-box h3{
+    font-size: 16px;
+    margin-top: 24px;
     margin-bottom: 10px;
-}
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
 
-.modal-box ul,
-.modal-box ol {
-    padding-left: 22px;
-    line-height: 1.8;
-}
+  .modal-box ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
 
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-}
+  .modal-box ul li{
+    padding-left: 26px;
+    position: relative;
+    font-size: 15px;
+  }
 
-.no-results {
-    text-align: center;
-    padding: 40px;
-    color: #777;
-}
+  .modal-box ul li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    background: var(--saffron);
+  }
 
-.community-post-box {
-    background: #ffffff;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+  .modal-box ol{
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+  }
 
-.community-post-box h2 {
-    font-size: 20px;
-    color: #ff6b35;
-    margin-bottom: 15px;
-    text-align: center;
-}
+  .modal-box ol li{
+    counter-increment: step;
+    padding-left: 38px;
+    position: relative;
+    font-size: 15px;
+  }
 
-#userRecipeForm {
+  .modal-box ol li::before{
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fbf3e2;
+    font-family: "Fraunces", serif;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---------- Community submission ---------- */
+
+  .community{
+    max-width: 1040px;
+    margin: 44px auto 10px;
+    padding: 0 20px;
+  }
+
+  .community-post-box{
+    background: var(--card);
+    border: 1px solid var(--line);
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px;
+    border-radius: 4px 20px 4px 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .community-post-box .eyebrow{
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    color: var(--saffron-dark);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .community-post-box h2{
+    font-size: 23px;
+    margin-bottom: 18px;
+  }
+
+  #userRecipeForm{
     display: flex;
     flex-direction: column;
     gap: 12px;
-}
+  }
 
-#userRecipeForm input, 
-#userRecipeForm textarea {
+  .field-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  #userRecipeForm label{
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  #userRecipeForm input,
+  #userRecipeForm textarea,
+  #userRecipeForm select{
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 12px 13px;
+    border: 1px solid var(--line);
     border-radius: 8px;
+    font: inherit;
     font-size: 14px;
-}
+    background: #fffefb;
+    color: var(--ink);
+  }
 
-#userRecipeForm button {
-    background: #ff6b35;
-    color: white;
+  #userRecipeForm textarea{ min-height: 76px; resize: vertical; }
+
+  #userRecipeForm small{
+    color: #8a7a63;
+    font-size: 12px;
+  }
+
+  #userRecipeForm button{
+    background: var(--ink);
+    color: #fbf3e2;
     border: none;
-    padding: 12px;
+    padding: 13px;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 600;
+    font: inherit;
+    font-size: 15px;
     cursor: pointer;
-}
+    margin-top: 6px;
+    transition: background 0.15s ease;
+  }
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 27px;
-    }
+  #userRecipeForm button:hover{ background: #382c1f; }
+  #userRecipeForm button:disabled{ background: #a89a83; cursor: not-allowed; }
 
-    .recipes {
-        grid-template-columns: 1fr;
-    }
+  .form-status{
+    font-size: 13px;
+    min-height: 18px;
+    margin-top: -2px;
+  }
 
-    .card-img {
-        height: 210px;
-    }
-}
+  .form-status.error{ color: var(--chili-dark); }
+  .form-status.success{ color: var(--cardamom); }
+
+  .community-loading{
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    padding: 6px 0 0;
+  }
+
+  footer{
+    background: var(--ink);
+    color: #cfc0a3;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 48px;
+    font-size: 14px;
+  }
+
+  footer p{ margin: 4px 0; }
+  footer .heart{ color: var(--chili); }
+
+  @media (max-width: 600px){
+    .hero{ padding: 44px 18px 56px; }
+    .field-row{ grid-template-columns: 1fr; }
+    .card-img-wrap{ height: 200px; }
+  }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🍴 Foodie Recipes</h1>
-    <p>Delicious recipes made simple</p>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">A recipe box, online</p>
+    <h1>Cook something worth telling people about</h1>
+    <p>Biryani on a Sunday, pancakes on a Tuesday — browse, save your favorites, and add your own to the box.</p>
+  </div>
 </header>
 
 <div class="search-box">
-    <input
-        type="text"
-        id="search"
-        placeholder="🔍 Search recipes..."
-        onkeyup="searchRecipes()"
-    >
+  <input
+    type="text"
+    id="search"
+    placeholder="Search recipes, e.g. chicken or dessert…"
+    aria-label="Search recipes"
+    onkeyup="searchRecipes()"
+  >
 </div>
 
-<div class="categories">
-    <button class="category" onclick="filterCategory('All')">All</button>
-    <button class="category" onclick="filterCategory('Breakfast')">🍳 Breakfast</button>
-    <button class="category" onclick="filterCategory('Lunch')">🍛 Lunch</button>
-    <button class="category" onclick="filterCategory('Dinner')">🍗 Dinner</button>
-    <button class="category" onclick="filterCategory('Dessert')">🍰 Dessert</button>
-</div>
+<nav class="categories" id="categoryTabs" aria-label="Recipe categories">
+  <button class="category active" data-category="All" onclick="filterCategory('All', this)">All</button>
+  <button class="category" data-category="Breakfast" onclick="filterCategory('Breakfast', this)">🍳 Breakfast</button>
+  <button class="category" data-category="Lunch" onclick="filterCategory('Lunch', this)">🍛 Lunch</button>
+  <button class="category" data-category="Dinner" onclick="filterCategory('Dinner', this)">🍗 Dinner</button>
+  <button class="category" data-category="Dessert" onclick="filterCategory('Dessert', this)">🍰 Dessert</button>
+</nav>
 
-<div class="community-post-box">
-  <h2>Share Your Cooked Dish</h2>
-  <form id="userRecipeForm">
-    <input type="text" id="postTitle" placeholder="Recipe Title (e.g., Spicy Karahi)" required>
-    <input type="text" id="postAuthor" placeholder="Your Name" required>
-    <textarea id="postIngredients" placeholder="Ingredients list (separated by commas)..." required></textarea>
-    <textarea id="postInstructions" placeholder="Cooking steps (separated by commas)..." required></textarea>
-    <input type="text" id="postImage" placeholder="Image URL (e.g., https://...)" required>
-    <button type="submit">Publish Dish</button>
-  </form>
-</div>
-    
 <div class="container">
-    <h2>Popular Recipes</h2>
-    <div class="recipes" id="recipeContainer"></div>
+  <div class="section-heading">
+    <h2>Popular recipes</h2>
+    <span class="count" id="resultCount"></span>
+  </div>
+  <div class="recipes" id="recipeContainer"></div>
+  <p class="community-loading" id="communityLoading" hidden>Loading recipes shared by the community…</p>
 </div>
 
-<div class="modal" id="recipeModal">
-    <div class="modal-box">
-        <button class="close" onclick="closeModal()">×</button>
-        <img id="modalImage">
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
-        <h3>🥘 Ingredients</h3>
-        <ul id="ingredients"></ul>
-        <h3>👨‍🍳 Instructions</h3>
-        <ol id="instructions"></ol>
-    </div>
+<section class="community">
+  <div class="community-post-box">
+    <p class="eyebrow">Your turn</p>
+    <h2>Share your cooked dish</h2>
+    <form id="userRecipeForm" novalidate>
+      <div>
+        <label for="postTitle">Recipe title</label>
+        <input type="text" id="postTitle" placeholder="e.g. Spicy Karahi" required>
+      </div>
+
+      <div class="field-row">
+        <div>
+          <label for="postAuthor">Your name</label>
+          <input type="text" id="postAuthor" placeholder="e.g. Ayesha" required>
+        </div>
+        <div>
+          <label for="postCategory">Category</label>
+          <select id="postCategory" required>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner" selected>Dinner</option>
+            <option value="Dessert">Dessert</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="postIngredients">Ingredients</label>
+        <textarea id="postIngredients" placeholder="Separate each item with a comma, e.g. Chicken - 500g, Onions - 2" required></textarea>
+      </div>
+
+      <div>
+        <label for="postInstructions">Cooking steps</label>
+        <textarea id="postInstructions" placeholder="Separate each step with a comma" required></textarea>
+      </div>
+
+      <div>
+        <label for="postImage">Image URL</label>
+        <input type="url" id="postImage" placeholder="https://example.com/your-dish.jpg" required>
+        <small>Leave a real image link so your dish looks its best.</small>
+      </div>
+
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      <button type="submit" id="submitBtn">Publish dish</button>
+    </form>
+  </div>
+</section>
+
+<div class="modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()" aria-label="Close recipe">×</button>
+    <img id="modalImage" alt="">
+    <h2 id="modalTitle"></h2>
+    <p class="modal-desc" id="modalDescription"></p>
+    <h3>Ingredients</h3>
+    <ul id="ingredients"></ul>
+    <h3>Instructions</h3>
+    <ol id="instructions"></ol>
+  </div>
 </div>
 
 <footer>
-    <p>© 2026 Foodie Recipes</p>
-    <p>Made with ❤️ for food lovers</p>
+  <p>© 2026 Foodie Recipes</p>
+  <p>Made with <span class="heart">♥</span> for food lovers</p>
 </footer>
 
 <script>
+const FALLBACK_IMAGE = "data:image/svg+xml;utf8," + encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" width="500" height="320" viewBox="0 0 500 320">
+    <rect width="500" height="320" fill="#ece1c8"/>
+    <text x="250" y="168" font-family="Georgia, serif" font-size="22" fill="#8a7a63" text-anchor="middle">Image unavailable</text>
+  </svg>
+`);
+
 const recipes = [
-{
+  {
     title: "Chicken Biryani",
     category: "Lunch",
     image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&auto=format&fit=crop",
     description: "Aromatic Pakistani-style chicken biryani.",
     ingredients: [
-        "Chicken - 500g",
-        "Basmati rice - 2 cups",
-        "Onions - 2",
-        "Tomatoes - 2",
-        "Yogurt - 1 cup",
-        "Biryani spices",
-        "Cooking oil"
+      "Chicken - 500g",
+      "Basmati rice - 2 cups",
+      "Onions - 2",
+      "Tomatoes - 2",
+      "Yogurt - 1 cup",
+      "Biryani spices",
+      "Cooking oil"
     ],
     instructions: [
-        "Wash and soak the rice.",
-        "Cook onions until golden brown.",
-        "Add chicken, tomatoes, yogurt and spices.",
-        "Cook until the chicken is tender.",
-        "Cook rice separately until almost done.",
-        "Layer rice and chicken together.",
-        "Cover and cook on low heat for 15 minutes.",
-        "Serve hot."
+      "Wash and soak the rice.",
+      "Cook onions until golden brown.",
+      "Add chicken, tomatoes, yogurt and spices.",
+      "Cook until the chicken is tender.",
+      "Cook rice separately until almost done.",
+      "Layer rice and chicken together.",
+      "Cover and cook on low heat for 15 minutes.",
+      "Serve hot."
     ]
-},
-{
+  },
+  {
     title: "Pancakes",
     category: "Breakfast",
     image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80",
     description: "Soft and fluffy pancakes for breakfast.",
     ingredients: [
-        "Flour - 1 cup",
-        "Milk - 1 cup",
-        "Egg - 1",
-        "Sugar - 2 tablespoons",
-        "Baking powder - 1 teaspoon",
-        "Butter"
+      "Flour - 1 cup",
+      "Milk - 1 cup",
+      "Egg - 1",
+      "Sugar - 2 tablespoons",
+      "Baking powder - 1 teaspoon",
+      "Butter"
     ],
     instructions: [
-        "Mix flour, sugar and baking powder.",
-        "Add milk and egg.",
-        "Mix until smooth.",
-        "Heat a pan and add butter.",
-        "Pour the batter into the pan.",
-        "Cook both sides until golden.",
-        "Serve with honey or fruit."
+      "Mix flour, sugar and baking powder.",
+      "Add milk and egg.",
+      "Mix until smooth.",
+      "Heat a pan and add butter.",
+      "Pour the batter into the pan.",
+      "Cook both sides until golden.",
+      "Serve with honey or fruit."
     ]
-},
-{
+  },
+  {
     title: "Chicken Karahi",
     category: "Dinner",
     image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&auto=format&fit=crop",
     description: "Spicy and delicious chicken karahi.",
     ingredients: [
-        "Chicken - 500g",
-        "Tomatoes - 4",
-        "Green chilies",
-        "Ginger",
-        "Garlic",
-        "Cooking oil",
-        "Karahi spices"
+      "Chicken - 500g",
+      "Tomatoes - 4",
+      "Green chilies",
+      "Ginger",
+      "Garlic",
+      "Cooking oil",
+      "Karahi spices"
     ],
     instructions: [
-        "Heat oil in a karahi.",
-        "Add chicken and cook until lightly brown.",
-        "Add ginger and garlic.",
-        "Add tomatoes and spices.",
-        "Cook until the oil separates.",
-        "Add green chilies.",
-        "Cook for another 5 minutes.",
-        "Serve with naan."
+      "Heat oil in a karahi.",
+      "Add chicken and cook until lightly brown.",
+      "Add ginger and garlic.",
+      "Add tomatoes and spices.",
+      "Cook until the oil separates.",
+      "Add green chilies.",
+      "Cook for another 5 minutes.",
+      "Serve with naan."
     ]
-},
-{
+  },
+  {
     title: "Chocolate Cake",
     category: "Dessert",
     image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
     description: "Rich and delicious chocolate cake.",
     ingredients: [
-        "Flour - 1½ cups",
-        "Cocoa powder - ½ cup",
-        "Sugar - 1 cup",
-        "Eggs - 2",
-        "Milk - 1 cup",
-        "Baking powder",
-        "Butter"
+      "Flour - 1½ cups",
+      "Cocoa powder - ½ cup",
+      "Sugar - 1 cup",
+      "Eggs - 2",
+      "Milk - 1 cup",
+      "Baking powder",
+      "Butter"
     ],
     instructions: [
-        "Mix flour, cocoa and baking powder.",
-        "Add sugar and eggs.",
-        "Add milk and melted butter.",
-        "Mix until smooth.",
-        "Pour into a baking pan.",
-        "Bake at 180°C for about 30 minutes.",
-        "Allow to cool before serving."
+      "Mix flour, cocoa and baking powder.",
+      "Add sugar and eggs.",
+      "Add milk and melted butter.",
+      "Mix until smooth.",
+      "Pour into a baking pan.",
+      "Bake at 180°C for about 30 minutes.",
+      "Allow to cool before serving."
     ]
-},
-{
+  },
+  {
     title: "Fresh Salad",
     category: "Lunch",
     image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
     description: "Fresh and healthy vegetable salad.",
     ingredients: [
-        "Cucumber",
-        "Tomatoes",
-        "Lettuce",
-        "Onion",
-        "Lemon juice",
-        "Salt",
-        "Black pepper"
+      "Cucumber",
+      "Tomatoes",
+      "Lettuce",
+      "Onion",
+      "Lemon juice",
+      "Salt",
+      "Black pepper"
     ],
     instructions: [
-        "Wash all vegetables.",
-        "Cut vegetables into small pieces.",
-        "Place everything in a bowl.",
-        "Add lemon juice.",
-        "Add salt and black pepper.",
-        "Mix well and serve."
+      "Wash all vegetables.",
+      "Cut vegetables into small pieces.",
+      "Place everything in a bowl.",
+      "Add lemon juice.",
+      "Add salt and black pepper.",
+      "Mix well and serve."
     ]
-},
-{
+  },
+  {
     title: "French Toast",
     category: "Breakfast",
     image: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
     description: "Quick and tasty French toast.",
     ingredients: [
-        "Bread - 4 slices",
-        "Eggs - 2",
-        "Milk - ½ cup",
-        "Sugar",
-        "Cinnamon",
-        "Butter"
+      "Bread - 4 slices",
+      "Eggs - 2",
+      "Milk - ½ cup",
+      "Sugar",
+      "Cinnamon",
+      "Butter"
     ],
     instructions: [
-        "Beat eggs with milk.",
-        "Add sugar and cinnamon.",
-        "Dip bread into the mixture.",
-        "Heat butter in a pan.",
-        "Cook the bread on both sides until golden.",
-        "Serve warm."
+      "Beat eggs with milk.",
+      "Add sugar and cinnamon.",
+      "Dip bread into the mixture.",
+      "Heat butter in a pan.",
+      "Cook the bread on both sides until golden.",
+      "Serve warm."
     ]
-},
-{
+  },
+  {
     title: "Gulab Jamun",
     category: "Dessert",
-    image: "gulab-jamun.jpg",
+    image: "https://images.unsplash.com/photo-1601303516361-8ae8578abb04?auto=format&fit=crop&w=800&q=80",
     description: "Soft and sweet milk-based fried dumplings soaked in rose syrup.",
     ingredients: [
-        "Milk powder - 1 cup",
-        "All-purpose flour - 1/4 cup",
-        "Ghee - 2 tbsp",
-        "Milk - 3-4 tbsp",
-        "Baking powder - 1/4 tsp",
-        "Sugar - 1.5 cups",
-        "Water - 1.5 cups",
-        "Cardamom pods - 3",
-        "Oil for frying"
+      "Milk powder - 1 cup",
+      "All-purpose flour - 1/4 cup",
+      "Ghee - 2 tbsp",
+      "Milk - 3-4 tbsp",
+      "Baking powder - 1/4 tsp",
+      "Sugar - 1.5 cups",
+      "Water - 1.5 cups",
+      "Cardamom pods - 3",
+      "Oil for frying"
     ],
     instructions: [
-        "Prepare sugar syrup by boiling sugar, water, and crushed cardamom until sticky.",
-        "Mix milk powder, flour, baking powder, ghee, and milk to form a soft dough.",
-        "Shape into small smooth balls without any cracks.",
-        "Heat oil on low flame and deep fry balls until golden brown.",
-        "Soak fried jamuns in warm sugar syrup for at least 2 hours before serving."
+      "Prepare sugar syrup by boiling sugar, water, and crushed cardamom until sticky.",
+      "Mix milk powder, flour, baking powder, ghee, and milk to form a soft dough.",
+      "Shape into small smooth balls without any cracks.",
+      "Heat oil on low flame and deep fry balls until golden brown.",
+      "Soak fried jamuns in warm sugar syrup for at least 2 hours before serving."
     ]
-}
+  }
 ];
-    
-function displayRecipes(list) {
-    const container = document.getElementById("recipeContainer");
 
-    if (list.length === 0) {
-        container.innerHTML = '<div class="no-results">No recipes found 😔</div>';
-        return;
-    }
+let currentCategory = "All";
+let currentSearch = "";
 
-    container.innerHTML = list.map((recipe) => `
-        <div class="card">
-            <img class="card-img" src="${recipe.image}" alt="${recipe.title}">
-            <div class="card-content">
-                <h3>${recipe.title}</h3>
-                <p>${recipe.description || 'Shared by community member'}</p>
-                <div class="buttons">
-                    <button class="view-btn" onclick="viewRecipeByName('${recipe.title.replace(/'/g, "\\'")}')">
-                        View Recipe
-                    </button>
-                    <button class="favorite" onclick="toggleFavorite(this)">
-                        ♡
-                    </button>
-                </div>
-            </div>
+function getVisibleList(){
+  return recipes.filter(recipe => {
+    const matchesCategory = currentCategory === "All" || recipe.category === currentCategory;
+    const haystack = `${recipe.title} ${recipe.description || ""} ${recipe.category || ""}`.toLowerCase();
+    const matchesSearch = haystack.includes(currentSearch);
+    return matchesCategory && matchesSearch;
+  });
+}
+
+function renderVisibleList(){
+  const list = getVisibleList();
+  displayRecipes(list);
+  const countEl = document.getElementById("resultCount");
+  countEl.textContent = list.length === 1 ? "1 recipe" : `${list.length} recipes`;
+}
+
+function displayRecipes(list){
+  const container = document.getElementById("recipeContainer");
+
+  if (list.length === 0){
+    container.innerHTML = `
+      <div class="no-results">
+        <strong>No recipes found</strong>
+        Try a different search term or category.
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = list.map((recipe) => {
+    const index = recipes.indexOf(recipe);
+    const safeImage = recipe.image ? recipe.image : FALLBACK_IMAGE;
+    return `
+      <div class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" src="${escapeAttr(safeImage)}" alt="${escapeAttr(recipe.title)}"
+               onerror="this.onerror=null; this.src='${FALLBACK_IMAGE}';">
+          <span class="card-tag">${escapeHtml(recipe.category || "Recipe")}</span>
         </div>
-    `).join("");
+        <div class="card-content">
+          <h3>${escapeHtml(recipe.title)}</h3>
+          <p>${escapeHtml(recipe.description || "Shared by a community member")}</p>
+          <div class="buttons">
+            <button class="view-btn" onclick="viewRecipeByIndex(${index})">
+              View recipe
+            </button>
+            <button class="favorite" onclick="toggleFavorite(this)" aria-label="Save to favorites" aria-pressed="false">
+              ♡
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
 }
 
-function viewRecipeByName(title) {
-    const recipe = recipes.find(r => r.title === title);
-    if (!recipe) return;
-
-    document.getElementById("modalImage").src = recipe.image;
-    document.getElementById("modalTitle").textContent = recipe.title;
-    document.getElementById("modalDescription").textContent = recipe.description || "";
-
-    document.getElementById("ingredients").innerHTML =
-        recipe.ingredients.map(item => `<li>${item}</li>`).join("");
-
-    document.getElementById("instructions").innerHTML =
-        recipe.instructions.map(item => `<li>${item}</li>`).join("");
-
-    document.getElementById("recipeModal").style.display = "block";
+function escapeHtml(str){
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
-function closeModal() {
-    document.getElementById("recipeModal").style.display = "none";
+function escapeAttr(str){
+  return escapeHtml(str).replace(/"/g, "&quot;");
 }
 
-function toggleFavorite(button) {
-    button.classList.toggle("active");
-    button.textContent = button.classList.contains("active") ? "♥" : "♡";
+function viewRecipeByIndex(index){
+  const recipe = recipes[index];
+  if (!recipe) return;
+
+  const safeImage = recipe.image ? recipe.image : FALLBACK_IMAGE;
+  const modalImage = document.getElementById("modalImage");
+  modalImage.src = safeImage;
+  modalImage.alt = recipe.title;
+  modalImage.onerror = function(){ this.onerror = null; this.src = FALLBACK_IMAGE; };
+
+  document.getElementById("modalTitle").textContent = recipe.title;
+  document.getElementById("modalDescription").textContent = recipe.description || "";
+
+  document.getElementById("ingredients").innerHTML =
+    (recipe.ingredients || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
+
+  document.getElementById("instructions").innerHTML =
+    (recipe.instructions || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
+
+  const modal = document.getElementById("recipeModal");
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("modalTitle").focus?.();
 }
 
-function searchRecipes() {
-    const search = document.getElementById("search").value.toLowerCase();
-
-    const filtered = recipes.filter(recipe =>
-        recipe.title.toLowerCase().includes(search) ||
-        (recipe.description && recipe.description.toLowerCase().includes(search)) ||
-        (recipe.category && recipe.category.toLowerCase().includes(search))
-    );
-
-    displayRecipes(filtered);
+function closeModal(){
+  document.getElementById("recipeModal").classList.remove("open");
+  document.body.style.overflow = "";
 }
 
-function filterCategory(category) {
-    if (category === "All") {
-        displayRecipes(recipes);
-        return;
-    }
-
-    const filtered = recipes.filter(recipe =>
-        recipe.category === category
-    );
-
-    displayRecipes(filtered);
+function toggleFavorite(button){
+  const isActive = button.classList.toggle("active");
+  button.textContent = isActive ? "♥" : "♡";
+  button.setAttribute("aria-pressed", String(isActive));
 }
 
-displayRecipes(recipes);
+function searchRecipes(){
+  currentSearch = document.getElementById("search").value.trim().toLowerCase();
+  renderVisibleList();
+}
 
-window.onclick = function(event) {
+function filterCategory(category, buttonEl){
+  currentCategory = category;
+  document.querySelectorAll(".category").forEach(btn => btn.classList.remove("active"));
+  if (buttonEl) buttonEl.classList.add("active");
+  renderVisibleList();
+}
+
+renderVisibleList();
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape"){
     const modal = document.getElementById("recipeModal");
-    if (event.target === modal) {
-        closeModal();
-    }
-};
+    if (modal.classList.contains("open")) closeModal();
+  }
+});
+
+window.addEventListener("click", (event) => {
+  const modal = document.getElementById("recipeModal");
+  if (event.target === modal) closeModal();
+});
 </script>
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
-  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+  import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyDXEFY2B59eSL1L4v_mZ1B4HI2340rd8U8",
@@ -606,58 +962,94 @@ window.onclick = function(event) {
   };
 
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
   const db = getFirestore(app);
 
-  // Load recipes stored in Firestore on launch
-  async function loadCommunityRecipes() {
+  // Analytics only works over http(s) with third-party cookies allowed; guard so it never breaks the page.
+  analyticsIsSupported().then((supported) => {
+    if (supported) getAnalytics(app);
+  }).catch(() => {});
+
+  const loadingEl = document.getElementById("communityLoading");
+  const form = document.getElementById("userRecipeForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const statusEl = document.getElementById("formStatus");
+
+  function setStatus(message, type){
+    statusEl.textContent = message;
+    statusEl.className = "form-status" + (type ? " " + type : "");
+  }
+
+  function splitList(value){
+    return value
+      .split(",")
+      .map(item => item.trim())
+      .filter(Boolean);
+  }
+
+  // Load recipes stored in Firestore on launch, then re-render the grid once.
+  async function loadCommunityRecipes(){
+    loadingEl.hidden = false;
     try {
       const querySnapshot = await getDocs(collection(db, "recipes"));
       querySnapshot.forEach((doc) => {
-        const item = doc.data();
-        recipes.push(item);
+        recipes.push(doc.data());
       });
-      displayRecipes(recipes);
+      renderVisibleList();
     } catch (e) {
       console.error("Error fetching recipes from Firestore:", e);
+      setStatus("Couldn't load community recipes right now — you can still browse the recipes above.", "error");
+    } finally {
+      loadingEl.hidden = true;
     }
   }
 
-  // Handle HTML Form Submission to save data to Firestore
-  const form = document.getElementById("userRecipeForm");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    setStatus("", "");
 
-    const title = document.getElementById("postTitle").value;
-    const author = document.getElementById("postAuthor").value;
-    const ingredients = document.getElementById("postIngredients").value.split(",").map(i => i.trim());
-    const instructions = document.getElementById("postInstructions").value.split(",").map(i => i.trim());
-    const image = document.getElementById("postImage").value;
+    const title = document.getElementById("postTitle").value.trim();
+    const author = document.getElementById("postAuthor").value.trim();
+    const category = document.getElementById("postCategory").value;
+    const ingredients = splitList(document.getElementById("postIngredients").value);
+    const instructions = splitList(document.getElementById("postInstructions").value);
+    const image = document.getElementById("postImage").value.trim();
+
+    if (!title || !author || !ingredients.length || !instructions.length || !image){
+      setStatus("Please fill in every field before publishing.", "error");
+      return;
+    }
 
     const newRecipe = {
-      title: title,
-      category: "Dinner",
+      title,
+      category,
       description: `Submitted by ${author}`,
-      ingredients: ingredients,
-      instructions: instructions,
-      image: image,
-      createdAt: new Date()
+      ingredients,
+      instructions,
+      image,
+      createdAt: serverTimestamp()
     };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Publishing…";
 
     try {
       await addDoc(collection(db, "recipes"), newRecipe);
       recipes.push(newRecipe);
-      displayRecipes(recipes);
+      renderVisibleList();
       form.reset();
-      alert("Dish shared successfully!");
+      document.getElementById("postCategory").value = "Dinner";
+      setStatus("Your dish is on the board. Thanks for sharing!", "success");
     } catch (error) {
-      console.error("Error publishing recipe: ", error);
-      alert("Failed to share dish. Check console for details.");
+      console.error("Error publishing recipe:", error);
+      setStatus("Something went wrong while publishing. Please try again.", "error");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Publish dish";
     }
   });
 
   loadCommunityRecipes();
 </script>
- 
+
 </body>
 </html>
