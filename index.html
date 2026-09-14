@@ -974,8 +974,7 @@ import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.
 });
   const db = getFirestore(app);
   const ai = getAI(app, { backend: new GoogleAIBackend() });
-const model = getGenerativeModel(ai, { model: "gemini-3.8-flash" });
-
+const model = getGenerativeModel(ai, { model: "gemini-1.5-flash" });
   window.askTastyStepsAI = async function() {
   const question = prompt("What would you like to ask TastySteps AI?");
 
