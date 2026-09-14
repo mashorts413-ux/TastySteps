@@ -955,8 +955,8 @@ window.addEventListener("click", (event) => {
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
   import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
   import { getFirestore, collection, addDoc, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-ai.js";
-  import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app-check.js";
+  import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-ai.js";
+
   const firebaseConfig = {
     apiKey: "AIzaSyDXEFY2B59eSLlL4v_mZlB4HI2340rd8U8",
     authDomain: "tastysteps-9219e.firebaseapp.com",
@@ -968,38 +968,36 @@ import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.
   };
 
   const app = initializeApp(firebaseConfig);
-  const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaEnterpriseProvider("6Lf1bbotAAAAAJl0tpZv5SbtPogN9EdIXxPRGcdl"),
-  isTokenAutoRefreshEnabled: true
-});
   const db = getFirestore(app);
+
+  // Active production model
   const ai = getAI(app, { backend: new GoogleAIBackend() });
-const model = getGenerativeModel(ai, { model: "gemini-3.6-flash" });
+  const model = getGenerativeModel(ai, { model: "gemini-3.6-flash" });
+
   window.askTastyStepsAI = async function() {
-  const question = prompt("What would you like to ask TastySteps AI?");
+    const question = prompt("What would you like to ask TastySteps AI?");
+    if (!question) return;
 
-  if (!question) return;
-
-  try {
-    const result = await model.generateContent(question);
-    alert(result.response.text());
-  } catch (error) {
-    console.error("Gemini Error:", error);
-    alert("Sorry, TastySteps AI could not answer right now.");
-  }
-};
-  
-async function testAI() {
     try {
-        const result = await model.generateContent("Say hello to TastySteps.");
-        console.log("AI TEST:", result.response.text());
+      const result = await model.generateContent(question);
+      const text = await result.response.text();
+      alert(text);
     } catch (error) {
-        console.error("AI TEST ERROR:", error);
+      console.error("Gemini Error:", error);
+      alert("TastySteps AI is currently busy. Please try again in a moment.");
     }
-}
+  };
 
+  async function testAI() {
+    try {
+      const result = await model.generateContent("Say hello to TastySteps.");
+      console.log("AI TEST:", await result.response.text());
+    } catch (error) {
+      console.error("AI TEST ERROR:", error);
+    }
+  }
   testAI();
-  // Analytics only works over http(s) with third-party cookies allowed; guard so it never breaks the page.
+
   analyticsIsSupported().then((supported) => {
     if (supported) getAnalytics(app);
   }).catch(() => {});
@@ -1015,13 +1013,9 @@ async function testAI() {
   }
 
   function splitList(value){
-    return value
-      .split(",")
-      .map(item => item.trim())
-      .filter(Boolean);
+    return value.split(",").map(item => item.trim()).filter(Boolean);
   }
 
-  // Load recipes stored in Firestore on launch, then re-render the grid once.
   async function loadCommunityRecipes(){
     loadingEl.hidden = false;
     try {
@@ -1031,8 +1025,7 @@ async function testAI() {
       });
       renderVisibleList();
     } catch (e) {
-      console.error("Error fetching recipes from Firestore:", e);
-      setStatus("Couldn't load community recipes right now — you can still browse the recipes above.", "error");
+      console.error("Error fetching recipes:", e);
     } finally {
       loadingEl.hidden = true;
     }
@@ -1072,11 +1065,10 @@ async function testAI() {
       recipes.push(newRecipe);
       renderVisibleList();
       form.reset();
-      document.getElementById("postCategory").value = "Dinner";
-      setStatus("Your dish is on the board. Thanks for sharing!", "success");
+      setStatus("Your dish is on the board!", "success");
     } catch (error) {
       console.error("Error publishing recipe:", error);
-      setStatus("Something went wrong while publishing. Please try again.", "error");
+      setStatus("Error publishing recipe.", "error");
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Publish dish";
@@ -1085,6 +1077,5 @@ async function testAI() {
 
   loadCommunityRecipes();
 </script>
-
 </body>
 </html>
