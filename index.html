@@ -975,7 +975,20 @@ import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.
   const db = getFirestore(app);
   const ai = getAI(app, { backend: new GoogleAIBackend() });
 const model = getGenerativeModel(ai, { model: "gemini-3.8-flash" });
-  
+
+  window.askTastyStepsAI = async function() {
+  const question = prompt("What would you like to ask TastySteps AI?");
+
+  if (!question) return;
+
+  try {
+    const result = await model.generateContent(question);
+    alert(result.response.text());
+  } catch (error) {
+    console.error("Gemini Error:", error);
+    alert("Sorry, TastySteps AI could not answer right now.");
+  }
+};
 async function testAI() {
     try {
         const result = await model.generateContent("Say hello to TastySteps.");
