@@ -951,6 +951,7 @@ window.addEventListener("click", (event) => {
   import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
   import { getFirestore, collection, addDoc, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-ai.js";
+  import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app-check.js";
   const firebaseConfig = {
     apiKey: "AIzaSyDXEFY2B59eSLlL4v_mZlB4HI2340rd8U8",
     authDomain: "tastysteps-9219e.firebaseapp.com",
@@ -962,6 +963,10 @@ import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.
   };
 
   const app = initializeApp(firebaseConfig);
+  const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaEnterpriseProvider("6Lf1bbotAAAAAJl0tpZv5SbtPogN9EdIXxPRGcdl"),
+  isTokenAutoRefreshEnabled: true
+});
   const db = getFirestore(app);
   const ai = getAI(app, { backend: new GoogleAIBackend() });
 const model = getGenerativeModel(ai, { model: "gemini-3.8-flash" });
@@ -975,7 +980,7 @@ async function testAI() {
     }
 }
 
-testAI();
+  testAI();
   // Analytics only works over http(s) with third-party cookies allowed; guard so it never breaks the page.
   analyticsIsSupported().then((supported) => {
     if (supported) getAnalytics(app);
