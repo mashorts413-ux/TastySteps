@@ -653,171 +653,1092 @@ const FALLBACK_IMAGE = "data:image/svg+xml;utf8," + encodeURIComponent(`
   </svg>
 `);
 
-const recipes = [
+   const recipes = [
   {
     title: "Chicken Biryani",
     category: "Lunch",
-    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&auto=format&fit=crop",
-    description: "Aromatic Pakistani-style chicken biryani.",
+    description: "Aromatic Pakistani-style chicken biryani layered with saffron rice.",
+    image: "https://loremflickr.com/400/300/biryani",
     ingredients: [
-      "Chicken - 500g",
-      "Basmati rice - 2 cups",
-      "Onions - 2",
-      "Tomatoes - 2",
-      "Yogurt - 1 cup",
-      "Biryani spices",
-      "Cooking oil"
+      "2 cups basmati rice",
+      "500g chicken",
+      "2 onions, fried crisp",
+      "1 cup yogurt",
+      "Biryani masala",
+      "Saffron milk"
     ],
     instructions: [
-      "Wash and soak the rice.",
-      "Cook onions until golden brown.",
-      "Add chicken, tomatoes, yogurt and spices.",
-      "Cook until the chicken is tender.",
-      "Cook rice separately until almost done.",
-      "Layer rice and chicken together.",
-      "Cover and cook on low heat for 15 minutes.",
-      "Serve hot."
+      "Marinate chicken in yogurt and spices for 1 hour.",
+      "Parboil rice with whole spices.",
+      "Layer chicken and rice in a pot.",
+      "Top with fried onions and saffron milk.",
+      "Cook on low heat (dum) for 25 minutes."
     ]
   },
+
   {
-    title: "Pancakes",
+    title: "Fluffy Pancakes",
     category: "Breakfast",
-    image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80",
-    description: "Soft and fluffy pancakes for breakfast.",
+    description: "Soft and fluffy pancakes topped with banana and blueberries.",
+    image: "https://loremflickr.com/400/300/pancakes",
     ingredients: [
-      "Flour - 1 cup",
-      "Milk - 1 cup",
-      "Egg - 1",
-      "Sugar - 2 tablespoons",
-      "Baking powder - 1 teaspoon",
-      "Butter"
+      "1.5 cups flour",
+      "2 tbsp sugar",
+      "1 egg",
+      "1 cup milk",
+      "1 tbsp butter",
+      "Baking powder"
     ],
     instructions: [
-      "Mix flour, sugar and baking powder.",
-      "Add milk and egg.",
-      "Mix until smooth.",
-      "Heat a pan and add butter.",
-      "Pour the batter into the pan.",
-      "Cook both sides until golden.",
-      "Serve with honey or fruit."
+      "Whisk dry ingredients together.",
+      "Add egg, milk, and melted butter.",
+      "Mix until just combined.",
+      "Cook on a hot griddle until bubbles form.",
+      "Flip and cook until golden."
     ]
   },
+
   {
     title: "Chicken Karahi",
     category: "Dinner",
-    image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&auto=format&fit=crop",
-    description: "Spicy and delicious chicken karahi.",
+    description: "Spicy and delicious chicken karahi cooked with tomatoes and ginger.",
+    image: "https://loremflickr.com/400/300/chickenkarahi",
     ingredients: [
-      "Chicken - 500g",
-      "Tomatoes - 4",
+      "1 kg chicken",
+      "4 tomatoes",
+      "Ginger garlic paste",
       "Green chilies",
-      "Ginger",
-      "Garlic",
-      "Cooking oil",
-      "Karahi spices"
+      "Oil",
+      "Karahi masala"
     ],
     instructions: [
-      "Heat oil in a karahi.",
-      "Add chicken and cook until lightly brown.",
-      "Add ginger and garlic.",
-      "Add tomatoes and spices.",
-      "Cook until the oil separates.",
-      "Add green chilies.",
-      "Cook for another 5 minutes.",
-      "Serve with naan."
+      "Fry chicken in oil until sealed.",
+      "Add ginger garlic paste and cook.",
+      "Add tomatoes and cook until soft.",
+      "Add spices and simmer.",
+      "Garnish with green chilies and coriander."
     ]
   },
+
   {
-    title: "Chocolate Cake",
+    title: "Chocolate Mousse Cups",
     category: "Dessert",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
-    description: "Rich and delicious chocolate cake.",
+    description: "Rich, silky chocolate mousse served in individual cups.",
+    image: "https://loremflickr.com/400/300/chocolatemousse",
     ingredients: [
-      "Flour - 1½ cups",
-      "Cocoa powder - ½ cup",
-      "Sugar - 1 cup",
-      "Eggs - 2",
-      "Milk - 1 cup",
-      "Baking powder",
+      "200g dark chocolate",
+      "2 cups whipped cream",
+      "3 eggs",
+      "2 tbsp sugar",
+      "Pinch of salt"
+    ],
+    instructions: [
+      "Melt chocolate over a double boiler.",
+      "Whisk egg yolks with sugar.",
+      "Fold in melted chocolate.",
+      "Gently fold in whipped cream.",
+      "Chill for 2 hours before serving."
+    ]
+  },
+
+  {
+    title: "Garden Fresh Salad",
+    category: "Lunch",
+    description: "A crisp mix of greens, cherry tomatoes, and a light vinaigrette.",
+    image: "https://loremflickr.com/400/300/gardensalad",
+    ingredients: [
+      "Mixed greens",
+      "Cherry tomatoes",
+      "Cucumber",
+      "Red onion",
+      "Olive oil",
+      "Balsamic vinegar"
+    ],
+    instructions: [
+      "Wash and chop all vegetables.",
+      "Toss together in a large bowl.",
+      "Whisk olive oil and vinegar.",
+      "Drizzle dressing over salad.",
+      "Serve immediately."
+    ]
+  },
+
+  {
+    title: "Classic Omelette",
+    category: "Breakfast",
+    description: "A simple, fluffy omelette with cheese and herbs.",
+    image: "https://loremflickr.com/400/300/omelette",
+    ingredients: [
+      "3 eggs",
+      "2 tbsp milk",
+      "Shredded cheese",
+      "Salt & pepper",
+      "Chopped chives",
       "Butter"
     ],
     instructions: [
-      "Mix flour, cocoa and baking powder.",
-      "Add sugar and eggs.",
-      "Add milk and melted butter.",
-      "Mix until smooth.",
-      "Pour into a baking pan.",
-      "Bake at 180°C for about 30 minutes.",
-      "Allow to cool before serving."
+      "Whisk eggs with milk, salt, and pepper.",
+      "Melt butter in a pan.",
+      "Pour in egg mixture.",
+      "Add cheese as it sets.",
+      "Fold and serve hot."
     ]
   },
+
   {
-    title: "Fresh Salad",
-    category: "Lunch",
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
-    description: "Fresh and healthy vegetable salad.",
+    title: "Beef Steak with Herb Butter",
+    category: "Dinner",
+    description: "Juicy pan-seared steak finished with garlic herb butter.",
+    image: "https://loremflickr.com/400/300/beefsteak",
     ingredients: [
-      "Cucumber",
-      "Tomatoes",
-      "Lettuce",
-      "Onion",
-      "Lemon juice",
-      "Salt",
-      "Black pepper"
+      "2 beef steaks",
+      "Butter",
+      "Garlic cloves",
+      "Rosemary",
+      "Salt & pepper",
+      "Olive oil"
     ],
     instructions: [
-      "Wash all vegetables.",
-      "Cut vegetables into small pieces.",
-      "Place everything in a bowl.",
-      "Add lemon juice.",
-      "Add salt and black pepper.",
-      "Mix well and serve."
+      "Season steaks generously.",
+      "Sear in hot oil 3-4 min per side.",
+      "Add butter, garlic, and rosemary.",
+      "Baste steak with melted butter.",
+      "Rest 5 minutes before slicing."
     ]
   },
+
+  {
+    title: "New York Cheesecake",
+    category: "Dessert",
+    description: "Creamy classic cheesecake with a buttery graham crust.",
+    image: "https://loremflickr.com/400/300/cheesecake",
+    ingredients: [
+      "Graham crackers",
+      "Cream cheese",
+      "Sugar",
+      "Eggs",
+      "Vanilla extract",
+      "Sour cream"
+    ],
+    instructions: [
+      "Press crumbs into a springform pan.",
+      "Beat cream cheese and sugar smooth.",
+      "Add eggs one at a time.",
+      "Pour over crust and bake at 160°C.",
+      "Cool completely before slicing."
+    ]
+  },
+
+  {
+    title: "Vegetable Pulao",
+    category: "Lunch",
+    description: "Fragrant rice cooked with mixed vegetables and whole spices.",
+    image: "https://loremflickr.com/400/300/pulao",
+    ingredients: [
+      "2 cups rice",
+      "Mixed vegetables",
+      "Whole spices",
+      "Onion",
+      "Oil",
+      "Salt"
+    ],
+    instructions: [
+      "Sauté onions and whole spices in oil.",
+      "Add vegetables and cook briefly.",
+      "Add rice and stir to coat.",
+      "Add water and bring to a boil.",
+      "Cover and cook until rice is done."
+    ]
+  },
+
   {
     title: "French Toast",
     category: "Breakfast",
-    image: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80",
-    description: "Quick and tasty French toast.",
+    description: "Golden, cinnamon-spiced French toast with maple syrup.",
+    image: "https://loremflickr.com/400/300/frenchtoast",
     ingredients: [
-      "Bread - 4 slices",
-      "Eggs - 2",
-      "Milk - ½ cup",
-      "Sugar",
+      "4 bread slices",
+      "2 eggs",
+      "1/2 cup milk",
       "Cinnamon",
-      "Butter"
+      "Butter",
+      "Maple syrup"
     ],
     instructions: [
-      "Beat eggs with milk.",
-      "Add sugar and cinnamon.",
-      "Dip bread into the mixture.",
-      "Heat butter in a pan.",
-      "Cook the bread on both sides until golden.",
-      "Serve warm."
+      "Whisk eggs, milk, and cinnamon.",
+      "Dip bread slices in mixture.",
+      "Fry in butter until golden.",
+      "Flip and cook other side.",
+      "Serve with maple syrup."
     ]
   },
+
+  {
+    title: "Butter Chicken",
+    category: "Dinner",
+    description: "Creamy tomato-based curry with tender chicken pieces.",
+    image: "https://loremflickr.com/400/300/butterchicken",
+    ingredients: [
+      "500g chicken",
+      "Tomato puree",
+      "Cream",
+      "Butter",
+      "Garam masala",
+      "Ginger garlic paste"
+    ],
+    instructions: [
+      "Marinate and grill chicken pieces.",
+      "Cook tomato puree with spices.",
+      "Add butter and simmer.",
+      "Stir in cream.",
+      "Add chicken and simmer 10 minutes."
+    ]
+  },
+
+  {
+    title: "Tiramisu",
+    category: "Dessert",
+    description: "Layered Italian dessert with coffee-soaked ladyfingers and mascarpone.",
+    image: "https://loremflickr.com/400/300/tiramisu",
+    ingredients: [
+      "Ladyfingers",
+      "Mascarpone cheese",
+      "Espresso",
+      "Cocoa powder",
+      "Sugar",
+      "Eggs"
+    ],
+    instructions: [
+      "Whisk egg yolks and sugar, fold in mascarpone.",
+      "Dip ladyfingers in espresso.",
+      "Layer with mascarpone mixture.",
+      "Repeat layers.",
+      "Dust with cocoa and chill overnight."
+    ]
+  },
+
+  {
+    title: "Grilled Chicken Wrap",
+    category: "Lunch",
+    description: "Smoky grilled chicken wrapped with fresh veggies and sauce.",
+    image: "https://loremflickr.com/400/300/chickenwrap",
+    ingredients: [
+      "Chicken breast",
+      "Tortilla wraps",
+      "Lettuce",
+      "Yogurt sauce",
+      "Tomato",
+      "Spices"
+    ],
+    instructions: [
+      "Marinate and grill chicken strips.",
+      "Warm the tortillas.",
+      "Spread sauce on wrap.",
+      "Add chicken and vegetables.",
+      "Roll tightly and slice."
+    ]
+  },
+
+  {
+    title: "Shakshuka",
+    category: "Breakfast",
+    description: "Eggs poached in a spiced tomato and pepper sauce.",
+    image: "https://loremflickr.com/400/300/shakshuka",
+    ingredients: [
+      "4 eggs",
+      "Tomatoes",
+      "Bell peppers",
+      "Onion",
+      "Cumin",
+      "Paprika"
+    ],
+    instructions: [
+      "Sauté onions and peppers.",
+      "Add tomatoes and spices, simmer.",
+      "Make wells and crack in eggs.",
+      "Cover and cook until eggs set.",
+      "Garnish with parsley."
+    ]
+  },
+
+  {
+    title: "Beef Lasagna",
+    category: "Dinner",
+    description: "Layers of pasta, beef ragu, and creamy béchamel sauce.",
+    image: "https://loremflickr.com/400/300/lasagna",
+    ingredients: [
+      "Lasagna sheets",
+      "Ground beef",
+      "Tomato sauce",
+      "Béchamel sauce",
+      "Mozzarella",
+      "Parmesan"
+    ],
+    instructions: [
+      "Cook beef with tomato sauce.",
+      "Layer pasta, meat sauce, and béchamel.",
+      "Repeat layers, top with cheese.",
+      "Bake at 180°C for 30 minutes.",
+      "Rest before slicing."
+    ]
+  },
+
+  {
+    title: "Baklava",
+    category: "Dessert",
+    description: "Crispy layered pastry with nuts and sweet honey syrup.",
+    image: "https://loremflickr.com/400/300/baklava",
+    ingredients: [
+      "Phyllo dough",
+      "Chopped walnuts",
+      "Butter",
+      "Honey",
+      "Sugar",
+      "Cinnamon"
+    ],
+    instructions: [
+      "Layer buttered phyllo sheets.",
+      "Add nut mixture between layers.",
+      "Repeat and top with phyllo.",
+      "Cut into diamonds and bake.",
+      "Pour honey syrup over hot baklava."
+    ]
+  },
+
+  {
+    title: "Club Sandwich",
+    category: "Lunch",
+    description: "Triple-decker sandwich with chicken, egg, and crisp lettuce.",
+    image: "https://loremflickr.com/400/300/clubsandwich",
+    ingredients: [
+      "Bread slices",
+      "Grilled chicken",
+      "Boiled egg",
+      "Lettuce",
+      "Tomato",
+      "Mayonnaise"
+    ],
+    instructions: [
+      "Toast the bread slices.",
+      "Spread mayonnaise on each layer.",
+      "Add chicken, egg, and vegetables.",
+      "Stack the layers.",
+      "Cut diagonally and secure with picks."
+    ]
+  },
+
+  {
+    title: "Greek Yogurt Parfait",
+    category: "Breakfast",
+    description: "Layers of yogurt, granola, and fresh berries.",
+    image: "https://loremflickr.com/400/300/yogurtparfait",
+    ingredients: [
+      "Greek yogurt",
+      "Granola",
+      "Mixed berries",
+      "Honey",
+      "Chia seeds"
+    ],
+    instructions: [
+      "Layer yogurt in a glass.",
+      "Add a layer of granola.",
+      "Add fresh berries.",
+      "Repeat layers.",
+      "Drizzle with honey."
+    ]
+  },
+
+  {
+    title: "Grilled Salmon",
+    category: "Dinner",
+    description: "Perfectly grilled salmon with lemon and dill.",
+    image: "https://loremflickr.com/400/300/grilledsalmon",
+    ingredients: [
+      "Salmon fillets",
+      "Lemon",
+      "Fresh dill",
+      "Olive oil",
+      "Garlic",
+      "Salt & pepper"
+    ],
+    instructions: [
+      "Marinate salmon in oil, lemon, and garlic.",
+      "Preheat grill to medium-high.",
+      "Grill skin-side down first.",
+      "Flip carefully and finish cooking.",
+      "Garnish with dill and lemon."
+    ]
+  },
+
+  {
+    title: "Chocolate Lava Cake",
+    category: "Dessert",
+    description: "Warm chocolate cake with a molten, gooey center.",
+    image: "https://loremflickr.com/400/300/lavacake",
+    ingredients: [
+      "Dark chocolate",
+      "Butter",
+      "Eggs",
+      "Sugar",
+      "Flour",
+      "Cocoa powder"
+    ],
+    instructions: [
+      "Melt chocolate and butter together.",
+      "Whisk in eggs and sugar.",
+      "Fold in flour and cocoa.",
+      "Pour into greased ramekins.",
+      "Bake at 200°C for 10-12 minutes."
+    ]
+  },
+
+  {
+    title: "Chana Chaat",
+    category: "Lunch",
+    description: "Tangy chickpea salad with chutneys and crunchy toppings.",
+    image: "https://loremflickr.com/400/300/chanachaat",
+    ingredients: [
+      "Boiled chickpeas",
+      "Onion",
+      "Tomato",
+      "Tamarind chutney",
+      "Chaat masala",
+      "Coriander"
+    ],
+    instructions: [
+      "Mix chickpeas with chopped onion and tomato.",
+      "Add tamarind chutney.",
+      "Sprinkle chaat masala.",
+      "Toss well.",
+      "Garnish with coriander and serve."
+    ]
+  },
+
+  {
+    title: "Banana Smoothie Bowl",
+    category: "Breakfast",
+    description: "Thick banana smoothie topped with fruit and granola.",
+    image: "https://loremflickr.com/400/300/smoothiebowl",
+    ingredients: [
+      "Frozen bananas",
+      "Milk",
+      "Granola",
+      "Sliced strawberries",
+      "Chia seeds",
+      "Honey"
+    ],
+    instructions: [
+      "Blend frozen bananas with milk.",
+      "Pour into a bowl.",
+      "Top with granola and strawberries.",
+      "Sprinkle chia seeds.",
+      "Drizzle honey and serve."
+    ]
+  },
+
+  {
+    title: "Mutton Pulao",
+    category: "Dinner",
+    description: "Fragrant rice slow-cooked with tender mutton and whole spices.",
+    image: "https://loremflickr.com/400/300/muttonpulao",
+    ingredients: [
+      "500g mutton",
+      "2 cups rice",
+      "Whole spices",
+      "Onion",
+      "Yogurt",
+      "Oil"
+    ],
+    instructions: [
+      "Brown mutton with onions and spices.",
+      "Add water and pressure cook until tender.",
+      "Add rice to the mutton stock.",
+      "Cook covered until rice absorbs liquid.",
+      "Rest before serving."
+    ]
+  },
+
   {
     title: "Gulab Jamun",
     category: "Dessert",
-    image: "https://images.unsplash.com/photo-1601303516361-8ae8578abb04?auto=format&fit=crop&w=800&q=80",
-    description: "Soft and sweet milk-based fried dumplings soaked in rose syrup.",
+    description: "Soft milk dumplings soaked in rose-scented sugar syrup.",
+    image: "https://loremflickr.com/400/300/gulabjamun",
     ingredients: [
-      "Milk powder - 1 cup",
-      "All-purpose flour - 1/4 cup",
-      "Ghee - 2 tbsp",
-      "Milk - 3-4 tbsp",
-      "Baking powder - 1/4 tsp",
-      "Sugar - 1.5 cups",
-      "Water - 1.5 cups",
-      "Cardamom pods - 3",
-      "Oil for frying"
+      "Milk powder",
+      "Flour",
+      "Ghee",
+      "Sugar",
+      "Cardamom",
+      "Rose water"
     ],
     instructions: [
-      "Prepare sugar syrup by boiling sugar, water, and crushed cardamom until sticky.",
-      "Mix milk powder, flour, baking powder, ghee, and milk to form a soft dough.",
-      "Shape into small smooth balls without any cracks.",
-      "Heat oil on low flame and deep fry balls until golden brown.",
-      "Soak fried jamuns in warm sugar syrup for at least 2 hours before serving."
+      "Make a soft dough with milk powder and flour.",
+      "Shape into smooth balls.",
+      "Fry on low heat until golden.",
+      "Prepare sugar syrup with cardamom.",
+      "Soak fried balls in warm syrup."
+    ]
+  },
+
+  {
+    title: "Caesar Salad",
+    category: "Lunch",
+    description: "Crisp romaine with parmesan, croutons, and creamy dressing.",
+    image: "https://loremflickr.com/400/300/caesarsalad",
+    ingredients: [
+      "Romaine lettuce",
+      "Parmesan cheese",
+      "Croutons",
+      "Caesar dressing",
+      "Grilled chicken (optional)"
+    ],
+    instructions: [
+      "Chop romaine lettuce.",
+      "Toss with Caesar dressing.",
+      "Add croutons and parmesan.",
+      "Top with grilled chicken if desired.",
+      "Serve chilled."
+    ]
+  },
+
+  {
+    title: "Masala Omelette Paratha Roll",
+    category: "Breakfast",
+    description: "Spiced omelette rolled inside a flaky paratha.",
+    image: "https://loremflickr.com/400/300/parattharoll",
+    ingredients: [
+      "2 eggs",
+      "1 paratha",
+      "Onion",
+      "Green chili",
+      "Salt",
+      "Oil"
+    ],
+    instructions: [
+      "Whisk eggs with chopped onion and chili.",
+      "Cook paratha until half done.",
+      "Pour egg mixture onto paratha in the pan.",
+      "Cook until egg sets, flip.",
+      "Roll and slice."
+    ]
+  },
+
+  {
+    title: "Beef Nihari",
+    category: "Dinner",
+    description: "Slow-cooked, deeply spiced beef stew, a South Asian classic.",
+    image: "https://loremflickr.com/400/300/nihari",
+    ingredients: [
+      "Beef shank",
+      "Nihari masala",
+      "Wheat flour",
+      "Ginger",
+      "Oil",
+      "Fried onions"
+    ],
+    instructions: [
+      "Slow-cook beef with spices for hours.",
+      "Mix flour with water to thicken.",
+      "Stir into the stew.",
+      "Simmer until rich and thick.",
+      "Garnish with ginger and fried onions."
+    ]
+  },
+
+  {
+    title: "Fruit Tart",
+    category: "Dessert",
+    description: "Buttery tart shell filled with custard and fresh fruit.",
+    image: "https://loremflickr.com/400/300/fruittart",
+    ingredients: [
+      "Tart shell",
+      "Vanilla custard",
+      "Mixed berries",
+      "Kiwi",
+      "Apricot glaze"
+    ],
+    instructions: [
+      "Bake the tart shell until golden.",
+      "Fill with cooled vanilla custard.",
+      "Arrange fruit on top.",
+      "Brush with apricot glaze.",
+      "Chill before serving."
+    ]
+  },
+
+  {
+    title: "Falafel Wrap",
+    category: "Lunch",
+    description: "Crispy falafel with tahini sauce wrapped in warm pita.",
+    image: "https://loremflickr.com/400/300/falafelwrap",
+    ingredients: [
+      "Chickpeas",
+      "Garlic",
+      "Cumin",
+      "Pita bread",
+      "Tahini sauce",
+      "Lettuce"
+    ],
+    instructions: [
+      "Blend chickpeas with garlic and spices.",
+      "Shape into balls and fry until crisp.",
+      "Warm the pita bread.",
+      "Add falafel, lettuce, and tahini.",
+      "Roll and serve."
+    ]
+  },
+
+  {
+    title: "Overnight Oats",
+    category: "Breakfast",
+    description: "No-cook oats soaked overnight with fruit and honey.",
+    image: "https://loremflickr.com/400/300/overnightoats",
+    ingredients: [
+      "Rolled oats",
+      "Milk",
+      "Honey",
+      "Chia seeds",
+      "Sliced banana"
+    ],
+    instructions: [
+      "Mix oats, milk, and chia seeds in a jar.",
+      "Add a drizzle of honey.",
+      "Cover and refrigerate overnight.",
+      "Top with banana before serving.",
+      "Stir and enjoy cold."
+    ]
+  },
+
+  {
+    title: "Shrimp Alfredo Pasta",
+    category: "Dinner",
+    description: "Creamy garlic parmesan pasta with juicy sautéed shrimp.",
+    image: "https://loremflickr.com/400/300/shrimpalfredo",
+    ingredients: [
+      "Shrimp",
+      "Fettuccine",
+      "Heavy cream",
+      "Parmesan",
+      "Garlic",
+      "Butter"
+    ],
+    instructions: [
+      "Cook pasta until al dente.",
+      "Sauté shrimp in butter and garlic.",
+      "Add cream and simmer.",
+      "Stir in parmesan until smooth.",
+      "Toss pasta with sauce and shrimp."
+    ]
+  },
+
+  {
+    title: "Kheer (Rice Pudding)",
+    category: "Dessert",
+    description: "Creamy rice pudding simmered with milk, cardamom, and nuts.",
+    image: "https://loremflickr.com/400/300/kheer",
+    ingredients: [
+      "Rice",
+      "Milk",
+      "Sugar",
+      "Cardamom",
+      "Almonds",
+      "Pistachios"
+    ],
+    instructions: [
+      "Simmer rice in milk until soft.",
+      "Add sugar and cardamom.",
+      "Cook until thick and creamy.",
+      "Stir frequently to prevent sticking.",
+      "Garnish with chopped nuts."
+    ]
+  },
+
+  {
+    title: "BBQ Chicken Pizza",
+    category: "Lunch",
+    description: "Smoky BBQ chicken pizza with red onion and mozzarella.",
+    image: "https://loremflickr.com/400/300/bbqpizza",
+    ingredients: [
+      "Pizza dough",
+      "BBQ sauce",
+      "Shredded chicken",
+      "Red onion",
+      "Mozzarella cheese"
+    ],
+    instructions: [
+      "Roll out pizza dough.",
+      "Spread BBQ sauce as base.",
+      "Top with chicken, onion, and cheese.",
+      "Bake at 220°C until crust is golden.",
+      "Slice and serve hot."
+    ]
+  },
+
+  {
+    title: "Egg & Spinach Muffins",
+    category: "Breakfast",
+    description: "Protein-packed baked egg muffins with spinach and cheese.",
+    image: "https://loremflickr.com/400/300/eggmuffins",
+    ingredients: [
+      "6 eggs",
+      "Spinach",
+      "Cheddar cheese",
+      "Milk",
+      "Salt & pepper"
+    ],
+    instructions: [
+      "Whisk eggs with milk and seasoning.",
+      "Stir in chopped spinach and cheese.",
+      "Pour into greased muffin tins.",
+      "Bake at 180°C for 18-20 minutes.",
+      "Cool slightly before removing."
+    ]
+  },
+
+  {
+    title: "Lamb Chops with Mint Sauce",
+    category: "Dinner",
+    description: "Herb-crusted lamb chops served with cooling mint sauce.",
+    image: "https://loremflickr.com/400/300/lambchops",
+    ingredients: [
+      "Lamb chops",
+      "Rosemary",
+      "Garlic",
+      "Mint leaves",
+      "Yogurt",
+      "Olive oil"
+    ],
+    instructions: [
+      "Marinate chops with garlic, rosemary, and oil.",
+      "Sear on high heat until browned.",
+      "Finish in the oven to desired doneness.",
+      "Blend mint with yogurt for sauce.",
+      "Serve chops with mint sauce."
+    ]
+  },
+
+  {
+    title: "Churros with Chocolate Dip",
+    category: "Dessert",
+    description: "Crispy cinnamon-sugar churros with warm chocolate sauce.",
+    image: "https://loremflickr.com/400/300/churros",
+    ingredients: [
+      "Flour",
+      "Butter",
+      "Eggs",
+      "Cinnamon sugar",
+      "Dark chocolate",
+      "Cream"
+    ],
+    instructions: [
+      "Make choux pastry dough.",
+      "Pipe into hot oil and fry until golden.",
+      "Roll in cinnamon sugar.",
+      "Melt chocolate with cream for dip.",
+      "Serve churros warm with dip."
+    ]
+  },
+
+  {
+    title: "Chicken Shawarma Plate",
+    category: "Lunch",
+    description: "Spiced grilled chicken served over rice with garlic sauce.",
+    image: "https://loremflickr.com/400/300/shawarma",
+    ingredients: [
+      "Chicken thighs",
+      "Shawarma spice mix",
+      "Rice",
+      "Garlic sauce",
+      "Pickles"
+    ],
+    instructions: [
+      "Marinate chicken in shawarma spices.",
+      "Grill or pan-sear until charred and cooked.",
+      "Slice thinly.",
+      "Serve over rice with garlic sauce.",
+      "Add pickles on the side."
+    ]
+  },
+
+  {
+    title: "Avocado Toast",
+    category: "Breakfast",
+    description: "Toasted sourdough topped with creamy avocado and chili flakes.",
+    image: "https://loremflickr.com/400/300/avocadotoast",
+    ingredients: [
+      "Sourdough bread",
+      "Ripe avocado",
+      "Lemon juice",
+      "Chili flakes",
+      "Salt",
+      "Olive oil"
+    ],
+    instructions: [
+      "Toast the sourdough slices.",
+      "Mash avocado with lemon juice and salt.",
+      "Spread onto toast.",
+      "Drizzle with olive oil.",
+      "Sprinkle chili flakes on top."
+    ]
+  },
+
+  {
+    title: "Fish Curry",
+    category: "Dinner",
+    description: "Tangy coconut fish curry with curry leaves and mustard seeds.",
+    image: "https://loremflickr.com/400/300/fishcurry",
+    ingredients: [
+      "Fish fillets",
+      "Coconut milk",
+      "Curry leaves",
+      "Mustard seeds",
+      "Turmeric",
+      "Tomato"
+    ],
+    instructions: [
+      "Temper mustard seeds and curry leaves in oil.",
+      "Add tomato and spices, cook down.",
+      "Pour in coconut milk and simmer.",
+      "Add fish pieces gently.",
+      "Cook until fish is just done."
+    ]
+  },
+
+  {
+    title: "Panna Cotta",
+    category: "Dessert",
+    description: "Silky Italian cream dessert topped with berry coulis.",
+    image: "https://loremflickr.com/400/300/pannacotta",
+    ingredients: [
+      "Heavy cream",
+      "Sugar",
+      "Gelatin",
+      "Vanilla bean",
+      "Mixed berries"
+    ],
+    instructions: [
+      "Heat cream with sugar and vanilla.",
+      "Dissolve gelatin into warm cream.",
+      "Pour into molds and chill until set.",
+      "Blend berries into a coulis.",
+      "Unmold and top with coulis."
+    ]
+  },
+
+  {
+    title: "Chicken Caesar Wrap",
+    category: "Lunch",
+    description: "Grilled chicken, romaine, and Caesar dressing in a soft wrap.",
+    image: "https://loremflickr.com/400/300/caesarwrap",
+    ingredients: [
+      "Grilled chicken",
+      "Romaine lettuce",
+      "Caesar dressing",
+      "Parmesan",
+      "Tortilla wrap"
+    ],
+    instructions: [
+      "Slice grilled chicken.",
+      "Toss lettuce with Caesar dressing.",
+      "Layer chicken and parmesan on the wrap.",
+      "Add dressed lettuce.",
+      "Roll tightly and slice in half."
+    ]
+  },
+
+  {
+    title: "Aloo Paratha",
+    category: "Breakfast",
+    description: "Whole wheat flatbread stuffed with spiced mashed potato.",
+    image: "https://loremflickr.com/400/300/alooparatha",
+    ingredients: [
+      "Whole wheat flour",
+      "Boiled potatoes",
+      "Green chili",
+      "Coriander",
+      "Cumin",
+      "Ghee"
+    ],
+    instructions: [
+      "Mash potatoes with spices.",
+      "Stuff dough balls with the mixture.",
+      "Roll out gently into a flatbread.",
+      "Cook on a griddle with ghee until golden.",
+      "Serve hot with yogurt."
+    ]
+  },
+
+  {
+    title: "Beef Stir Fry",
+    category: "Dinner",
+    description: "Quick and savory beef stir fry with crisp vegetables.",
+    image: "https://loremflickr.com/400/300/beefstirfry",
+    ingredients: [
+      "Beef strips",
+      "Bell peppers",
+      "Broccoli",
+      "Soy sauce",
+      "Garlic",
+      "Sesame oil"
+    ],
+    instructions: [
+      "Sear beef strips on high heat.",
+      "Remove and stir-fry vegetables.",
+      "Add garlic and soy sauce.",
+      "Return beef to the pan.",
+      "Toss with sesame oil and serve."
+    ]
+  },
+
+  {
+    title: "Apple Pie",
+    category: "Dessert",
+    description: "Classic double-crust pie packed with spiced cinnamon apples.",
+    image: "https://loremflickr.com/400/300/applepie",
+    ingredients: [
+      "Pie crust",
+      "Apples",
+      "Sugar",
+      "Cinnamon",
+      "Butter",
+      "Lemon juice"
+    ],
+    instructions: [
+      "Toss sliced apples with sugar, cinnamon, and lemon.",
+      "Fill bottom crust with apple mixture.",
+      "Dot with butter and cover with top crust.",
+      "Bake at 190°C until golden.",
+      "Cool before slicing."
+    ]
+  },
+
+  {
+    title: "Quinoa Veggie Bowl",
+    category: "Lunch",
+    description: "Nutritious quinoa bowl with roasted vegetables and tahini.",
+    image: "https://loremflickr.com/400/300/quinoabowl",
+    ingredients: [
+      "Quinoa",
+      "Roasted vegetables",
+      "Chickpeas",
+      "Tahini dressing",
+      "Lemon"
+    ],
+    instructions: [
+      "Cook quinoa until fluffy.",
+      "Roast vegetables and chickpeas.",
+      "Assemble quinoa and vegetables in a bowl.",
+      "Drizzle with tahini dressing.",
+      "Squeeze lemon over the top."
+    ]
+  },
+
+  {
+    title: "Chia Pudding",
+    category: "Breakfast",
+    description: "Creamy overnight chia pudding topped with fresh fruit.",
+    image: "https://loremflickr.com/400/300/chiapudding",
+    ingredients: [
+      "Chia seeds",
+      "Coconut milk",
+      "Honey",
+      "Vanilla extract",
+      "Fresh fruit"
+    ],
+    instructions: [
+      "Mix chia seeds with coconut milk and honey.",
+      "Stir well and let sit 10 minutes.",
+      "Stir again to break up clumps.",
+      "Refrigerate overnight.",
+      "Top with fresh fruit before serving."
+    ]
+  },
+
+  {
+    title: "Palak Paneer",
+    category: "Dinner",
+    description: "Creamy spinach curry with soft cubes of paneer cheese.",
+    image: "https://loremflickr.com/400/300/palakpaneer",
+    ingredients: [
+      "Paneer cubes",
+      "Spinach",
+      "Onion",
+      "Tomato",
+      "Cream",
+      "Garam masala"
+    ],
+    instructions: [
+      "Blanch and blend spinach into a puree.",
+      "Sauté onion, tomato, and spices.",
+      "Add spinach puree and simmer.",
+      "Add paneer cubes and cream.",
+      "Simmer gently before serving."
+    ]
+  },
+
+  {
+    title: "Red Velvet Cupcakes",
+    category: "Dessert",
+    description: "Moist red velvet cupcakes topped with cream cheese frosting.",
+    image: "https://loremflickr.com/400/300/redvelvet",
+    ingredients: [
+      "Flour",
+      "Cocoa powder",
+      "Buttermilk",
+      "Red food coloring",
+      "Cream cheese",
+      "Butter"
+    ],
+    instructions: [
+      "Mix dry ingredients together.",
+      "Cream butter and sugar, add eggs.",
+      "Alternate adding buttermilk and dry mix.",
+      "Bake at 175°C for 18 minutes.",
+      "Top cooled cupcakes with cream cheese frosting."
+    ]
+  },
+
+  {
+    title: "Turkey Club Salad",
+    category: "Lunch",
+    description: "A hearty salad with turkey, bacon, egg, and creamy dressing.",
+    image: "https://loremflickr.com/400/300/turkeysalad",
+    ingredients: [
+      "Sliced turkey",
+      "Bacon",
+      "Boiled egg",
+      "Lettuce",
+      "Cherry tomatoes",
+      "Ranch dressing"
+    ],
+    instructions: [
+      "Chop lettuce and tomatoes.",
+      "Add turkey, bacon, and sliced egg.",
+      "Drizzle with ranch dressing.",
+      "Toss gently.",
+      "Serve immediately."
+    ]
+  },
+
+  {
+    title: "Milk Cake (Doodh Cake)",
+    category: "Dessert",
+    description: "Dense, sweet milk cake with a caramelized top, soaked in syrup.",
+    image: "https://loremflickr.com/400/300/milkcake",
+    ingredients: [
+      "Full cream milk",
+      "Semolina",
+      "Sugar",
+      "Ghee",
+      "Cardamom",
+      "Baking powder"
+    ],
+    instructions: [
+      "Cook milk down until thickened.",
+      "Mix in semolina, ghee, and cardamom.",
+      "Pour into a greased tray and bake.",
+      "Prepare sugar syrup.",
+      "Soak baked cake in syrup and cool."
     ]
   }
 ];
