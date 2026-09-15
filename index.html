@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TastySteps - Delicious Recipes & Easy Cooking Ideas</title>
   <meta name="description" content="TastySteps offers delicious, easy-to-follow recipes and cooking ideas for everyday meals.">
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B2%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -631,7 +631,7 @@
   <div class="modal-box">
     <button class="close" onclick="closeModal()" aria-label="Close recipe">×</button>
     <img id="modalImage" alt="">
-    <h2 id="modalTitle"></h2>
+    <h2 id="modalTitle" tabindex="-1"></h2>
     <p class="modal-desc" id="modalDescription"></p>
     <h3>Ingredients</h3>
     <ul id="ingredients"></ul>
@@ -1818,9 +1818,9 @@ function viewRecipeByIndex(index){
 
   const safeImage = recipe.image ? recipe.image : FALLBACK_IMAGE;
   const modalImage = document.getElementById("modalImage");
+  modalImage.onerror = function(){ this.onerror = null; this.src = FALLBACK_IMAGE; };
   modalImage.src = safeImage;
   modalImage.alt = recipe.title;
-  modalImage.onerror = function(){ this.onerror = null; this.src = FALLBACK_IMAGE; };
 
   document.getElementById("modalTitle").textContent = recipe.title;
   document.getElementById("modalDescription").textContent = recipe.description || "";
@@ -1913,15 +1913,18 @@ window.addEventListener("click", (event) => {
     }
   };
 
-  async function testAI() {
+  // Dev helper: call window.testAI() from the browser console if you ever need
+  // to sanity-check the Gemini connection. Not run automatically — an
+  // automatic call here would fire a live AI request for every single visitor
+  // on every page load, burning through your API quota for no reason.
+  window.testAI = async function() {
     try {
       const result = await model.generateContent("Say hello to TastySteps.");
       console.log("AI TEST:", await result.response.text());
     } catch (error) {
       console.error("AI TEST ERROR:", error);
     }
-  }
-  testAI();
+  };
 
   analyticsIsSupported().then((supported) => {
     if (supported) getAnalytics(app);
