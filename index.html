@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TastySteps - Delicious Recipes & Food Sharing</title>
-  <meta name="description" content="TastySteps is a free recipe-sharing community where people discover, create, and share delicious homemade recipes.">
+<title>TastySteps - Delicious Recipes & Easy Cooking Ideas</title>
+  <meta name="description" content="TastySteps offers delicious, easy-to-follow recipes and cooking ideas for everyday meals.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B2%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -655,2139 +655,1599 @@ const FALLBACK_IMAGE = "data:image/svg+xml;utf8," + encodeURIComponent(`
 
    const recipes = [
   {
-    title: "Chicken Biryani-Style Khichdi",
-    category: "Breakfast",
-    description: "A gentle, spiced rice-and-lentil porridge that Pakistani households turn to on quiet mornings — the kind of dish that asks nothing of you but gives back total comfort.",
-    image: "https://loremflickr.com/400/300/khichdi",
-    ingredients: [
-      "1 cup rice",
-      "1/2 cup split lentils (moong dal)",
-      "1 small onion, sliced",
-      "1 tsp cumin seeds",
-      "1/2 tsp turmeric",
-      "2 tbsp ghee",
-      "Salt to taste",
-      "4 cups water"
-    ],
-    instructions: [
-      "Wash the rice and lentils together until the water runs clear.",
-      "Heat ghee and fry cumin seeds and onion until golden.",
-      "Add turmeric, then the rice and lentils, stirring to coat.",
-      "Pour in water and salt, bring to a boil, then simmer covered for 20 minutes.",
-      "Serve hot with a dollop of extra ghee on top."
-    ]
-  },
-  {
-    title: "Classic Fluffy Pancakes",
-    category: "Breakfast",
-    description: "Soft, golden stacks that turn an ordinary Saturday into something worth waking up early for.",
-    image: "https://loremflickr.com/400/300/pancakes",
-    ingredients: [
-      "1.5 cups flour",
-      "2 tbsp sugar",
-      "2 tsp baking powder",
-      "1 egg",
-      "1 cup milk",
-      "2 tbsp melted butter",
-      "Pinch of salt"
-    ],
-    instructions: [
-      "Whisk together flour, sugar, baking powder, and salt.",
-      "In a separate bowl, beat egg, milk, and melted butter.",
-      "Combine wet and dry ingredients until just mixed — a few lumps are fine.",
-      "Pour batter onto a hot, lightly greased griddle.",
-      "Flip once bubbles form on the surface, cook until golden.",
-      "Serve warm with syrup and fresh fruit."
-    ]
-  },
-  {
-    title: "French Toast with Cinnamon",
-    category: "Breakfast",
-    description: "Thick, custardy slices that taste like a slow Sunday morning, even when you're rushing out the door.",
-    image: "https://loremflickr.com/400/300/frenchtoast",
-    ingredients: [
-      "4 thick bread slices",
-      "2 eggs",
-      "1/2 cup milk",
-      "1 tsp cinnamon",
-      "1 tsp vanilla extract",
-      "Butter for frying",
-      "Maple syrup to serve"
-    ],
-    instructions: [
-      "Whisk eggs, milk, cinnamon, and vanilla together.",
-      "Dip each bread slice fully into the mixture.",
-      "Melt butter in a pan over medium heat.",
-      "Fry slices until golden brown on both sides.",
-      "Serve immediately with maple syrup."
-    ]
-  },
-  {
-    title: "Masala Omelette",
-    category: "Breakfast",
-    description: "A humble spiced omelette that carries the flavor of every Pakistani breakfast table — simple, fast, and endlessly satisfying.",
-    image: "https://loremflickr.com/400/300/omelette",
-    ingredients: [
-      "3 eggs",
-      "1 small onion, finely chopped",
-      "1 tomato, chopped",
-      "1 green chili, chopped",
-      "2 tbsp fresh coriander",
-      "Salt and pepper",
-      "Oil for frying"
-    ],
-    instructions: [
-      "Whisk the eggs with salt and pepper.",
-      "Stir in the chopped onion, tomato, chili, and coriander.",
-      "Heat oil in a nonstick pan.",
-      "Pour in the mixture and cook until the edges set.",
-      "Fold in half and cook through, then serve hot with paratha."
-    ]
-  },
-  {
-    title: "Aloo Paratha",
-    category: "Breakfast",
-    description: "Flaky, stuffed flatbread that's been the heart of South Asian breakfasts for generations — best eaten hot, straight off the pan.",
-    image: "https://loremflickr.com/400/300/paratha",
-    ingredients: [
-      "2 cups whole wheat flour",
-      "3 boiled potatoes, mashed",
-      "1 green chili, chopped",
-      "1/2 tsp cumin",
-      "1/2 tsp red chili powder",
-      "Fresh coriander",
-      "Ghee for cooking"
-    ],
-    instructions: [
-      "Make a soft dough with the flour and water; rest 15 minutes.",
-      "Mix mashed potatoes with spices and coriander.",
-      "Stuff a dough ball with the potato mixture and seal.",
-      "Roll out gently into a flatbread.",
-      "Cook on a hot griddle with ghee until golden on both sides.",
-      "Serve with yogurt and pickle."
-    ]
-  },
-  {
-    title: "Shakshuka",
-    category: "Breakfast",
-    description: "Eggs gently poached in a spiced tomato sauce — a dish that turns a few pantry staples into something that feels like a warm welcome.",
-    image: "https://loremflickr.com/400/300/shakshuka",
-    ingredients: [
-      "4 eggs",
-      "4 tomatoes, chopped",
-      "1 onion, diced",
-      "1 bell pepper, diced",
-      "1 tsp cumin",
-      "1 tsp paprika",
-      "2 garlic cloves",
-      "Fresh parsley"
-    ],
-    instructions: [
-      "Sauté onion and bell pepper until soft.",
-      "Add garlic, cumin, and paprika, cook until fragrant.",
-      "Add tomatoes and simmer into a thick sauce.",
-      "Make small wells in the sauce and crack in the eggs.",
-      "Cover and cook until the eggs are just set.",
-      "Garnish with parsley and serve with crusty bread."
-    ]
-  },
-  {
-    title: "Avocado Toast with Chili Flakes",
-    category: "Breakfast",
-    description: "Simple, bright, and endlessly satisfying — the kind of breakfast that feels like a small act of self-care.",
-    image: "https://loremflickr.com/400/300/avocadotoast",
-    ingredients: [
-      "2 slices sourdough bread",
-      "1 ripe avocado",
-      "1/2 lemon, juiced",
-      "Chili flakes",
-      "Salt",
-      "Olive oil"
-    ],
-    instructions: [
-      "Toast the sourdough until golden and crisp.",
-      "Mash the avocado with lemon juice and a pinch of salt.",
-      "Spread generously over the toast.",
-      "Drizzle with olive oil.",
-      "Sprinkle chili flakes on top and serve immediately."
-    ]
-  },
-  {
-    title: "Greek Yogurt Berry Parfait",
-    category: "Breakfast",
-    description: "Layers of creamy yogurt, crunchy granola, and sweet berries — a breakfast that feels like a small treat, not a chore.",
-    image: "https://loremflickr.com/400/300/parfait",
-    ingredients: [
-      "1 cup Greek yogurt",
-      "1/2 cup granola",
-      "1/2 cup mixed berries",
-      "1 tbsp honey",
-      "Chia seeds"
-    ],
-    instructions: [
-      "Spoon a layer of yogurt into a glass.",
-      "Add a layer of granola.",
-      "Top with fresh berries.",
-      "Repeat the layers once more.",
-      "Drizzle with honey and sprinkle chia seeds on top."
-    ]
-  },
-  {
-    title: "Overnight Oats",
-    category: "Breakfast",
-    description: "No-cook, no-fuss oats that quietly wait for you in the fridge, ready the moment you need them most.",
-    image: "https://loremflickr.com/400/300/oats",
-    ingredients: [
-      "1/2 cup rolled oats",
-      "1/2 cup milk",
-      "1 tbsp honey",
-      "1 tbsp chia seeds",
-      "Sliced banana"
-    ],
-    instructions: [
-      "Combine oats, milk, honey, and chia seeds in a jar.",
-      "Stir well to combine.",
-      "Cover and refrigerate overnight.",
-      "Top with sliced banana in the morning.",
-      "Stir once more and enjoy cold."
-    ]
-  },
-  {
-    title: "Chana Chaat",
-    category: "Breakfast",
-    description: "A tangy, spiced chickpea salad that livens up any morning with a burst of chutney and crunch.",
-    image: "https://loremflickr.com/400/300/chanachaat",
-    ingredients: [
-      "2 cups boiled chickpeas",
-      "1 onion, diced",
-      "1 tomato, diced",
-      "2 tbsp tamarind chutney",
-      "1 tsp chaat masala",
-      "Fresh coriander"
-    ],
-    instructions: [
-      "Mix chickpeas with chopped onion and tomato.",
-      "Add tamarind chutney and toss well.",
-      "Sprinkle chaat masala over the mix.",
-      "Garnish with fresh coriander.",
-      "Serve chilled or at room temperature."
-    ]
-  },
-  {
-    title: "Banana Smoothie Bowl",
-    category: "Breakfast",
-    description: "Thick, cold, and topped with everything good — the kind of breakfast that feels indulgent but does you good.",
-    image: "https://loremflickr.com/400/300/smoothiebowl",
-    ingredients: [
-      "2 frozen bananas",
-      "1/2 cup milk",
-      "1/4 cup granola",
-      "Sliced strawberries",
-      "1 tbsp honey"
-    ],
-    instructions: [
-      "Blend frozen bananas with milk until thick and smooth.",
-      "Pour into a bowl.",
-      "Top with granola and strawberries.",
-      "Drizzle honey over the top.",
-      "Serve immediately while cold."
-    ]
-  },
-  {
-    title: "Cheese Omelette Roll (Paratha Roll)",
-    category: "Breakfast",
-    description: "A rolled-up breakfast that's portable comfort — perfect for mornings when you're moving fast but still want something warm.",
-    image: "https://loremflickr.com/400/300/paratharoll",
-    ingredients: [
-      "2 eggs",
-      "1 cooked paratha",
-      "2 tbsp shredded cheese",
-      "1 small onion, chopped",
-      "Salt and pepper"
-    ],
-    instructions: [
-      "Whisk eggs with onion, salt, and pepper.",
-      "Heat the paratha in a pan until warm.",
-      "Pour the egg mixture over the paratha in the pan.",
-      "Sprinkle cheese and let the egg set.",
-      "Fold the paratha over the egg and roll it up.",
-      "Slice and serve warm."
-    ]
-  },
-  {
-    title: "Sheermal with Chai",
-    category: "Breakfast",
-    description: "Slightly sweet, saffron-scented bread that pairs perfectly with a strong cup of chai on a slow morning.",
-    image: "https://loremflickr.com/400/300/sheermal",
-    ingredients: [
-      "2 cups flour",
-      "1/4 cup milk",
-      "2 tbsp sugar",
-      "1 pinch saffron",
-      "2 tbsp ghee",
-      "Yeast"
-    ],
-    instructions: [
-      "Dissolve yeast in warm milk with sugar.",
-      "Knead into a soft dough with flour, ghee, and saffron milk.",
-      "Let the dough rise for an hour.",
-      "Shape into flat rounds and bake until golden.",
-      "Brush with ghee and serve warm with tea."
-    ]
-  },
-  {
-    title: "Congee with Scallions",
-    category: "Breakfast",
-    description: "A gentle rice porridge that feels like a warm blanket in a bowl — humble, healing, and quietly delicious.",
-    image: "https://loremflickr.com/400/300/congee",
-    ingredients: [
-      "1 cup rice",
-      "6 cups water or broth",
-      "1 tsp ginger, minced",
-      "2 scallions, sliced",
-      "Soy sauce",
-      "White pepper"
-    ],
-    instructions: [
-      "Simmer rice in water or broth with ginger for 45 minutes, stirring occasionally.",
-      "Cook until the rice breaks down into a thick porridge.",
-      "Season with soy sauce and white pepper.",
-      "Ladle into bowls.",
-      "Top with sliced scallions and serve hot."
-    ]
-  },
-  {
-    title: "Cinnamon Rolls",
-    category: "Breakfast",
-    description: "Soft, swirled, and glazed — the smell alone is enough to pull everyone out of bed.",
-    image: "https://loremflickr.com/400/300/cinnamonrolls",
-    ingredients: [
-      "3 cups flour",
-      "1/4 cup sugar",
-      "1 packet yeast",
-      "1/2 cup milk, warm",
-      "1/4 cup butter, melted",
-      "2 tbsp cinnamon",
-      "1 cup powdered sugar for glaze"
-    ],
-    instructions: [
-      "Combine flour, sugar, yeast, milk, and butter into a soft dough.",
-      "Let rise for an hour until doubled.",
-      "Roll out and spread with butter and cinnamon sugar.",
-      "Roll into a log and slice into rounds.",
-      "Bake at 180°C for 20 minutes.",
-      "Drizzle with powdered sugar glaze while warm."
-    ]
-  },
-  {
-    title: "Poha",
-    category: "Breakfast",
-    description: "Light, fluffy flattened rice tossed with mustard seeds and peanuts — a breakfast that's quick but never boring.",
-    image: "https://loremflickr.com/400/300/poha",
-    ingredients: [
-      "2 cups flattened rice (poha)",
-      "1 onion, chopped",
-      "1 potato, diced",
-      "1 tsp mustard seeds",
-      "Curry leaves",
-      "Peanuts",
-      "Turmeric"
-    ],
-    instructions: [
-      "Rinse the poha briefly and set aside to soften.",
-      "Heat oil and temper mustard seeds and curry leaves.",
-      "Add onion and potato, cook until soft.",
-      "Add turmeric and the softened poha, mix gently.",
-      "Stir in peanuts and cook for a few more minutes.",
-      "Garnish with coriander and serve warm."
-    ]
-  },
-  {
-    title: "Breakfast Burrito",
-    category: "Breakfast",
-    description: "Everything you want in a morning meal, wrapped up and ready to go — hearty, warm, and no fork required.",
-    image: "https://loremflickr.com/400/300/breakfastburrito",
-    ingredients: [
-      "2 eggs, scrambled",
-      "1 tortilla",
-      "2 tbsp beans",
-      "2 tbsp shredded cheese",
-      "Salsa",
-      "Chopped cilantro"
-    ],
-    instructions: [
-      "Scramble the eggs until just set.",
-      "Warm the tortilla in a dry pan.",
-      "Layer eggs, beans, and cheese down the center.",
-      "Add salsa and cilantro.",
-      "Fold in the sides and roll tightly.",
-      "Serve warm, sliced in half."
-    ]
-  },
-  {
-    title: "Egg and Spinach Muffins",
-    category: "Breakfast",
-    description: "Little baked bites of protein and greens — the kind of make-ahead breakfast that makes busy mornings a little kinder.",
-    image: "https://loremflickr.com/400/300/eggmuffins",
-    ingredients: [
-      "6 eggs",
-      "1 cup spinach, chopped",
-      "1/2 cup shredded cheese",
-      "2 tbsp milk",
-      "Salt and pepper"
-    ],
-    instructions: [
-      "Whisk eggs with milk, salt, and pepper.",
-      "Stir in chopped spinach and cheese.",
-      "Pour into a greased muffin tin.",
-      "Bake at 180°C for 18-20 minutes.",
-      "Cool slightly before removing from the tin."
-    ]
-  },
-  {
-    title: "Chia Pudding with Mango",
-    category: "Breakfast",
-    description: "Creamy, cooling, and quietly sweet — a breakfast that feels like dessert but keeps you going all morning.",
-    image: "https://loremflickr.com/400/300/chiapudding",
-    ingredients: [
-      "1/4 cup chia seeds",
-      "1 cup coconut milk",
-      "1 tbsp honey",
-      "1/2 mango, diced"
-    ],
-    instructions: [
-      "Stir chia seeds into coconut milk with honey.",
-      "Let sit for 10 minutes, then stir again to prevent clumping.",
-      "Refrigerate overnight or at least 4 hours.",
-      "Top with diced mango before serving.",
-      "Stir gently and enjoy chilled."
-    ]
-  },
-  {
-    title: "Dosa with Coconut Chutney",
-    category: "Breakfast",
-    description: "Thin, crisp, golden crepes made from fermented rice batter — a South Indian breakfast staple loved far beyond its home.",
-    image: "https://loremflickr.com/400/300/dosa",
-    ingredients: [
-      "2 cups rice, soaked",
-      "1/2 cup urad dal, soaked",
-      "Salt",
-      "Oil for cooking",
-      "Coconut chutney to serve"
-    ],
-    instructions: [
-      "Grind soaked rice and dal into a smooth batter.",
-      "Let the batter ferment overnight at room temperature.",
-      "Season with salt and mix well.",
-      "Pour a ladle onto a hot griddle, spreading thin.",
-      "Drizzle oil around the edges and cook until crisp.",
-      "Fold and serve hot with coconut chutney."
-    ]
-  },
-  {
-    title: "Halwa Puri",
-    category: "Breakfast",
-    description: "A rich, celebratory breakfast of fried bread, sweet semolina halwa, and spiced chickpeas — a weekend tradition in Pakistani homes.",
-    image: "https://loremflickr.com/400/300/halwapuri",
-    ingredients: [
-      "2 cups flour (for puri)",
-      "1 cup semolina (for halwa)",
-      "1 cup sugar",
-      "1 cup boiled chickpeas",
-      "Ghee",
-      "Cardamom"
-    ],
-    instructions: [
-      "Knead a stiff dough for the puri and roll into small rounds.",
-      "Deep fry the puri until puffed and golden.",
-      "Toast semolina in ghee until fragrant.",
-      "Add sugar and water to the semolina, stirring until thick.",
-      "Cook the chickpeas with spices until warmed through.",
-      "Serve puri with halwa and chickpeas together."
-    ]
-  },
-  {
-    title: "Bagel with Cream Cheese and Lox",
-    category: "Breakfast",
-    description: "Chewy, dense, and topped simply — a breakfast classic that never needs to try too hard.",
-    image: "https://loremflickr.com/400/300/bagel",
-    ingredients: [
-      "1 bagel, sliced",
-      "2 tbsp cream cheese",
-      "2 slices smoked salmon",
-      "Capers",
-      "Red onion, thinly sliced",
-      "Fresh dill"
-    ],
-    instructions: [
-      "Toast the bagel halves until golden.",
-      "Spread cream cheese generously on each half.",
-      "Layer smoked salmon on top.",
-      "Add capers and thin red onion slices.",
-      "Finish with fresh dill and serve immediately."
-    ]
-  },
-  {
-    title: "Granola Bowl with Fresh Fruit",
-    category: "Breakfast",
-    description: "Crunchy, wholesome, and endlessly customizable — a breakfast that feels good to eat.",
-    image: "https://loremflickr.com/400/300/granola",
-    ingredients: [
-      "1 cup granola",
-      "1 cup milk or yogurt",
-      "1 banana, sliced",
-      "1/2 cup berries",
-      "1 tbsp honey"
-    ],
-    instructions: [
-      "Pour granola into a bowl.",
-      "Add milk or yogurt.",
-      "Top with sliced banana and berries.",
-      "Drizzle with honey.",
-      "Serve immediately while the granola is still crunchy."
-    ]
-  },
-  {
-    title: "Idli with Sambar",
-    category: "Breakfast",
-    description: "Soft, steamed rice cakes served with a tangy lentil stew — light, gentle, and comforting in every bite.",
-    image: "https://loremflickr.com/400/300/idli",
-    ingredients: [
-      "2 cups rice, soaked",
-      "1/2 cup urad dal, soaked",
-      "Salt",
-      "1 cup lentils (for sambar)",
-      "Sambar powder",
-      "Tamarind pulp"
-    ],
-    instructions: [
-      "Grind rice and dal separately, then combine into a batter.",
-      "Let the batter ferment overnight.",
-      "Steam spoonfuls of batter in an idli mold until fluffy.",
-      "Cook lentils with tamarind and sambar powder for the sambar.",
-      "Serve warm idli with hot sambar."
-    ]
-  },
-  {
-    title: "Chicken Biryani",
-    category: "Lunch",
-    description: "Layers of fragrant rice, tender spiced chicken, and golden fried onions — this is the dish that turns any ordinary lunch into a celebration.",
-    image: "https://loremflickr.com/400/300/biryani",
-    ingredients: [
-      "500g chicken",
-      "2 cups basmati rice",
-      "2 onions, fried crisp",
-      "1 cup yogurt",
-      "Biryani masala",
-      "Saffron soaked in milk"
-    ],
-    instructions: [
-      "Marinate chicken in yogurt and biryani masala for at least an hour.",
-      "Parboil the rice with whole spices until 70% cooked.",
-      "Cook the marinated chicken until nearly done.",
-      "Layer the rice over the chicken in a heavy pot.",
-      "Top with fried onions and saffron milk.",
-      "Cover tightly and cook on low heat for 20-25 minutes before serving."
-    ]
-  },
-  {
-    title: "Grilled Chicken Caesar Salad",
-    category: "Lunch",
-    description: "Crisp romaine, savory parmesan, and smoky grilled chicken — a lunch that feels light but leaves you fully satisfied.",
-    image: "https://loremflickr.com/400/300/caesarsalad",
-    ingredients: [
-      "2 cups romaine lettuce, chopped",
-      "1 grilled chicken breast, sliced",
-      "1/4 cup parmesan, shaved",
-      "1/2 cup croutons",
-      "Caesar dressing"
-    ],
-    instructions: [
-      "Toss chopped romaine with Caesar dressing.",
-      "Slice the grilled chicken breast.",
-      "Arrange chicken over the dressed lettuce.",
-      "Top with croutons and shaved parmesan.",
-      "Serve immediately while the croutons are crisp."
-    ]
-  },
-  {
-    title: "Club Sandwich",
-    category: "Lunch",
-    description: "A stacked, satisfying sandwich layered with chicken, egg, and crisp bacon — the kind of lunch that needs no introduction.",
-    image: "https://loremflickr.com/400/300/clubsandwich",
-    ingredients: [
-      "3 bread slices",
-      "Grilled chicken breast, sliced",
-      "1 boiled egg, sliced",
-      "2 strips bacon, cooked",
-      "Lettuce",
-      "Tomato",
-      "Mayonnaise"
-    ],
-    instructions: [
-      "Toast the bread slices lightly.",
-      "Spread mayonnaise on each slice.",
-      "Layer chicken, egg, bacon, lettuce, and tomato between the slices.",
-      "Stack all three layers together.",
-      "Secure with toothpicks and cut diagonally.",
-      "Serve with fries or a side salad."
-    ]
-  },
-  {
-    title: "Falafel Wrap",
-    category: "Lunch",
-    description: "Crispy chickpea falafel, cool tahini sauce, and crunchy vegetables rolled into warm pita — a Middle Eastern favorite worth savoring.",
-    image: "https://loremflickr.com/400/300/falafelwrap",
-    ingredients: [
-      "1.5 cups chickpeas, soaked",
-      "2 garlic cloves",
-      "1 tsp cumin",
-      "Pita bread",
-      "Tahini sauce",
-      "Chopped lettuce and tomato"
-    ],
-    instructions: [
-      "Blend chickpeas with garlic, cumin, and a little salt into a coarse paste.",
-      "Shape the mixture into small balls or patties.",
-      "Fry until golden and crisp on all sides.",
-      "Warm the pita bread.",
-      "Fill with falafel, lettuce, tomato, and tahini sauce.",
-      "Roll tightly and serve."
-    ]
-  },
-  {
-    title: "Vegetable Pulao",
-    category: "Lunch",
-    description: "Fragrant rice gently cooked with garden vegetables and whole spices — simple, wholesome, and endlessly comforting.",
-    image: "https://loremflickr.com/400/300/pulao",
-    ingredients: [
-      "2 cups basmati rice",
-      "1 cup mixed vegetables (peas, carrots, beans)",
-      "1 onion, sliced",
-      "Whole spices (cinnamon, cloves, cardamom)",
-      "Oil"
-    ],
-    instructions: [
-      "Sauté onion and whole spices in oil until fragrant.",
-      "Add the mixed vegetables and stir-fry briefly.",
-      "Add rice and gently mix to coat.",
-      "Pour in water and bring to a boil.",
-      "Cover and cook on low heat until the rice is tender.",
-      "Fluff gently before serving."
-    ]
-  },
-  {
-    title: "Chicken Shawarma Plate",
-    category: "Lunch",
-    description: "Spiced, char-grilled chicken served over rice with garlic sauce — a Middle Eastern street-food favorite worth recreating at home.",
-    image: "https://loremflickr.com/400/300/shawarma",
-    ingredients: [
-      "500g chicken thighs",
-      "Shawarma spice blend",
-      "2 cups cooked rice",
-      "Garlic sauce",
-      "Pickled vegetables"
-    ],
-    instructions: [
-      "Marinate the chicken in shawarma spices for at least 2 hours.",
-      "Grill or pan-sear the chicken until charred and cooked through.",
-      "Slice the chicken thinly.",
-      "Serve over a bed of rice.",
-      "Drizzle generously with garlic sauce.",
-      "Add pickled vegetables on the side."
-    ]
-  },
-  {
-    title: "BBQ Chicken Pizza",
-    category: "Lunch",
-    description: "Smoky barbecue sauce, tender shredded chicken, and melted cheese on a crisp crust — a lunch that feels like a small indulgence.",
-    image: "https://loremflickr.com/400/300/bbqpizza",
-    ingredients: [
-      "1 pizza dough base",
-      "1/2 cup BBQ sauce",
-      "1 cup shredded cooked chicken",
-      "1 red onion, thinly sliced",
-      "1.5 cups mozzarella cheese"
-    ],
-    instructions: [
-      "Preheat the oven and roll out the pizza dough.",
-      "Spread BBQ sauce evenly as the base layer.",
-      "Scatter shredded chicken and red onion over the sauce.",
-      "Top generously with mozzarella cheese.",
-      "Bake until the crust is golden and cheese is bubbling.",
-      "Slice and serve hot."
-    ]
-  },
-  {
-    title: "Quinoa Veggie Bowl",
-    category: "Lunch",
-    description: "A nourishing bowl of fluffy quinoa, roasted vegetables, and creamy tahini — lunch that leaves you feeling good, not heavy.",
-    image: "https://loremflickr.com/400/300/quinoabowl",
-    ingredients: [
-      "1 cup quinoa, cooked",
-      "1 cup roasted vegetables (zucchini, peppers, chickpeas)",
-      "2 tbsp tahini dressing",
-      "Lemon wedge"
-    ],
-    instructions: [
-      "Cook quinoa according to package instructions until fluffy.",
-      "Roast the vegetables and chickpeas until tender and lightly charred.",
-      "Assemble quinoa and vegetables together in a bowl.",
-      "Drizzle generously with tahini dressing.",
-      "Finish with a squeeze of fresh lemon."
-    ]
-  },
-  {
-    title: "Chicken Fried Rice",
-    category: "Lunch",
-    description: "Wok-tossed rice with tender chicken, crisp vegetables, and savory soy sauce — a quick lunch that never feels boring.",
-    image: "https://loremflickr.com/400/300/friedrice",
-    ingredients: [
-      "2 cups cooked rice, cooled",
-      "200g chicken, diced",
-      "1 carrot, diced",
-      "1/2 cup peas",
-      "2 eggs, beaten",
-      "Soy sauce",
-      "Garlic"
-    ],
-    instructions: [
-      "Stir-fry chicken until cooked through, then set aside.",
-      "Scramble the eggs in the same pan and set aside.",
-      "Sauté garlic, carrot, and peas until just tender.",
-      "Add the cooled rice, breaking up any clumps.",
-      "Return chicken and eggs to the pan, stir in soy sauce.",
-      "Toss everything together over high heat and serve hot."
-    ]
-  },
-  {
-    title: "Turkey Club Salad",
-    category: "Lunch",
-    description: "A hearty salad loaded with turkey, bacon, and egg — everything you love about a club sandwich, in a lighter form.",
-    image: "https://loremflickr.com/400/300/turkeysalad",
-    ingredients: [
-      "1 cup sliced turkey",
-      "2 strips bacon, cooked and crumbled",
-      "1 boiled egg, sliced",
-      "Mixed lettuce",
-      "Cherry tomatoes",
-      "Ranch dressing"
-    ],
-    instructions: [
-      "Chop the lettuce and halve the cherry tomatoes.",
-      "Arrange in a bowl as the base.",
-      "Top with sliced turkey, bacon, and egg.",
-      "Drizzle with ranch dressing.",
-      "Toss gently before serving."
-    ]
-  },
-  {
-    title: "Chana Pulao",
-    category: "Lunch",
-    description: "Chickpeas simmered into fragrant rice — a satisfying, protein-packed lunch rooted in South Asian home cooking.",
-    image: "https://loremflickr.com/400/300/chanapulao",
-    ingredients: [
-      "2 cups rice",
-      "1.5 cups boiled chickpeas",
-      "1 onion, sliced",
-      "Whole spices",
-      "Yogurt",
-      "Oil"
-    ],
-    instructions: [
-      "Sauté onion and whole spices in oil until golden.",
-      "Add chickpeas and yogurt, cooking until well combined.",
-      "Add rice and stir gently to coat.",
-      "Pour in water and bring to a boil.",
-      "Cover and simmer until the rice is fully cooked.",
-      "Rest for 5 minutes before fluffing and serving."
-    ]
-  },
-  {
-    title: "Greek Salad with Feta",
-    category: "Lunch",
-    description: "Crisp cucumber, juicy tomato, briny olives, and creamy feta — a Mediterranean lunch that tastes like sunshine.",
-    image: "https://loremflickr.com/400/300/greeksalad",
-    ingredients: [
-      "2 tomatoes, chopped",
-      "1 cucumber, chopped",
-      "1/2 red onion, sliced",
-      "1/2 cup kalamata olives",
-      "100g feta cheese, cubed",
-      "Olive oil",
-      "Oregano"
-    ],
-    instructions: [
-      "Combine tomatoes, cucumber, and red onion in a bowl.",
-      "Add olives and cubed feta.",
-      "Drizzle generously with olive oil.",
-      "Sprinkle with dried oregano and a pinch of salt.",
-      "Toss gently and serve immediately."
-    ]
-  },
-  {
-    title: "Beef Tacos",
-    category: "Lunch",
-    description: "Warm tortillas piled with seasoned beef and fresh toppings — a lunch that's fun to build and even better to eat.",
-    image: "https://loremflickr.com/400/300/beeftacos",
-    ingredients: [
-      "300g ground beef",
-      "Taco seasoning",
-      "6 small tortillas",
-      "Shredded lettuce",
-      "Diced tomato",
-      "Shredded cheese",
-      "Salsa"
-    ],
-    instructions: [
-      "Brown the ground beef in a pan.",
-      "Stir in taco seasoning and a splash of water, simmer briefly.",
-      "Warm the tortillas.",
-      "Fill each tortilla with beef.",
-      "Top with lettuce, tomato, cheese, and salsa.",
-      "Serve immediately while warm."
-    ]
-  },
-  {
-    title: "Chicken Shawarma Wrap",
-    category: "Lunch",
-    description: "All the flavor of a shawarma plate, rolled up for lunch on the go.",
-    image: "https://loremflickr.com/400/300/shawarmawrap",
-    ingredients: [
-      "Grilled shawarma chicken, sliced",
-      "1 large flatbread",
-      "Garlic sauce",
-      "Pickles",
-      "Shredded lettuce"
-    ],
-    instructions: [
-      "Warm the flatbread briefly.",
-      "Spread garlic sauce down the center.",
-      "Layer sliced chicken, lettuce, and pickles.",
-      "Roll tightly, tucking in the sides.",
-      "Slice in half and serve."
-    ]
-  },
-  {
-    title: "Lentil Soup (Daal)",
-    category: "Lunch",
-    description: "A warm bowl of spiced lentils — humble, nourishing, and one of the most comforting lunches in South Asian cooking.",
-    image: "https://loremflickr.com/400/300/daal",
-    ingredients: [
-      "1 cup red lentils",
-      "1 onion, chopped",
-      "2 tomatoes, chopped",
-      "1 tsp cumin",
-      "1 tsp turmeric",
-      "Garlic and ginger paste"
-    ],
-    instructions: [
-      "Rinse lentils and boil with turmeric until soft.",
-      "In a separate pan, sauté onion until golden.",
-      "Add garlic, ginger, cumin, and tomatoes, cooking until soft.",
-      "Pour this tempering into the cooked lentils.",
-      "Simmer for 10 more minutes to combine flavors.",
-      "Serve hot with rice or bread."
-    ]
-  },
-  {
-    title: "Sushi Rolls (California Roll)",
-    category: "Lunch",
-    description: "Neat rolls of vinegared rice, crab, avocado, and cucumber — a lunch that feels like a small, elegant treat.",
-    image: "https://loremflickr.com/400/300/sushi",
-    ingredients: [
-      "2 cups sushi rice, cooked and seasoned",
-      "Nori sheets",
-      "Imitation crab or cooked shrimp",
-      "1 avocado, sliced",
-      "1 cucumber, julienned"
-    ],
-    instructions: [
-      "Lay a nori sheet on a bamboo mat.",
-      "Spread a thin layer of rice evenly over the nori.",
-      "Add crab, avocado, and cucumber in a line.",
-      "Roll tightly using the mat, sealing the edge with water.",
-      "Slice into rounds with a sharp, wet knife.",
-      "Serve with soy sauce and pickled ginger."
-    ]
-  },
-  {
-    title: "Chicken Noodle Soup",
-    category: "Lunch",
-    description: "A gentle, brothy bowl that feels like a hug on a chilly afternoon.",
-    image: "https://loremflickr.com/400/300/noodlesoup",
-    ingredients: [
-      "500ml chicken broth",
-      "1 cup cooked chicken, shredded",
-      "1 cup egg noodles",
-      "1 carrot, sliced",
-      "Fresh parsley"
-    ],
-    instructions: [
-      "Bring the chicken broth to a simmer.",
-      "Add carrot and cook until just tender.",
-      "Stir in the egg noodles and cook until soft.",
-      "Add shredded chicken and heat through.",
-      "Garnish with fresh parsley and serve hot."
-    ]
-  },
-  {
-    title: "Chicken Shashlik Rice Plate",
-    category: "Lunch",
-    description: "Grilled chicken skewers with peppers and onions served over rice — a lunch full of color and smoky flavor.",
-    image: "https://loremflickr.com/400/300/shashlik",
-    ingredients: [
-      "500g chicken cubes",
-      "1 bell pepper, cubed",
-      "1 onion, cubed",
-      "Shashlik sauce",
-      "2 cups steamed rice"
-    ],
-    instructions: [
-      "Marinate the chicken briefly in a little oil and spices.",
-      "Thread chicken, pepper, and onion onto skewers.",
-      "Grill or pan-sear until charred and cooked through.",
-      "Toss the grilled skewers in warm shashlik sauce.",
-      "Serve over a bed of steamed rice."
-    ]
-  },
-  {
-    title: "Panini with Mozzarella and Tomato",
-    category: "Lunch",
-    description: "A pressed, toasty sandwich with melted cheese and juicy tomato — simple lunch food done right.",
-    image: "https://loremflickr.com/400/300/panini",
-    ingredients: [
-      "2 slices ciabatta bread",
-      "Fresh mozzarella, sliced",
-      "1 tomato, sliced",
-      "Fresh basil leaves",
-      "Olive oil"
-    ],
-    instructions: [
-      "Layer mozzarella, tomato, and basil between the bread slices.",
-      "Drizzle lightly with olive oil.",
-      "Press in a panini press or hot pan with a weight on top.",
-      "Grill until the bread is golden and the cheese melts.",
-      "Slice in half and serve warm."
-    ]
-  },
-  {
-    title: "Vegetable Spring Rolls",
-    category: "Lunch",
-    description: "Crisp, golden rolls packed with vegetables — a lunch that's light but full of crunch and flavor.",
-    image: "https://loremflickr.com/400/300/springrolls",
-    ingredients: [
-      "Spring roll wrappers",
-      "1 cup shredded cabbage",
-      "1 carrot, julienned",
-      "1/2 cup bean sprouts",
-      "Soy sauce",
-      "Oil for frying"
-    ],
-    instructions: [
-      "Mix shredded cabbage, carrot, and bean sprouts with a splash of soy sauce.",
-      "Place filling in the center of a wrapper.",
-      "Fold and roll tightly, sealing the edge with water.",
-      "Fry in hot oil until golden and crisp.",
-      "Drain on paper towels and serve with dipping sauce."
-    ]
-  },
-  {
-    title: "Chapli Kebab",
-    category: "Lunch",
-    description: "Spiced, pan-fried beef patties from the Peshawar region — crisp outside, juicy inside, and packed with bold flavor.",
-    image: "https://loremflickr.com/400/300/chaplikebab",
-    ingredients: [
-      "500g ground beef",
-      "1 onion, finely chopped",
-      "1 tomato, finely chopped",
-      "Coriander seeds, crushed",
-      "1 egg",
-      "Corn flour"
-    ],
-    instructions: [
-      "Mix ground beef with onion, tomato, coriander, and egg.",
-      "Add a spoon of corn flour to help bind the mixture.",
-      "Shape into flat, round patties.",
-      "Shallow fry in hot oil until deeply golden on both sides.",
-      "Drain briefly and serve hot with naan and chutney."
-    ]
-  },
-  {
-    title: "Falafel and Hummus Plate",
-    category: "Lunch",
-    description: "A generous plate of crispy falafel, creamy hummus, and warm pita — a satisfying, plant-based lunch.",
-    image: "https://loremflickr.com/400/300/hummusplate",
-    ingredients: [
-      "Falafel (fried chickpea patties)",
-      "1 cup hummus",
-      "Warm pita bread",
-      "Chopped cucumber and tomato",
-      "Olive oil"
-    ],
-    instructions: [
-      "Arrange the fried falafel on a plate.",
-      "Spoon hummus generously alongside.",
-      "Drizzle the hummus with olive oil.",
-      "Add chopped cucumber and tomato on the side.",
-      "Serve with warm pita for scooping."
-    ]
-  },
-  {
-    title: "Chicken Quesadilla",
-    category: "Lunch",
-    description: "Melty, crisp tortillas folded around spiced chicken and cheese — quick comfort food that never disappoints.",
-    image: "https://loremflickr.com/400/300/quesadilla",
-    ingredients: [
-      "2 flour tortillas",
-      "1 cup cooked shredded chicken",
-      "1 cup shredded cheese",
-      "1/2 bell pepper, sliced",
-      "Salsa to serve"
-    ],
-    instructions: [
-      "Layer chicken, cheese, and bell pepper over half a tortilla.",
-      "Fold the tortilla over the filling.",
-      "Cook in a dry pan until golden and crisp on both sides.",
-      "Repeat with the second tortilla.",
-      "Slice into wedges and serve with salsa."
-    ]
-  },
-  {
-    title: "Chicken Caesar Wrap",
-    category: "Lunch",
-    description: "All the flavor of a Caesar salad, wrapped up for a lunch you can eat on the move.",
-    image: "https://loremflickr.com/400/300/caesarwrap",
-    ingredients: [
-      "Grilled chicken, sliced",
-      "1 large tortilla",
-      "Romaine lettuce, chopped",
-      "Caesar dressing",
-      "Shaved parmesan"
-    ],
-    instructions: [
-      "Toss chopped romaine with Caesar dressing.",
-      "Lay the dressed lettuce down the center of the tortilla.",
-      "Add sliced chicken and shaved parmesan.",
-      "Roll tightly, folding in the sides.",
-      "Slice in half and serve."
-    ]
-  },
-  {
-    title: "Vegetable Samosas",
-    category: "Lunch",
-    description: "Crisp, golden pastry parcels filled with spiced potatoes and peas — a beloved snack that turns any lunch into an occasion.",
-    image: "https://loremflickr.com/400/300/samosas",
-    ingredients: [
-      "Samosa pastry sheets",
-      "2 potatoes, boiled and mashed",
-      "1/2 cup peas",
-      "1 tsp cumin",
-      "1 tsp garam masala",
-      "Oil for frying"
-    ],
-    instructions: [
-      "Mix mashed potatoes with peas and spices.",
-      "Spoon the filling into a cone made from the pastry sheet.",
-      "Seal the edges with a little water.",
-      "Deep fry until golden and crisp.",
-      "Drain and serve hot with chutney."
-    ]
-  },
-  {
-    title: "Chicken Karahi",
+    title: "Beef Wellington",
     category: "Dinner",
-    description: "Spicy, tomato-rich chicken cooked fast and hot in a karahi — bold, comforting, and unmistakably Pakistani.",
-    image: "https://loremflickr.com/400/300/chickenkarahi",
+    wiki: "Beef Wellington",
+    image: "",
+    description: "The showstopper of showstoppers: a whole beef tenderloin cloaked in mushroom duxelles, wrapped in prosciutto and golden puff pastry. Cutting into it at the table is pure theatre — and the rosy centre never fails to draw a gasp.",
     ingredients: [
-      "1 kg chicken, cut into pieces",
-      "4 tomatoes, chopped",
-      "Ginger garlic paste",
-      "Green chilies",
-      "Oil",
-      "Karahi masala"
+      "1 kg beef tenderloin (centre cut)",
+      "400g mushrooms, very finely chopped",
+      "8 slices prosciutto",
+      "1 sheet all-butter puff pastry",
+      "2 tbsp Dijon mustard",
+      "2 egg yolks, beaten",
+      "Salt and black pepper"
     ],
     instructions: [
-      "Heat oil and fry the chicken pieces until sealed.",
-      "Add ginger garlic paste and cook until fragrant.",
-      "Add chopped tomatoes and cook until they break down.",
-      "Stir in karahi masala and green chilies.",
-      "Simmer until the chicken is tender and the oil separates.",
-      "Garnish with fresh coriander and serve hot with naan."
+      "Season the tenderloin generously and sear hard in a screaming-hot pan for 1 minute per side. Cool, then brush all over with Dijon.",
+      "Cook the chopped mushrooms in a dry pan until every drop of moisture evaporates and they form a dark, dry paste. Cool completely.",
+      "Lay overlapping prosciutto on cling film, spread the duxelles over it, then place the beef on top and roll tightly into a log. Chill 30 minutes.",
+      "Roll out the puff pastry, unwrap the beef onto it, and encase it fully, sealing the seams. Chill another 30 minutes.",
+      "Brush with egg yolk, score the top lightly, and bake at 200°C for 35-40 minutes for medium-rare.",
+      "Rest 10 full minutes before slicing into thick rounds — this is non-negotiable for a clean cut."
     ]
   },
   {
-    title: "Butter Chicken",
+    title: "Lobster Thermidor",
     category: "Dinner",
-    description: "Tender chicken in a velvety, tomato-cream sauce — rich, mellow, and endlessly comforting.",
-    image: "https://loremflickr.com/400/300/butterchicken",
+    wiki: "Lobster Thermidor",
+    image: "",
+    description: "Lobster meat folded into a cognac-laced cream sauce, piled back into the shell and glazed under the grill. It is unapologetically rich, unapologetically expensive, and one of the most romantic dishes ever plated.",
     ingredients: [
-      "500g chicken, boneless",
-      "1 cup tomato puree",
-      "1/2 cup cream",
+      "2 whole lobsters, cooked and halved",
       "2 tbsp butter",
-      "Garam masala",
-      "Ginger garlic paste"
+      "2 shallots, finely diced",
+      "60ml brandy or cognac",
+      "200ml heavy cream",
+      "2 tsp Dijon mustard",
+      "50g Gruyère cheese, grated",
+      "Fresh tarragon"
     ],
     instructions: [
-      "Marinate and grill or pan-sear the chicken until cooked.",
-      "In a separate pot, cook tomato puree with ginger garlic paste and garam masala.",
-      "Simmer until the sauce thickens and deepens in color.",
-      "Stir in the butter until melted and glossy.",
-      "Add the cooked chicken and simmer for 10 minutes.",
-      "Finish with cream and serve with naan or rice."
+      "Remove the lobster meat from the shells, keeping the shells intact. Chop the meat into bite-sized pieces.",
+      "Soften the shallots in butter, then add the brandy and let it reduce almost to nothing.",
+      "Pour in the cream and mustard, simmering until the sauce coats the back of a spoon.",
+      "Fold in the lobster meat and chopped tarragon, warming through gently — do not boil.",
+      "Spoon the mixture back into the lobster shells and blanket with grated Gruyère.",
+      "Grill until blistered and golden brown on top, then serve immediately."
+    ]
+  },
+  {
+    title: "Filet Mignon with Red Wine Reduction",
+    category: "Dinner",
+    wiki: "Filet mignon",
+    image: "",
+    description: "The most tender cut of beef there is, seared to a deep crust and finished with a glossy red wine sauce. Simple, expensive, and the kind of plate that makes an anniversary feel like an occasion.",
+    ingredients: [
+      "4 filet mignon steaks (200g each)",
+      "3 tbsp butter",
+      "250ml dry red wine",
+      "250ml beef stock",
+      "2 shallots, minced",
+      "2 sprigs thyme",
+      "Salt and cracked pepper"
+    ],
+    instructions: [
+      "Bring the steaks to room temperature and season heavily on all sides.",
+      "Sear in a very hot pan, 3-4 minutes per side for medium-rare, basting with butter and thyme at the end.",
+      "Remove the steaks to a warm plate to rest.",
+      "In the same pan, soften the shallots, then pour in the red wine and scrape up every browned bit.",
+      "Add the stock and reduce until the sauce is syrupy and glossy, then whisk in the remaining cold butter.",
+      "Spoon the sauce over the rested steaks and serve at once."
+    ]
+  },
+  {
+    title: "Saffron Seafood Paella",
+    category: "Dinner",
+    wiki: "Paella",
+    image: "",
+    description: "A wide pan of saffron-stained rice studded with prawns, mussels and clams, with that prized crisp layer at the bottom. It arrives at the table looking like a celebration, because it is one.",
+    ingredients: [
+      "400g bomba or paella rice",
+      "1 large pinch saffron threads",
+      "300g large prawns",
+      "300g mussels, cleaned",
+      "200g clams",
+      "1 litre hot fish stock",
+      "1 red pepper, sliced",
+      "4 garlic cloves, minced",
+      "Lemon wedges"
+    ],
+    instructions: [
+      "Steep the saffron in a little hot stock to bloom its colour and aroma.",
+      "Sear the prawns briefly in the paella pan, then set aside.",
+      "Soften the garlic and red pepper in the same pan.",
+      "Stir in the rice to coat it, then pour in the hot stock and saffron. Spread everything into an even layer.",
+      "From this point do not stir. Simmer for 15 minutes, then nestle in the mussels, clams and prawns.",
+      "Cook until the liquid is absorbed and you hear the rice crackle — that is the socarrat forming. Rest 5 minutes and serve with lemon."
+    ]
+  },
+  {
+    title: "Truffle Risotto",
+    category: "Dinner",
+    wiki: "Risotto",
+    image: "",
+    description: "Creamy arborio rice stirred patiently with stock and finished with butter, Parmesan and shavings of black truffle. The aroma alone justifies the price tag.",
+    ingredients: [
+      "300g arborio or carnaroli rice",
+      "1.2 litres hot chicken stock",
+      "1 small onion, finely diced",
+      "125ml dry white wine",
+      "60g cold butter",
+      "80g Parmesan, grated",
+      "1 small black truffle (or truffle oil)"
+    ],
+    instructions: [
+      "Sweat the onion in butter until translucent but not coloured.",
+      "Add the rice and toast for 2 minutes until the grains turn glassy at the edges.",
+      "Pour in the wine and stir until fully absorbed.",
+      "Add hot stock one ladle at a time, stirring constantly, waiting for each addition to absorb before the next. This takes about 18 minutes.",
+      "Off the heat, beat in the cold butter and Parmesan vigorously until glossy and loose.",
+      "Shave truffle generously over each bowl and serve immediately."
+    ]
+  },
+  {
+    title: "Rack of Lamb with Herb Crust",
+    category: "Dinner",
+    wiki: "Rack of lamb",
+    image: "",
+    description: "A crown of pink lamb under a crackling crust of herbs, garlic and breadcrumbs. Carving it into individual chops at the table is one of cooking's great pleasures.",
+    ingredients: [
+      "2 racks of lamb, frenched",
+      "100g fresh breadcrumbs",
+      "3 tbsp Dijon mustard",
+      "4 garlic cloves, minced",
+      "Handful parsley and rosemary, chopped",
+      "3 tbsp olive oil",
+      "Salt and pepper"
+    ],
+    instructions: [
+      "Season the racks and sear them fat-side down in a hot pan until deeply browned.",
+      "Blitz the breadcrumbs with the herbs, garlic and olive oil until green and fragrant.",
+      "Brush the seared lamb all over with Dijon mustard.",
+      "Press the herb crumb firmly onto the mustard-coated fat cap.",
+      "Roast at 200°C for 18-20 minutes for pink, blushing meat.",
+      "Rest for 10 minutes, then carve between the bones into individual chops."
+    ]
+  },
+  {
+    title: "Chicken Cordon Bleu",
+    category: "Dinner",
+    wiki: "Chicken cordon bleu",
+    image: "",
+    description: "Chicken rolled around ham and Swiss cheese, breaded and fried until shatteringly crisp. The moment the cheese runs out onto the plate is the whole point.",
+    ingredients: [
+      "4 chicken breasts, butterflied",
+      "8 slices ham",
+      "8 slices Swiss or Gruyère cheese",
+      "2 eggs, beaten",
+      "150g breadcrumbs",
+      "100g flour",
+      "Oil for frying"
+    ],
+    instructions: [
+      "Pound the butterflied chicken breasts thin between two sheets of cling film.",
+      "Layer ham and cheese over each, then roll up tightly and chill for 30 minutes to hold their shape.",
+      "Dredge each roll in flour, then egg, then breadcrumbs, pressing firmly to coat.",
+      "Fry in shallow oil, turning, until golden on all sides.",
+      "Transfer to the oven at 180°C for 15 minutes to cook through.",
+      "Rest briefly, then slice to reveal the molten cheese centre."
+    ]
+  },
+  {
+    title: "Duck à l'Orange",
+    category: "Dinner",
+    wiki: "Duck à l'orange",
+    image: "",
+    description: "Crisp-skinned roast duck with a glossy bittersweet orange sauce — the dish that defined French fine dining for a generation and still feels utterly special.",
+    ingredients: [
+      "1 whole duck (about 2kg)",
+      "3 oranges, juiced and zested",
+      "100g sugar",
+      "60ml red wine vinegar",
+      "500ml duck or chicken stock",
+      "2 tbsp Grand Marnier",
+      "Salt and pepper"
+    ],
+    instructions: [
+      "Score the duck skin in a diamond pattern, season heavily, and roast at 180°C for about 90 minutes, draining the fat periodically.",
+      "Make a caramel by cooking the sugar and vinegar together until deep amber.",
+      "Add the orange juice, zest and stock, then simmer until the sauce reduces and thickens.",
+      "Finish the sauce with Grand Marnier and a knob of butter for shine.",
+      "Raise the oven to 220°C for the final 10 minutes to crisp the skin.",
+      "Carve the duck and spoon the orange sauce generously over the top."
+    ]
+  },
+  {
+    title: "Osso Buco alla Milanese",
+    category: "Dinner",
+    wiki: "Ossobuco",
+    image: "",
+    description: "Veal shanks braised until the meat slumps off the bone, with the prized marrow waiting in the centre. Slow food at its most rewarding.",
+    ingredients: [
+      "4 veal shanks, tied",
+      "2 carrots, diced",
+      "2 celery stalks, diced",
+      "1 onion, diced",
+      "250ml dry white wine",
+      "400g chopped tomatoes",
+      "500ml veal stock",
+      "Gremolata (lemon zest, garlic, parsley)"
+    ],
+    instructions: [
+      "Dust the shanks in flour and sear until deeply browned on both sides, then set aside.",
+      "Soften the carrot, celery and onion in the same pot until sweet.",
+      "Deglaze with white wine, scraping the base clean.",
+      "Return the shanks, add tomatoes and stock until nearly submerged.",
+      "Cover and braise at 160°C for 2 to 2.5 hours until fork-tender.",
+      "Scatter fresh gremolata over just before serving, traditionally with saffron risotto."
+    ]
+  },
+  {
+    title: "Beef Bourguignon",
+    category: "Dinner",
+    wiki: "Beef bourguignon",
+    image: "",
+    description: "Beef slowly braised in red wine with bacon, mushrooms and pearl onions until everything melts together. A dish that tastes like it has been cooking all your life.",
+    ingredients: [
+      "1.2kg beef chuck, cubed",
+      "200g bacon lardons",
+      "750ml full-bodied red wine",
+      "300g button mushrooms",
+      "250g pearl onions",
+      "3 carrots, sliced",
+      "500ml beef stock",
+      "2 bay leaves"
+    ],
+    instructions: [
+      "Render the bacon lardons until crisp, then remove and set aside.",
+      "Brown the beef cubes hard in the bacon fat, working in batches so they colour rather than steam.",
+      "Add the carrots, then pour in the wine and stock with the bay leaves.",
+      "Cover and braise at 150°C for 3 hours until the beef surrenders.",
+      "Separately sauté the mushrooms and pearl onions in butter until golden.",
+      "Fold them into the stew with the bacon, simmer 20 more minutes, and serve."
+    ]
+  },
+  {
+    title: "Coq au Vin",
+    category: "Dinner",
+    wiki: "Coq au vin",
+    image: "",
+    description: "Chicken braised in red wine with bacon and mushrooms until the sauce turns dark and silky. Rustic, deeply French, and endlessly comforting.",
+    ingredients: [
+      "1 whole chicken, jointed",
+      "750ml red wine",
+      "150g bacon lardons",
+      "250g mushrooms",
+      "200g pearl onions",
+      "3 garlic cloves",
+      "2 tbsp tomato paste",
+      "Fresh thyme"
+    ],
+    instructions: [
+      "Marinate the chicken pieces in the red wine with thyme and garlic overnight if you can.",
+      "Pat the chicken dry, then brown well in bacon fat.",
+      "Stir in the tomato paste and cook out for a minute.",
+      "Return the wine marinade, bring to a simmer and braise gently for 1 hour.",
+      "Add the sautéed mushrooms and pearl onions for the last 20 minutes.",
+      "Reduce the sauce until it clings, then serve with crusty bread."
+    ]
+  },
+  {
+    title: "Chilean Sea Bass with Miso Glaze",
+    category: "Dinner",
+    wiki: "Patagonian toothfish",
+    image: "",
+    description: "Buttery, snow-white fish lacquered in sweet-salty miso and caramelised under fierce heat. One of the most expensive fish in the world, and worth every rupee.",
+    ingredients: [
+      "4 sea bass fillets (200g each)",
+      "100g white miso paste",
+      "3 tbsp mirin",
+      "3 tbsp sake",
+      "2 tbsp sugar",
+      "Sliced spring onion",
+      "Toasted sesame seeds"
+    ],
+    instructions: [
+      "Whisk the miso, mirin, sake and sugar into a smooth glaze.",
+      "Coat the fillets thoroughly and marinate, ideally for 24 to 48 hours.",
+      "Wipe off excess marinade so it caramelises rather than burns.",
+      "Sear the fillets skin-side down, then finish under a hot grill until blistered and lacquered.",
+      "The flesh should flake at the lightest pressure.",
+      "Scatter spring onion and sesame seeds over and serve."
+    ]
+  },
+  {
+    title: "Lamb Shank Braised in Red Wine",
+    category: "Dinner",
+    wiki: "Lamb and mutton",
+    image: "",
+    description: "A whole shank cooked so long the meat collapses at the touch of a fork, in a sauce dark with wine and rosemary. Impressive to look at, effortless to eat.",
+    ingredients: [
+      "4 lamb shanks",
+      "750ml red wine",
+      "500ml lamb or beef stock",
+      "2 onions, chopped",
+      "4 garlic cloves",
+      "2 tbsp tomato paste",
+      "3 sprigs rosemary",
+      "2 carrots, chopped"
+    ],
+    instructions: [
+      "Season the shanks and brown them all over in a heavy casserole.",
+      "Remove, then soften the onions, carrots and garlic in the same pot.",
+      "Stir in the tomato paste, then pour in the wine and reduce by half.",
+      "Return the shanks with the stock and rosemary until nearly covered.",
+      "Cover and braise at 160°C for 3 hours, turning once.",
+      "Reduce the remaining liquid into a glossy sauce and pour over the shanks."
+    ]
+  },
+  {
+    title: "Mutton Biryani (Hyderabadi Dum)",
+    category: "Dinner",
+    wiki: "Biryani",
+    image: "",
+    description: "Layers of saffron rice and slow-marinated mutton sealed under dough and cooked in its own steam. When the lid finally comes off, the aroma stops conversation.",
+    ingredients: [
+      "1kg mutton, on the bone",
+      "750g aged basmati rice",
+      "400g yoghurt",
+      "4 onions, fried until crisp",
+      "Large pinch saffron in warm milk",
+      "Whole spices (bay, cardamom, cinnamon, cloves)",
+      "Mint and coriander leaves",
+      "4 tbsp ghee"
+    ],
+    instructions: [
+      "Marinate the mutton in yoghurt, fried onions, herbs and spices for at least 4 hours, ideally overnight.",
+      "Parboil the rice with whole spices until 70 percent cooked, then drain.",
+      "Layer the marinated mutton in a heavy pot and spread the rice over it.",
+      "Top with saffron milk, ghee, remaining fried onions and herbs.",
+      "Seal the lid with dough and cook on the lowest heat for 45 minutes.",
+      "Break the seal at the table and fold gently from the bottom so the layers stay distinct."
     ]
   },
   {
     title: "Beef Nihari",
     category: "Dinner",
-    description: "A slow-simmered beef stew, rich with spice and history — the kind of dish that rewards patience with deep, layered flavor.",
-    image: "https://loremflickr.com/400/300/nihari",
+    wiki: "Nihari",
+    image: "",
+    description: "Beef shank simmered overnight into a spiced, collagen-rich stew, finished with ginger and lemon. A Pakistani institution and a genuine labour of love.",
     ingredients: [
-      "1 kg beef shank",
-      "Nihari masala",
-      "2 tbsp wheat flour",
-      "Ginger, julienned",
-      "Fried onions",
-      "Oil"
+      "1.5kg beef shank with marrow bones",
+      "4 tbsp nihari masala",
+      "3 tbsp wheat flour",
+      "2 onions, sliced",
+      "Ginger julienne, green chillies and lemon to serve",
+      "200ml oil or ghee"
     ],
     instructions: [
-      "Slow-cook the beef with nihari masala and water for several hours until fall-apart tender.",
-      "Mix wheat flour with water into a smooth slurry.",
-      "Stir the slurry into the stew to thicken it.",
-      "Simmer for another 20 minutes, stirring occasionally.",
-      "Ladle into bowls and top with ginger and fried onions.",
-      "Serve hot with naan."
+      "Brown the onions in ghee, then add the beef and nihari masala.",
+      "Cover with water and simmer on the lowest possible heat for 6 to 8 hours until the meat falls apart.",
+      "Whisk the flour into cold water until perfectly smooth with no lumps.",
+      "Stream this slurry into the simmering pot, stirring constantly, to thicken the gravy.",
+      "Cook a further 30 minutes until the oil rises to the surface — the mark of a proper nihari.",
+      "Serve with ginger, green chilli, lemon and hot naan."
     ]
   },
   {
-    title: "Grilled Salmon with Lemon Butter",
+    title: "Tandoori Lobster",
     category: "Dinner",
-    description: "Simple, elegant, and full of flavor — a dinner that feels special without demanding hours in the kitchen.",
-    image: "https://loremflickr.com/400/300/grilledsalmon",
+    wiki: "Lobster",
+    image: "",
+    description: "Lobster tails bathed in spiced yoghurt and blistered in fierce heat. Where South Asian spice meets luxury seafood, and both win.",
     ingredients: [
-      "2 salmon fillets",
-      "1 lemon",
-      "2 tbsp butter",
-      "2 garlic cloves, minced",
-      "Fresh dill"
+      "4 lobster tails, split",
+      "200g thick yoghurt",
+      "2 tbsp ginger garlic paste",
+      "1 tbsp Kashmiri chilli powder",
+      "1 tsp garam masala",
+      "2 tbsp lemon juice",
+      "3 tbsp melted butter"
     ],
     instructions: [
-      "Season the salmon fillets with salt and pepper.",
-      "Heat a pan and sear the salmon skin-side down first.",
-      "Flip and cook until just done.",
-      "Add butter, garlic, and a squeeze of lemon to the pan.",
-      "Baste the salmon with the melted garlic butter.",
-      "Garnish with fresh dill and serve immediately."
+      "Whisk the yoghurt with ginger garlic paste, chilli, garam masala and lemon juice.",
+      "Coat the split lobster tails thoroughly and marinate for 30 minutes — no longer, or the flesh toughens.",
+      "Cook over very high heat in a tandoor, grill or hot oven until the edges char.",
+      "Baste repeatedly with melted butter as it cooks.",
+      "The flesh should turn opaque and pull cleanly from the shell.",
+      "Serve with mint chutney and lemon wedges."
     ]
   },
   {
-    title: "Beef Lasagna",
+    title: "Chicken Karahi",
     category: "Dinner",
-    description: "Layers of pasta, rich beef ragu, and creamy béchamel — the kind of dinner that brings the whole table together.",
-    image: "https://loremflickr.com/400/300/lasagna",
+    wiki: "Karahi",
+    image: "",
+    description: "Chicken cooked hard and fast with tomatoes, ginger and green chilli in a heavy karahi. Bold, unfussy, and the dish most Pakistani households would defend to the death.",
     ingredients: [
-      "Lasagna sheets",
-      "500g ground beef",
-      "2 cups tomato sauce",
-      "2 cups béchamel sauce",
-      "1.5 cups mozzarella cheese"
+      "1kg chicken, cut into pieces",
+      "6 tomatoes, roughly chopped",
+      "3 tbsp ginger garlic paste",
+      "6 green chillies, slit",
+      "1 tsp crushed coriander seeds",
+      "1 tsp black pepper",
+      "150ml oil",
+      "Ginger julienne to finish"
     ],
     instructions: [
-      "Brown the ground beef and simmer it in tomato sauce.",
-      "Spread a thin layer of meat sauce in a baking dish.",
-      "Layer lasagna sheets, meat sauce, and béchamel.",
-      "Repeat the layers, finishing with béchamel and cheese on top.",
-      "Bake at 180°C for about 30 minutes until bubbling.",
-      "Rest for 10 minutes before slicing and serving."
+      "Heat the oil until shimmering and fry the chicken on high heat until it seizes and colours.",
+      "Add the ginger garlic paste and cook until the raw smell disappears.",
+      "Add the tomatoes and cook hard until they collapse and the oil separates.",
+      "Stir in the crushed coriander, black pepper and green chillies.",
+      "Simmer uncovered until the gravy clings tightly to the chicken.",
+      "Finish with ginger julienne and serve straight from the karahi with naan."
     ]
   },
   {
-    title: "Palak Paneer",
+    title: "Butter Chicken",
     category: "Dinner",
-    description: "Soft paneer cubes simmered in a silky spinach sauce — a vegetarian dinner that's every bit as satisfying as meat.",
-    image: "https://loremflickr.com/400/300/palakpaneer",
+    wiki: "Butter chicken",
+    image: "",
+    description: "Charred chicken tikka folded into a velvety tomato and cream sauce enriched with butter. Mellow, luxurious, and beloved almost everywhere on earth.",
     ingredients: [
-      "250g paneer, cubed",
-      "4 cups spinach",
-      "1 onion, chopped",
-      "1 tomato, chopped",
-      "Cream",
-      "Garam masala"
+      "800g boneless chicken thighs",
+      "200g yoghurt",
+      "2 tbsp tandoori masala",
+      "600g tomato purée",
+      "150ml heavy cream",
+      "100g butter",
+      "1 tbsp kasuri methi (dried fenugreek)",
+      "1 tbsp honey"
     ],
     instructions: [
-      "Blanch the spinach briefly, then blend into a smooth puree.",
-      "Sauté onion and tomato until soft.",
-      "Add the spinach puree and garam masala, simmer gently.",
-      "Add the paneer cubes and warm through.",
-      "Stir in a splash of cream just before serving.",
-      "Serve hot with roti or rice."
+      "Marinate the chicken in yoghurt and tandoori masala for at least 2 hours, then grill until charred at the edges.",
+      "Simmer the tomato purée with ginger garlic until it darkens and thickens considerably.",
+      "Blend the sauce completely smooth, then pass it through a sieve for a silky texture.",
+      "Return to the heat and whisk in the butter, piece by piece.",
+      "Add the cream, honey and crushed kasuri methi.",
+      "Fold in the grilled chicken, simmer 10 minutes, and serve with naan."
     ]
   },
   {
-    title: "Grilled Lamb Chops with Mint Sauce",
+    title: "Grilled Wagyu Steak",
     category: "Dinner",
-    description: "Herb-marinated lamb chops, seared until deeply browned — an elegant dinner that still feels comforting.",
-    image: "https://loremflickr.com/400/300/lambchops",
+    wiki: "Wagyu",
+    image: "",
+    description: "Intensely marbled beef that melts rather than chews. It needs almost nothing done to it — salt, fierce heat, and the restraint to stop there.",
     ingredients: [
-      "6 lamb chops",
-      "2 garlic cloves, minced",
-      "1 tsp rosemary",
-      "Olive oil",
-      "Fresh mint leaves",
-      "1/2 cup yogurt"
+      "2 wagyu steaks (200g each)",
+      "Flaky sea salt",
+      "Coarsely cracked black pepper",
+      "1 garlic clove",
+      "Small knob of butter"
     ],
     instructions: [
-      "Marinate the lamb chops with garlic, rosemary, and olive oil for at least 1 hour.",
-      "Sear the chops in a hot pan until nicely browned.",
-      "Finish cooking to your preferred doneness.",
-      "Blend mint leaves into the yogurt for the sauce.",
-      "Rest the chops for a few minutes before serving.",
-      "Serve with the mint yogurt sauce on the side."
+      "Bring the steaks fully to room temperature — this matters more with wagyu than any other cut.",
+      "Season only with flaky salt just before cooking.",
+      "Sear in a dry, ripping-hot cast iron pan; the fat renders and becomes its own cooking oil.",
+      "Cook 2 to 3 minutes per side maximum — wagyu should not go past medium-rare.",
+      "Baste briefly with butter and crushed garlic at the very end.",
+      "Rest 5 minutes, slice against the grain, and finish with cracked pepper."
     ]
   },
   {
-    title: "Beef Stroganoff",
+    title: "Seafood Bouillabaisse",
     category: "Dinner",
-    description: "Tender strips of beef in a creamy mushroom sauce over egg noodles — old-fashioned comfort in every bite.",
-    image: "https://loremflickr.com/400/300/stroganoff",
+    wiki: "Bouillabaisse",
+    image: "",
+    description: "A Provençal fish stew fragrant with saffron and fennel, crowded with whatever the sea offered that morning. Served with rouille-slathered toast.",
     ingredients: [
-      "500g beef strips",
-      "1 cup mushrooms, sliced",
-      "1 onion, sliced",
-      "1 cup sour cream",
-      "Egg noodles, cooked",
-      "Beef broth"
+      "500g mixed white fish, chunked",
+      "300g mussels",
+      "200g prawns",
+      "1 fennel bulb, sliced",
+      "2 leeks, sliced",
+      "Pinch saffron",
+      "1 litre fish stock",
+      "400g chopped tomatoes",
+      "Orange zest"
     ],
     instructions: [
-      "Sear the beef strips quickly over high heat, then set aside.",
-      "Sauté onion and mushrooms in the same pan.",
-      "Add beef broth and simmer briefly.",
-      "Stir in sour cream until the sauce is smooth.",
-      "Return the beef to the pan and warm through.",
-      "Serve over cooked egg noodles."
+      "Sweat the fennel and leeks in olive oil until soft and sweet.",
+      "Add the tomatoes, saffron and orange zest, cooking until fragrant.",
+      "Pour in the fish stock and simmer for 20 minutes to build the base.",
+      "Add the firmest fish first, then the prawns and mussels last.",
+      "Simmer only until the mussels open and the fish just flakes — overcooking ruins it.",
+      "Serve in wide bowls with rouille and toasted baguette."
     ]
   },
   {
     title: "Chicken Tikka Masala",
     category: "Dinner",
-    description: "Char-grilled chicken tikka simmered in a spiced, creamy tomato sauce — a beloved dinner with real depth of flavor.",
-    image: "https://loremflickr.com/400/300/tikkamasala",
+    wiki: "Chicken tikka masala",
+    image: "",
+    description: "Smoky grilled chicken tikka in a spiced tomato cream sauce. Rich, forgiving and perpetually the most-ordered dish on any menu it appears on.",
     ingredients: [
-      "500g chicken, cubed",
-      "1 cup yogurt",
-      "Tikka masala spice mix",
-      "1 cup tomato puree",
-      "Cream",
-      "Ginger garlic paste"
+      "800g chicken thighs, cubed",
+      "250g yoghurt",
+      "3 tbsp tikka masala spice blend",
+      "500g tomato purée",
+      "150ml cream",
+      "2 tbsp ginger garlic paste",
+      "1 onion, finely diced",
+      "Fresh coriander"
     ],
     instructions: [
-      "Marinate chicken cubes in yogurt and tikka spices for at least an hour.",
-      "Grill or pan-sear the chicken until charred at the edges.",
-      "Cook tomato puree with ginger garlic paste and remaining spices.",
-      "Simmer the sauce until it thickens.",
-      "Add the grilled chicken and simmer for 10 minutes.",
-      "Stir in cream and serve with rice or naan."
+      "Marinate the chicken in yoghurt and tikka spices for at least 2 hours.",
+      "Grill or pan-sear until the edges blacken slightly — that char is essential to the flavour.",
+      "Soften the onion, then add ginger garlic paste and the remaining spices.",
+      "Add the tomato purée and simmer until thick and deep red.",
+      "Stir in the cream and return the grilled chicken to the pan.",
+      "Simmer 10 minutes, scatter with coriander, and serve with basmati rice."
     ]
   },
   {
-    title: "Vegetable Korma",
+    title: "Peking-Style Roast Duck",
     category: "Dinner",
-    description: "A mild, creamy curry of mixed vegetables in a cashew-based sauce — gentle, rich, and deeply comforting.",
-    image: "https://loremflickr.com/400/300/korma",
+    wiki: "Peking duck",
+    image: "",
+    description: "Lacquered, glass-crisp skin carved tableside and folded into thin pancakes with scallion and hoisin. Few dishes carry this much ceremony.",
     ingredients: [
-      "2 cups mixed vegetables",
-      "1/4 cup cashews, soaked",
-      "1/2 cup yogurt",
-      "1 onion, chopped",
-      "Korma spice mix"
+      "1 whole duck",
+      "3 tbsp maltose or honey",
+      "2 tbsp rice vinegar",
+      "Thin pancakes",
+      "Cucumber batons",
+      "Spring onions, julienned",
+      "Hoisin sauce"
     ],
     instructions: [
-      "Blend soaked cashews into a smooth paste.",
-      "Sauté onion until golden, then add korma spices.",
-      "Add the vegetables and cook until slightly tender.",
-      "Stir in the cashew paste and yogurt.",
-      "Simmer gently until the vegetables are fully cooked and the sauce is creamy.",
-      "Serve hot with rice or naan."
+      "Scald the duck with boiling water to tighten the skin, then pat completely dry.",
+      "Brush with a maltose and vinegar glaze.",
+      "Hang or air-dry the duck in the fridge, uncovered, for 24 hours — this is what produces the crisp skin.",
+      "Roast at 180°C for 90 minutes, raising the heat at the end for colour.",
+      "Carve the crisp skin and meat into thin slices.",
+      "Serve with pancakes, cucumber, spring onion and hoisin to wrap at the table."
     ]
   },
   {
-    title: "Chow Mein",
+    title: "Mutton Rogan Josh",
     category: "Dinner",
-    description: "Stir-fried noodles tossed with vegetables and savory sauce — a quick, satisfying dinner with plenty of texture.",
-    image: "https://loremflickr.com/400/300/chowmein",
+    wiki: "Rogan josh",
+    image: "",
+    description: "Kashmiri mutton stewed in a fragrant red gravy built on dried chilli and warm spice. Deeply aromatic without being punishingly hot.",
     ingredients: [
-      "250g noodles, cooked",
-      "1 cup mixed vegetables (cabbage, carrot, capsicum)",
-      "2 tbsp soy sauce",
-      "Garlic, minced",
-      "Spring onion"
+      "1kg mutton, on the bone",
+      "200g yoghurt",
+      "3 tbsp Kashmiri chilli powder",
+      "1 tsp fennel powder",
+      "1 tsp dried ginger powder",
+      "Whole spices (cardamom, cloves, cinnamon)",
+      "150ml mustard oil"
     ],
     instructions: [
-      "Boil the noodles until just tender, then drain.",
-      "Heat oil and stir-fry garlic until fragrant.",
-      "Add the mixed vegetables and stir-fry on high heat.",
-      "Add the noodles and soy sauce, tossing everything together.",
-      "Cook for a few more minutes until well combined.",
-      "Garnish with spring onion and serve hot."
+      "Heat the mustard oil until it just smokes, then temper the whole spices.",
+      "Brown the mutton pieces thoroughly in the spiced oil.",
+      "Lower the heat and whisk in the yoghurt gradually so it does not split.",
+      "Add the Kashmiri chilli, fennel and ginger powders.",
+      "Cover and cook on low heat for 1.5 hours until the mutton is tender and the oil separates.",
+      "Rest 10 minutes off the heat before serving with rice or naan."
     ]
   },
   {
-    title: "Ramen with Soft-Boiled Egg",
+    title: "Surf and Turf",
     category: "Dinner",
-    description: "A steaming bowl of rich broth, noodles, and a jammy egg — the kind of dinner that feels like a warm exhale after a long day.",
-    image: "https://loremflickr.com/400/300/ramen",
+    wiki: "Surf and turf",
+    image: "",
+    description: "Steak and lobster on one plate — the most unapologetic statement of abundance in all of cooking, and still a genuine joy to eat.",
     ingredients: [
-      "2 servings ramen noodles",
-      "4 cups chicken or pork broth",
-      "2 soft-boiled eggs",
-      "Sliced green onion",
-      "Soy sauce",
-      "Nori sheets"
-    ],
-    instructions: [
-      "Bring the broth to a gentle simmer and season with soy sauce.",
-      "Cook the ramen noodles separately according to package instructions.",
-      "Divide the noodles between two bowls.",
-      "Ladle the hot broth over the noodles.",
-      "Top with a halved soft-boiled egg, green onion, and nori.",
-      "Serve immediately while hot."
-    ]
-  },
-  {
-    title: "Beef Rendang",
-    category: "Dinner",
-    description: "A deeply spiced, slow-cooked Indonesian beef dish — rich, dark, and worth every minute of simmering.",
-    image: "https://loremflickr.com/400/300/rendang",
-    ingredients: [
-      "1 kg beef chunks",
-      "2 cups coconut milk",
-      "Lemongrass",
-      "Galangal",
-      "Rendang spice paste"
-    ],
-    instructions: [
-      "Sear the beef chunks until browned on all sides.",
-      "Add the rendang spice paste, lemongrass, and galangal.",
-      "Pour in the coconut milk and bring to a simmer.",
-      "Cook low and slow for 1.5-2 hours, stirring occasionally.",
-      "Continue cooking until the sauce reduces and darkens.",
-      "Serve with steamed rice."
-    ]
-  },
-  {
-    title: "Shepherd's Pie",
-    category: "Dinner",
-    description: "Savory minced meat topped with creamy mashed potato and baked until golden — pure, hearty comfort.",
-    image: "https://loremflickr.com/400/300/shepherdspie",
-    ingredients: [
-      "500g ground lamb or beef",
-      "1 cup peas and carrots",
-      "1 onion, chopped",
-      "4 potatoes, mashed",
-      "Beef broth"
-    ],
-    instructions: [
-      "Brown the ground meat with onion.",
-      "Add peas, carrots, and a splash of beef broth, simmer briefly.",
-      "Spread the meat mixture into a baking dish.",
-      "Top evenly with mashed potato.",
-      "Bake at 200°C until the top is golden.",
-      "Rest for a few minutes before serving."
-    ]
-  },
-  {
-    title: "Chicken Parmesan",
-    category: "Dinner",
-    description: "Crispy breaded chicken topped with marinara and melted cheese — Italian-American comfort food at its finest.",
-    image: "https://loremflickr.com/400/300/chickenparm",
-    ingredients: [
-      "2 chicken breasts, pounded thin",
-      "1 cup breadcrumbs",
-      "1 cup marinara sauce",
-      "1 cup mozzarella cheese",
-      "Parmesan cheese"
-    ],
-    instructions: [
-      "Bread the chicken breasts and pan-fry until golden and cooked through.",
-      "Place the fried chicken in a baking dish.",
-      "Top each piece with marinara sauce.",
-      "Sprinkle generously with mozzarella and parmesan.",
-      "Bake until the cheese is melted and bubbling.",
-      "Serve with pasta or a side salad."
-    ]
-  },
-  {
-    title: "Fajitas (Chicken)",
-    category: "Dinner",
-    description: "Sizzling strips of chicken and peppers served with warm tortillas — an interactive dinner that's always a crowd-pleaser.",
-    image: "https://loremflickr.com/400/300/fajitas",
-    ingredients: [
-      "500g chicken breast, sliced",
-      "2 bell peppers, sliced",
-      "1 onion, sliced",
-      "Fajita seasoning",
-      "Flour tortillas"
-    ],
-    instructions: [
-      "Toss the chicken and vegetables with fajita seasoning.",
-      "Heat a large pan or skillet until very hot.",
-      "Cook the chicken and vegetables together until charred and cooked through.",
-      "Warm the tortillas.",
-      "Serve the sizzling chicken and vegetables alongside the tortillas.",
-      "Let everyone build their own fajitas at the table."
-    ]
-  },
-  {
-    title: "Paella",
-    category: "Dinner",
-    description: "A vibrant Spanish rice dish loaded with saffron, seafood, and chicken — a dinner that turns into an event.",
-    image: "https://loremflickr.com/400/300/paella",
-    ingredients: [
-      "2 cups paella rice",
-      "Saffron threads",
-      "300g chicken pieces",
-      "200g shrimp",
-      "1 bell pepper, sliced",
-      "Chicken broth"
-    ],
-    instructions: [
-      "Sear the chicken pieces in a wide paella pan until browned.",
-      "Add bell pepper and cook briefly.",
-      "Stir in the rice and saffron, coating it in the pan drippings.",
-      "Pour in the broth and bring to a simmer.",
-      "Add the shrimp partway through cooking.",
-      "Cook without stirring until the rice is tender and a crust forms on the bottom."
-    ]
-  },
-  {
-    title: "Osso Buco",
-    category: "Dinner",
-    description: "Braised veal shanks in a rich wine and vegetable sauce — an Italian classic worth the slow cook.",
-    image: "https://loremflickr.com/400/300/ossobuco",
-    ingredients: [
-      "4 veal shanks",
-      "1 cup white wine",
-      "2 carrots, diced",
-      "2 celery stalks, diced",
-      "1 onion, diced",
-      "Beef broth"
-    ],
-    instructions: [
-      "Sear the veal shanks until browned on all sides.",
-      "Remove and sauté the carrots, celery, and onion in the same pot.",
-      "Deglaze with white wine, scraping up the browned bits.",
-      "Return the shanks to the pot and add broth to nearly cover.",
-      "Cover and braise slowly for 2-2.5 hours until tender.",
-      "Serve with the vegetables and pan sauce spooned over."
-    ]
-  },
-  {
-    title: "Kung Pao Chicken",
-    category: "Dinner",
-    description: "Spicy, sweet, and packed with peanuts — a stir-fry dinner with bold Sichuan flavor.",
-    image: "https://loremflickr.com/400/300/kungpao",
-    ingredients: [
-      "500g chicken, cubed",
-      "1/2 cup peanuts",
-      "Dried red chilies",
-      "2 tbsp soy sauce",
-      "1 tbsp vinegar",
-      "Garlic and ginger"
-    ],
-    instructions: [
-      "Stir-fry the chicken cubes until cooked through, then set aside.",
-      "Sauté garlic, ginger, and dried chilies in the same pan.",
-      "Add soy sauce and vinegar to make a quick sauce.",
-      "Return the chicken to the pan and toss to coat.",
-      "Stir in the peanuts just before removing from heat.",
-      "Serve hot with steamed rice."
-    ]
-  },
-  {
-    title: "Bibimbap",
-    category: "Dinner",
-    description: "A colorful Korean rice bowl topped with seasoned vegetables, beef, and a fried egg — as beautiful as it is satisfying.",
-    image: "https://loremflickr.com/400/300/bibimbap",
-    ingredients: [
-      "2 cups cooked rice",
-      "200g beef, thinly sliced",
-      "Assorted sautéed vegetables (spinach, carrot, bean sprouts)",
-      "2 fried eggs",
-      "Gochujang sauce"
-    ],
-    instructions: [
-      "Cook and season each vegetable separately.",
-      "Stir-fry the beef with a little soy sauce and garlic.",
-      "Divide rice between two bowls.",
-      "Arrange the vegetables and beef around the rice.",
-      "Top each bowl with a fried egg.",
-      "Serve with gochujang sauce and mix well before eating."
-    ]
-  },
-  {
-    title: "Beef Wellington",
-    category: "Dinner",
-    description: "Tender beef fillet wrapped in mushroom duxelles and golden puff pastry — a dinner reserved for special occasions.",
-    image: "https://loremflickr.com/400/300/beefwellington",
-    ingredients: [
-      "1 beef fillet",
-      "2 cups mushrooms, finely chopped",
-      "Puff pastry sheet",
-      "Dijon mustard",
-      "Prosciutto slices"
-    ],
-    instructions: [
-      "Sear the beef fillet quickly on all sides, then let it cool.",
-      "Cook the mushrooms down into a thick, dry paste (duxelles).",
-      "Brush the beef with mustard, then wrap in prosciutto and the mushroom mixture.",
-      "Wrap the whole thing tightly in puff pastry.",
-      "Bake at 200°C until the pastry is golden and the beef reaches desired doneness.",
-      "Rest for 10 minutes before slicing."
-    ]
-  },
-  {
-    title: "Chicken Korma",
-    category: "Dinner",
-    description: "A mild, fragrant curry with a creamy nut-based sauce — gentle spice that still feels rich and satisfying.",
-    image: "https://loremflickr.com/400/300/chickenkorma",
-    ingredients: [
-      "500g chicken",
-      "1/2 cup yogurt",
-      "1/4 cup cashews, ground",
-      "1 onion, chopped",
-      "Korma spice mix"
-    ],
-    instructions: [
-      "Sauté the onion until golden brown.",
-      "Add korma spices and cook until fragrant.",
-      "Add the chicken and cook until sealed.",
-      "Stir in yogurt and ground cashews.",
-      "Simmer gently until the chicken is fully cooked and the sauce thickens.",
-      "Serve with rice or naan."
-    ]
-  },
-  {
-    title: "Seekh Kebab",
-    category: "Dinner",
-    description: "Spiced minced meat skewers, grilled until smoky and charred — a South Asian dinner favorite full of bold flavor.",
-    image: "https://loremflickr.com/400/300/seekhkebab",
-    ingredients: [
-      "500g ground beef or lamb",
-      "1 onion, grated and squeezed dry",
-      "Fresh coriander, chopped",
-      "Garam masala",
-      "Green chilies, minced"
-    ],
-    instructions: [
-      "Mix the minced meat with onion, coriander, garam masala, and chilies.",
-      "Knead the mixture well until smooth and well combined.",
-      "Mold the mixture around skewers into long shapes.",
-      "Grill or pan-fry, turning occasionally, until charred and cooked through.",
-      "Rest briefly before removing from skewers.",
-      "Serve hot with naan and chutney."
-    ]
-  },
-  {
-    title: "Haleem",
-    category: "Dinner",
-    description: "A slow-cooked blend of meat, lentils, and wheat, shredded into a rich, hearty stew — deeply comforting and full of history.",
-    image: "https://loremflickr.com/400/300/haleem",
-    ingredients: [
-      "500g beef or chicken",
-      "1 cup mixed lentils",
-      "1/2 cup wheat or barley, soaked",
-      "Haleem spice mix",
-      "Fried onions, ginger, and lemon to garnish"
-    ],
-    instructions: [
-      "Cook the meat, lentils, and wheat together with spices and plenty of water.",
-      "Simmer for several hours until everything is very soft.",
-      "Shred the meat and blend everything into a thick, porridge-like consistency.",
-      "Adjust the consistency with more water if needed, and simmer further.",
-      "Ladle into bowls.",
-      "Garnish with fried onions, ginger, and a squeeze of lemon."
-    ]
-  },
-  {
-    title: "Moussaka",
-    category: "Dinner",
-    description: "Layers of eggplant, spiced meat, and creamy béchamel baked until golden — a Greek dinner classic full of warmth.",
-    image: "https://loremflickr.com/400/300/moussaka",
-    ingredients: [
-      "2 eggplants, sliced",
-      "500g ground lamb",
-      "1 cup tomato sauce",
-      "2 cups béchamel sauce",
-      "Cinnamon"
-    ],
-    instructions: [
-      "Salt the eggplant slices and let them sit, then pat dry and fry until golden.",
-      "Cook the ground lamb with tomato sauce and a pinch of cinnamon.",
-      "Layer eggplant and meat sauce in a baking dish.",
-      "Top with a generous layer of béchamel sauce.",
-      "Bake at 180°C until golden and bubbling on top.",
-      "Rest for 10 minutes before serving."
-    ]
-  },
-  {
-    title: "New York Cheesecake",
-    category: "Dessert",
-    description: "Rich, creamy, and impossibly smooth — the kind of dessert that makes any dinner feel like a celebration.",
-    image: "https://loremflickr.com/400/300/cheesecake",
-    ingredients: [
-      "2 cups cream cheese",
-      "1 cup graham cracker crumbs",
-      "3 eggs",
-      "1 cup sugar",
-      "1 tsp vanilla extract",
-      "1/4 cup melted butter"
-    ],
-    instructions: [
-      "Mix graham cracker crumbs with melted butter and press into a springform pan.",
-      "Beat cream cheese and sugar until smooth.",
-      "Add eggs one at a time, mixing gently after each.",
-      "Stir in vanilla extract.",
-      "Pour the filling over the crust and bake at 160°C until just set.",
-      "Cool completely, then chill for at least 4 hours before slicing."
-    ]
-  },
-  {
-    title: "Chocolate Lava Cake",
-    category: "Dessert",
-    description: "A warm, rich chocolate cake with a molten center that spills out the moment you cut into it.",
-    image: "https://loremflickr.com/400/300/lavacake",
-    ingredients: [
-      "100g dark chocolate",
+      "2 beef tenderloin steaks",
+      "2 lobster tails",
       "100g butter",
-      "2 eggs",
-      "1/4 cup sugar",
-      "3 tbsp flour"
+      "3 garlic cloves, crushed",
+      "Fresh parsley",
+      "Lemon wedges",
+      "Flaky salt"
     ],
     instructions: [
-      "Melt the chocolate and butter together until smooth.",
-      "Whisk in the eggs and sugar until well combined.",
-      "Fold in the flour gently.",
-      "Pour into greased ramekins.",
-      "Bake at 200°C for 10-12 minutes, until the edges are set but the center is soft.",
-      "Invert onto plates immediately and serve warm."
+      "Season the steaks well and sear in a very hot pan to your preferred doneness, basting with butter and garlic.",
+      "Rest the steaks while you cook the lobster.",
+      "Split the lobster tails and brush generously with garlic butter.",
+      "Grill the lobster flesh-side down first, then flip and baste until opaque.",
+      "Plate the steak and lobster together with any pan butter spooned over.",
+      "Finish with parsley, flaky salt and lemon."
     ]
   },
   {
-    title: "Gulab Jamun",
-    category: "Dessert",
-    description: "Soft, spongy milk dumplings soaked in warm, rose-scented syrup — a beloved South Asian sweet for every celebration.",
-    image: "https://loremflickr.com/400/300/gulabjamun",
+    title: "Chicken Korma (Shahi)",
+    category: "Dinner",
+    wiki: "Korma",
+    image: "",
+    description: "A royal Mughlai curry built on ground almonds, cream and gentle whole spices. Mild, fragrant and unmistakably regal.",
     ingredients: [
-      "1 cup milk powder",
-      "3 tbsp flour",
-      "1/4 cup ghee",
-      "2 cups sugar",
-      "Cardamom pods",
-      "Rose water"
+      "1kg chicken, on the bone",
+      "100g blanched almonds, ground",
+      "200g yoghurt",
+      "150ml cream",
+      "3 onions, fried and blended",
+      "Whole spices (green cardamom, mace, cinnamon)",
+      "4 tbsp ghee"
     ],
     instructions: [
-      "Combine milk powder, flour, and ghee into a soft dough.",
-      "Shape the dough into smooth, crack-free balls.",
-      "Fry the balls on low heat until deeply golden brown.",
-      "Meanwhile, make a sugar syrup with cardamom and a little rose water.",
-      "Add the fried balls to the warm syrup and let them soak for at least 30 minutes.",
-      "Serve warm or at room temperature."
+      "Fry the onions until deep golden, then blend into a smooth paste.",
+      "Temper the whole spices in ghee until fragrant.",
+      "Add the chicken and seal on all sides without browning too heavily.",
+      "Whisk in the yoghurt slowly over low heat to prevent splitting.",
+      "Add the onion paste and ground almonds, simmering until the chicken is tender.",
+      "Finish with cream, rest briefly, and serve with sheermal or naan."
+    ]
+  },
+  {
+    title: "Lobster Roll",
+    category: "Lunch",
+    wiki: "Lobster roll",
+    image: "",
+    description: "Sweet chunks of lobster barely dressed, piled into a buttered, griddled bun. Deceptively simple, seriously expensive, and completely addictive.",
+    ingredients: [
+      "400g cooked lobster meat, chunked",
+      "3 tbsp mayonnaise",
+      "1 celery stalk, finely diced",
+      "1 tbsp lemon juice",
+      "2 tbsp butter",
+      "4 split-top brioche buns",
+      "Chives"
+    ],
+    instructions: [
+      "Fold the lobster meat with mayonnaise, celery and lemon juice — dress it lightly, the lobster is the point.",
+      "Season carefully and chill while you prepare the buns.",
+      "Butter the outsides of the split-top buns generously.",
+      "Griddle the buns on both flat sides until deeply golden and crisp.",
+      "Pile the lobster filling high into each warm bun.",
+      "Scatter with chives and serve immediately."
+    ]
+  },
+  {
+    title: "Truffle Mushroom Pasta",
+    category: "Lunch",
+    wiki: "Tagliatelle",
+    image: "",
+    description: "Silky ribbons of pasta in a cream and mushroom sauce, finished with shaved truffle. The kind of lunch that ruins you for ordinary pasta.",
+    ingredients: [
+      "400g tagliatelle",
+      "400g mixed mushrooms, sliced",
+      "200ml heavy cream",
+      "80g Parmesan, grated",
+      "3 garlic cloves",
+      "2 tbsp truffle oil or fresh truffle",
+      "50g butter"
+    ],
+    instructions: [
+      "Cook the pasta in well-salted water until just shy of al dente, reserving a cup of the water.",
+      "Sear the mushrooms in butter without crowding the pan so they brown rather than steam.",
+      "Add the garlic, then pour in the cream and simmer until slightly thickened.",
+      "Toss the drained pasta through the sauce with a splash of pasta water and the Parmesan.",
+      "Emulsify by tossing vigorously until the sauce coats every strand.",
+      "Finish with shaved truffle or a drizzle of truffle oil off the heat."
+    ]
+  },
+  {
+    title: "Wagyu Beef Burger",
+    category: "Lunch",
+    wiki: "Hamburger",
+    image: "",
+    description: "A thick patty of marbled wagyu, melted cheese, and a toasted brioche bun. An indulgent upgrade on the most democratic food there is.",
+    ingredients: [
+      "500g wagyu beef mince",
+      "4 slices aged cheddar",
+      "4 brioche buns",
+      "1 onion, caramelised",
+      "Lettuce and tomato",
+      "Garlic aioli",
+      "Flaky salt"
+    ],
+    instructions: [
+      "Form the mince into thick patties, handling as little as possible to keep them tender.",
+      "Season only the outside, heavily, just before cooking.",
+      "Sear in a very hot pan for 3 minutes per side, adding cheese in the final minute to melt.",
+      "Toast the brioche buns in the rendered beef fat.",
+      "Spread aioli on both halves, then build with lettuce, tomato and caramelised onion.",
+      "Rest the patty a minute before assembling so the juices stay in."
+    ]
+  },
+  {
+    title: "Chicken Biryani",
+    category: "Lunch",
+    wiki: "Biryani",
+    image: "",
+    description: "Saffron rice layered with spiced chicken and crisp fried onions, steamed under a sealed lid. The undisputed king of the South Asian table.",
+    ingredients: [
+      "1kg chicken, on the bone",
+      "750g aged basmati rice",
+      "400g yoghurt",
+      "4 onions, fried crisp",
+      "Saffron steeped in warm milk",
+      "Whole spices (bay, cardamom, cinnamon, cloves)",
+      "Mint and coriander",
+      "4 tbsp ghee"
+    ],
+    instructions: [
+      "Marinate the chicken in yoghurt, fried onions, herbs and biryani spices for at least 2 hours.",
+      "Parboil the basmati with whole spices until 70 percent done, then drain immediately.",
+      "Cook the marinated chicken until nearly tender, leaving some gravy at the base.",
+      "Spread the rice over the chicken and top with saffron milk, ghee and remaining fried onions.",
+      "Seal the pot tightly and steam on the lowest heat for 30 to 40 minutes.",
+      "Fold gently from the bottom when serving so the layers remain visible."
+    ]
+  },
+  {
+    title: "Eggs Benedict with Smoked Salmon",
+    category: "Lunch",
+    wiki: "Eggs Benedict",
+    image: "",
+    description: "Poached eggs and silky hollandaise over toasted muffins and smoked salmon. Brunch's most elegant plate, and the yolk break is the whole event.",
+    ingredients: [
+      "4 eggs, for poaching",
+      "2 English muffins, split",
+      "200g smoked salmon",
+      "3 egg yolks",
+      "150g butter, melted",
+      "1 tbsp lemon juice",
+      "White vinegar",
+      "Fresh dill"
+    ],
+    instructions: [
+      "Whisk the egg yolks with lemon juice over a bain-marie until pale and thickened.",
+      "Stream in the warm melted butter slowly, whisking constantly, to form hollandaise. Keep it warm.",
+      "Poach the eggs in barely simmering water with a splash of vinegar for 3 minutes.",
+      "Toast the muffin halves until golden.",
+      "Layer smoked salmon over each muffin half, then a poached egg.",
+      "Spoon hollandaise generously over the top and finish with dill."
+    ]
+  },
+  {
+    title: "Seafood Linguine",
+    category: "Lunch",
+    wiki: "Linguine",
+    image: "",
+    description: "Linguine tossed with prawns, clams and mussels in garlic, white wine and chilli. Bright, briny and effortlessly impressive.",
+    ingredients: [
+      "400g linguine",
+      "250g prawns",
+      "300g clams",
+      "300g mussels",
+      "150ml dry white wine",
+      "4 garlic cloves, sliced",
+      "1 red chilli, sliced",
+      "Fresh parsley",
+      "Olive oil"
+    ],
+    instructions: [
+      "Cook the linguine until just under al dente, reserving pasta water.",
+      "Gently sizzle the garlic and chilli in olive oil without browning.",
+      "Add the clams and mussels with the white wine, then cover until they open.",
+      "Add the prawns and cook just until pink.",
+      "Toss the drained linguine into the pan with a splash of pasta water.",
+      "Finish with parsley and a drizzle of good olive oil."
+    ]
+  },
+  {
+    title: "Beef Shawarma Platter",
+    category: "Lunch",
+    wiki: "Shawarma",
+    image: "",
+    description: "Spice-marinated beef shaved thin over rice with garlic sauce and pickles. Street food with genuine depth of flavour.",
+    ingredients: [
+      "800g beef, thinly sliced",
+      "3 tbsp shawarma spice blend",
+      "200g yoghurt",
+      "2 tbsp vinegar",
+      "Garlic toum sauce",
+      "Pickled turnips",
+      "Basmati rice to serve"
+    ],
+    instructions: [
+      "Marinate the sliced beef in yoghurt, vinegar and shawarma spices overnight.",
+      "Sear in batches over very high heat so the edges crisp rather than stew.",
+      "Keep the cooked beef warm while you finish the rest.",
+      "Spoon the beef over a bed of warm basmati rice.",
+      "Drizzle generously with garlic toum.",
+      "Serve with pickled turnips and warm flatbread."
+    ]
+  },
+  {
+    title: "Prawn Tempura Udon",
+    category: "Lunch",
+    wiki: "Tempura",
+    image: "",
+    description: "Featherlight battered prawns resting on thick udon noodles in a clean dashi broth. Delicate, precise and deeply satisfying.",
+    ingredients: [
+      "8 large prawns, peeled with tails on",
+      "100g tempura flour",
+      "200ml ice-cold sparkling water",
+      "400g udon noodles",
+      "1 litre dashi broth",
+      "2 tbsp soy sauce",
+      "Spring onions"
+    ],
+    instructions: [
+      "Whisk the tempura flour with ice-cold water very briefly — lumps are correct and essential.",
+      "Dip the prawns and fry at 180°C until pale gold and crisp, then drain.",
+      "Warm the dashi broth and season with soy sauce.",
+      "Cook the udon noodles and divide between bowls.",
+      "Ladle the hot broth over the noodles.",
+      "Rest the tempura prawns on top and scatter with spring onion. Serve at once."
+    ]
+  },
+  {
+    title: "Chicken Caesar Salad with Anchovy Dressing",
+    category: "Lunch",
+    wiki: "Caesar salad",
+    image: "",
+    description: "Crisp romaine in a proper anchovy-and-Parmesan dressing with grilled chicken. Done right, it is far more than a side.",
+    ingredients: [
+      "2 romaine hearts, chopped",
+      "2 chicken breasts, grilled",
+      "4 anchovy fillets",
+      "1 egg yolk",
+      "1 garlic clove",
+      "80g Parmesan",
+      "Juice of half a lemon",
+      "Sourdough croutons"
+    ],
+    instructions: [
+      "Mash the anchovies and garlic into a paste.",
+      "Whisk in the egg yolk and lemon juice, then stream in olive oil to emulsify.",
+      "Stir in most of the grated Parmesan and season carefully — the anchovies are already salty.",
+      "Toss the romaine thoroughly so every leaf is coated.",
+      "Top with sliced grilled chicken and sourdough croutons.",
+      "Shave the remaining Parmesan over and serve immediately."
+    ]
+  },
+  {
+    title: "Crab Cakes with Remoulade",
+    category: "Lunch",
+    wiki: "Crab cake",
+    image: "",
+    description: "Cakes that are almost entirely crab, barely bound, seared to a golden crust. The less filler, the better — and the more expensive.",
+    ingredients: [
+      "500g lump crab meat",
+      "2 tbsp mayonnaise",
+      "1 egg",
+      "2 tbsp breadcrumbs",
+      "1 tsp Dijon mustard",
+      "Remoulade sauce",
+      "Lemon wedges"
+    ],
+    instructions: [
+      "Fold the crab meat gently with mayonnaise, egg, Dijon and just enough breadcrumbs to bind.",
+      "Handle as little as possible to keep the lumps of crab intact.",
+      "Form into thick patties and chill for at least an hour so they hold together.",
+      "Sear in butter over medium heat until deeply golden on both sides.",
+      "Drain briefly on paper.",
+      "Serve with remoulade and lemon wedges."
+    ]
+  },
+  {
+    title: "Chicken Shashlik with Rice",
+    category: "Lunch",
+    wiki: "Shashlik",
+    image: "",
+    description: "Charred chicken skewers with peppers and onion over rice, in a glossy spiced sauce. Colourful, smoky and a reliable crowd-pleaser.",
+    ingredients: [
+      "800g chicken cubes",
+      "2 bell peppers, cubed",
+      "2 onions, cubed",
+      "3 tbsp soy sauce",
+      "2 tbsp tomato ketchup",
+      "1 tbsp vinegar",
+      "Cornflour slurry",
+      "Basmati rice to serve"
+    ],
+    instructions: [
+      "Marinate the chicken cubes in soy sauce and vinegar for an hour.",
+      "Thread onto skewers alternating with peppers and onion.",
+      "Grill over high heat until charred at the edges and cooked through.",
+      "Simmer the ketchup, soy and vinegar together, then thicken with cornflour slurry.",
+      "Arrange the skewers over hot rice.",
+      "Pour the sauce over and serve immediately."
+    ]
+  },
+  {
+    title: "Grilled Halloumi and Pomegranate Salad",
+    category: "Lunch",
+    wiki: "Halloumi",
+    image: "",
+    description: "Salty, squeaky halloumi seared golden against sweet pomegranate and fresh herbs. Bright, textural and genuinely memorable.",
+    ingredients: [
+      "250g halloumi, sliced",
+      "Seeds of 1 pomegranate",
+      "Rocket leaves",
+      "Handful mint leaves",
+      "2 tbsp olive oil",
+      "1 tbsp pomegranate molasses",
+      "Toasted pistachios"
+    ],
+    instructions: [
+      "Pat the halloumi slices completely dry so they sear rather than steam.",
+      "Sear in a dry hot pan until deeply golden on both sides.",
+      "Arrange rocket and mint on a platter.",
+      "Lay the hot halloumi over the leaves.",
+      "Scatter with pomegranate seeds and toasted pistachios.",
+      "Drizzle with olive oil and pomegranate molasses, then serve at once."
+    ]
+  },
+  {
+    title: "Smoked Salmon and Cream Cheese Bagel",
+    category: "Breakfast",
+    wiki: "Bagel",
+    image: "",
+    description: "A chewy bagel, thick cream cheese, silky smoked salmon, capers and red onion. Restrained, expensive, and perfect exactly as it is.",
+    ingredients: [
+      "2 bagels, halved",
+      "150g cream cheese",
+      "200g smoked salmon",
+      "2 tbsp capers",
+      "Half a red onion, thinly sliced",
+      "Fresh dill",
+      "Cracked black pepper"
+    ],
+    instructions: [
+      "Toast the bagel halves until golden at the edges.",
+      "Spread cream cheese thickly while still warm.",
+      "Drape the smoked salmon generously over each half.",
+      "Scatter with capers and thin red onion slices.",
+      "Finish with fresh dill and plenty of cracked pepper."
+    ]
+  },
+  {
+    title: "Eggs Royale",
+    category: "Breakfast",
+    wiki: "Eggs Benedict",
+    image: "",
+    description: "Poached eggs and hollandaise over smoked salmon and muffins. The brunch order that always feels like a small luxury.",
+    ingredients: [
+      "4 eggs",
+      "2 English muffins, split",
+      "200g smoked salmon",
+      "3 egg yolks",
+      "150g melted butter",
+      "1 tbsp lemon juice",
+      "Chives"
+    ],
+    instructions: [
+      "Make the hollandaise by whisking yolks and lemon over gentle heat, then streaming in melted butter.",
+      "Poach the eggs in barely simmering water for about 3 minutes until the whites set but yolks stay liquid.",
+      "Toast the muffin halves.",
+      "Layer smoked salmon over each half.",
+      "Top with a poached egg and a generous spoon of hollandaise.",
+      "Scatter chives and serve immediately."
+    ]
+  },
+  {
+    title: "Truffle Scrambled Eggs",
+    category: "Breakfast",
+    wiki: "Scrambled eggs",
+    image: "",
+    description: "Eggs cooked low and slow into soft curds, enriched with butter and crowned with shaved truffle. Breakfast elevated to something indulgent.",
+    ingredients: [
+      "6 eggs",
+      "50g butter",
+      "2 tbsp cream",
+      "Shaved black truffle or truffle oil",
+      "Chives",
+      "Sourdough toast",
+      "Flaky salt"
+    ],
+    instructions: [
+      "Beat the eggs lightly with cream — do not over-whisk.",
+      "Melt butter in a pan over the lowest possible heat.",
+      "Add the eggs and stir slowly and constantly with a spatula.",
+      "Remove from the heat while still slightly underdone; residual heat finishes them.",
+      "Spoon over toasted sourdough.",
+      "Shave truffle over the top, season with flaky salt and chives."
+    ]
+  },
+  {
+    title: "Halwa Puri",
+    category: "Breakfast",
+    wiki: "Halwa puri",
+    image: "",
+    description: "Puffed fried bread with sweet semolina halwa and spiced chickpeas. The Pakistani weekend breakfast that turns a morning into an event.",
+    ingredients: [
+      "2 cups flour (for puri)",
+      "1 cup semolina",
+      "1 cup sugar",
+      "2 cups boiled chickpeas",
+      "4 tbsp ghee",
+      "Cardamom powder",
+      "Chaat masala"
+    ],
+    instructions: [
+      "Knead a stiff dough for the puri and rest it for 30 minutes.",
+      "Roll into small rounds and deep fry until they puff dramatically and turn golden.",
+      "Toast the semolina in ghee until it smells nutty and turns light brown.",
+      "Add sugar syrup and cardamom to the semolina, cooking until thick and glossy.",
+      "Cook the chickpeas with spices into a thick curry.",
+      "Serve all three together while the puri is still hot."
+    ]
+  },
+  {
+    title: "Belgian Waffles with Berries and Cream",
+    category: "Breakfast",
+    wiki: "Waffle",
+    image: "",
+    description: "Deep-pocketed waffles, crisp outside and tender within, buried under berries and cream. A weekend breakfast worth waking up for.",
+    ingredients: [
+      "250g flour",
+      "2 eggs, separated",
+      "350ml milk",
+      "100g melted butter",
+      "2 tbsp sugar",
+      "Mixed berries",
+      "Whipped cream",
+      "Maple syrup"
+    ],
+    instructions: [
+      "Whisk the flour, sugar, egg yolks, milk and melted butter into a smooth batter.",
+      "Beat the egg whites to soft peaks and fold them in gently — this is what makes them light.",
+      "Pour into a preheated waffle iron and cook until deeply golden and crisp.",
+      "Stack on a warm plate.",
+      "Top with mixed berries and whipped cream.",
+      "Finish with maple syrup and serve immediately."
+    ]
+  },
+  {
+    title: "Shakshuka",
+    category: "Breakfast",
+    wiki: "Shakshuka",
+    image: "",
+    description: "Eggs poached into a spiced tomato and pepper sauce, served straight from the pan with bread for scooping. Communal, generous and comforting.",
+    ingredients: [
+      "6 eggs",
+      "800g chopped tomatoes",
+      "2 red peppers, sliced",
+      "1 onion, diced",
+      "4 garlic cloves",
+      "2 tsp cumin",
+      "2 tsp paprika",
+      "Feta and parsley to finish"
+    ],
+    instructions: [
+      "Soften the onion and peppers in olive oil until sweet.",
+      "Add the garlic, cumin and paprika, cooking until fragrant.",
+      "Pour in the tomatoes and simmer until thick and jammy.",
+      "Make wells in the sauce and crack an egg into each.",
+      "Cover and cook until the whites set but the yolks remain runny.",
+      "Crumble feta over, scatter parsley, and serve with bread."
+    ]
+  },
+  {
+    title: "Croque Madame",
+    category: "Breakfast",
+    wiki: "Croque monsieur",
+    image: "",
+    description: "Ham and Gruyère toasted under béchamel, crowned with a fried egg. French café food at its most satisfying.",
+    ingredients: [
+      "4 slices good white bread",
+      "4 slices ham",
+      "150g Gruyère, grated",
+      "300ml béchamel sauce",
+      "2 eggs",
+      "Butter",
+      "Dijon mustard"
+    ],
+    instructions: [
+      "Spread Dijon on the bread and layer with ham and half the Gruyère.",
+      "Close the sandwiches and butter the outsides.",
+      "Griddle until golden on both sides.",
+      "Spoon béchamel over the tops and blanket with the remaining Gruyère.",
+      "Grill until bubbling and browned.",
+      "Top each with a fried egg and serve immediately."
+    ]
+  },
+  {
+    title: "Nihari-Style Breakfast Paya",
+    category: "Breakfast",
+    wiki: "Paya (food)",
+    image: "",
+    description: "Slow-cooked trotters in a rich, spiced broth — a traditional Pakistani breakfast that takes all night and rewards every hour.",
+    ingredients: [
+      "4 trotters, cleaned thoroughly",
+      "3 onions, sliced",
+      "3 tbsp ginger garlic paste",
+      "2 tbsp paya masala",
+      "Ginger julienne and coriander",
+      "150ml oil"
+    ],
+    instructions: [
+      "Brown the onions in oil until deep golden.",
+      "Add the ginger garlic paste and paya masala, cooking until fragrant.",
+      "Add the cleaned trotters and plenty of water.",
+      "Simmer on the lowest heat for 6 to 8 hours until the broth turns rich and gelatinous.",
+      "Skim occasionally and adjust the seasoning near the end.",
+      "Serve steaming with naan, ginger julienne and fresh coriander."
+    ]
+  },
+  {
+    title: "Avocado Toast with Poached Egg",
+    category: "Breakfast",
+    wiki: "Avocado toast",
+    image: "",
+    description: "Sourdough, crushed avocado, a soft poached egg and chilli flakes. Simple, bright, and quietly perfect.",
+    ingredients: [
+      "2 slices sourdough",
+      "1 ripe avocado",
+      "2 eggs",
+      "1 tbsp lemon juice",
+      "Chilli flakes",
+      "Olive oil",
+      "Flaky salt"
+    ],
+    instructions: [
+      "Toast the sourdough until crisp and golden.",
+      "Crush the avocado roughly with lemon juice and salt — keep some texture.",
+      "Poach the eggs in barely simmering water for 3 minutes.",
+      "Spread the avocado thickly over the toast.",
+      "Set a poached egg on each slice.",
+      "Finish with olive oil, chilli flakes and flaky salt."
+    ]
+  },
+  {
+    title: "French Toast Brioche with Berries",
+    category: "Breakfast",
+    wiki: "French toast",
+    image: "",
+    description: "Thick brioche soaked in vanilla custard and fried in butter until caramelised. Closer to dessert than breakfast, and no one is complaining.",
+    ingredients: [
+      "4 thick brioche slices",
+      "3 eggs",
+      "200ml cream",
+      "2 tbsp sugar",
+      "1 tsp vanilla extract",
+      "Butter for frying",
+      "Mixed berries",
+      "Icing sugar"
+    ],
+    instructions: [
+      "Whisk the eggs, cream, sugar and vanilla into a custard.",
+      "Soak the brioche slices thoroughly — brioche can take more than ordinary bread.",
+      "Fry in generous butter over medium heat until deeply caramelised on both sides.",
+      "Do not rush the heat, or the outside burns before the centre sets.",
+      "Stack on warm plates with berries.",
+      "Dust with icing sugar and serve immediately."
+    ]
+  },
+  {
+    title: "Steak and Eggs",
+    category: "Breakfast",
+    wiki: "Steak and eggs",
+    image: "",
+    description: "A seared steak beside fried eggs with runny yolks. Unapologetically hearty, and the yolk doubles as the sauce.",
+    ingredients: [
+      "2 sirloin or ribeye steaks",
+      "4 eggs",
+      "2 tbsp butter",
+      "1 garlic clove",
+      "Fresh thyme",
+      "Flaky salt and cracked pepper"
+    ],
+    instructions: [
+      "Season the steaks heavily and bring to room temperature.",
+      "Sear in a very hot pan to your preferred doneness, basting with butter, garlic and thyme.",
+      "Rest the steaks on a warm plate.",
+      "Fry the eggs in the same pan so they pick up the beef fat.",
+      "Cook until the whites set but the yolks stay liquid.",
+      "Plate together and finish with flaky salt and cracked pepper."
+    ]
+  },
+  {
+    title: "Chocolate Soufflé",
+    category: "Dessert",
+    wiki: "Soufflé",
+    image: "",
+    description: "A dark chocolate soufflé that rises dramatically and collapses the moment you break it. Technically demanding, emotionally rewarding.",
+    ingredients: [
+      "200g dark chocolate (70%)",
+      "4 egg yolks",
+      "6 egg whites",
+      "100g caster sugar",
+      "50g butter",
+      "Butter and sugar for the ramekins",
+      "Icing sugar to dust"
+    ],
+    instructions: [
+      "Butter the ramekins and coat with sugar, brushing upward so the soufflé can climb.",
+      "Melt the chocolate with butter, then beat in the egg yolks.",
+      "Whisk the egg whites to soft peaks, adding sugar gradually until glossy.",
+      "Fold a third of the whites into the chocolate to loosen it, then fold in the rest gently.",
+      "Fill the ramekins to the rim and level the tops.",
+      "Bake at 190°C for 12 to 14 minutes without opening the oven. Dust and serve immediately."
+    ]
+  },
+  {
+    title: "Crème Brûlée",
+    category: "Dessert",
+    wiki: "Crème brûlée",
+    image: "",
+    description: "Silky vanilla custard under a glass-thin sheet of caramel. That first crack of the spoon is one of dessert's great pleasures.",
+    ingredients: [
+      "500ml heavy cream",
+      "1 vanilla pod, split",
+      "6 egg yolks",
+      "100g caster sugar",
+      "Extra sugar for the top"
+    ],
+    instructions: [
+      "Infuse the cream with the split vanilla pod over gentle heat, then let it steep.",
+      "Whisk the egg yolks with sugar until pale.",
+      "Slowly pour the warm cream into the yolks, whisking constantly to avoid scrambling.",
+      "Strain the custard and pour into ramekins.",
+      "Bake in a water bath at 150°C until just set with a slight wobble, then chill fully.",
+      "Sprinkle sugar over each and torch until deeply caramelised. Serve within minutes."
     ]
   },
   {
     title: "Tiramisu",
     category: "Dessert",
-    description: "Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa — an Italian dessert built for slow enjoyment.",
-    image: "https://loremflickr.com/400/300/tiramisu",
+    wiki: "Tiramisu",
+    image: "",
+    description: "Espresso-soaked savoiardi layered with mascarpone cream and dusted with cocoa. Best made the day before, which makes it merciful as well as delicious.",
     ingredients: [
-      "1 cup mascarpone cheese",
-      "2 eggs, separated",
-      "1/4 cup sugar",
-      "1 cup strong espresso, cooled",
-      "Ladyfinger biscuits",
+      "300g mascarpone",
+      "4 eggs, separated",
+      "100g caster sugar",
+      "300ml strong espresso, cooled",
+      "3 tbsp Marsala or coffee liqueur",
+      "24 savoiardi biscuits",
       "Cocoa powder"
     ],
     instructions: [
-      "Whisk egg yolks with sugar until pale, then fold in mascarpone.",
-      "In a separate bowl, whisk egg whites to soft peaks and fold into the mascarpone mixture.",
-      "Dip each ladyfinger briefly into the cooled espresso.",
-      "Layer the soaked ladyfingers and mascarpone mixture in a dish.",
-      "Repeat the layers, finishing with the cream on top.",
-      "Dust generously with cocoa powder and chill for several hours before serving."
+      "Whisk the egg yolks with sugar until pale and thick, then beat in the mascarpone.",
+      "Whisk the egg whites to soft peaks and fold them through gently.",
+      "Combine the cooled espresso with the Marsala in a shallow dish.",
+      "Dip each savoiardi briefly — a second per side, no more, or they collapse.",
+      "Layer soaked biscuits and mascarpone cream twice, finishing with cream.",
+      "Chill at least 6 hours, then dust heavily with cocoa just before serving."
     ]
   },
   {
     title: "Baklava",
     category: "Dessert",
-    description: "Crisp, buttery layers of phyllo pastry filled with nuts and soaked in honey syrup — sweet, crunchy, and irresistible.",
-    image: "https://loremflickr.com/400/300/baklava",
+    wiki: "Baklava",
+    image: "",
+    description: "Dozens of paper-thin pastry layers with pistachios and butter, drenched in syrup. Sticky, shattering and unapologetically sweet.",
     ingredients: [
-      "Phyllo pastry sheets",
-      "2 cups walnuts, chopped",
-      "1 cup butter, melted",
-      "1 cup honey",
-      "1/2 cup sugar",
-      "Cinnamon"
-    ],
-    instructions: [
-      "Layer several buttered phyllo sheets in a baking dish.",
-      "Sprinkle a layer of chopped walnuts and cinnamon over the top.",
-      "Repeat the layering, brushing butter between every few sheets.",
-      "Cut into diamond shapes before baking.",
-      "Bake at 160°C until golden and crisp.",
-      "Pour warm honey syrup over the hot baklava and let it soak in before serving."
-    ]
-  },
-  {
-    title: "Apple Pie",
-    category: "Dessert",
-    description: "A classic double-crust pie packed with cinnamon-spiced apples — the smell alone feels like home.",
-    image: "https://loremflickr.com/400/300/applepie",
-    ingredients: [
-      "Pie crust (top and bottom)",
-      "6 apples, peeled and sliced",
-      "3/4 cup sugar",
-      "1 tsp cinnamon",
-      "2 tbsp butter",
+      "400g phyllo pastry",
+      "300g pistachios, chopped",
+      "250g butter, melted",
+      "300g sugar",
+      "250ml water",
+      "2 tbsp honey",
       "1 tbsp lemon juice"
     ],
     instructions: [
-      "Toss the sliced apples with sugar, cinnamon, and lemon juice.",
-      "Line a pie dish with the bottom crust.",
-      "Fill with the apple mixture and dot with butter.",
-      "Cover with the top crust, sealing and crimping the edges.",
-      "Cut a few slits for steam to escape.",
-      "Bake at 190°C until the crust is golden and the filling is bubbling."
+      "Brush each phyllo sheet with melted butter, layering about ten as the base.",
+      "Scatter a layer of chopped pistachios, then continue layering buttered phyllo.",
+      "Repeat until all the nuts are used, finishing with about ten buttered sheets on top.",
+      "Cut into diamonds all the way through before baking — this is essential.",
+      "Bake at 160°C for about 50 minutes until golden and crisp.",
+      "Pour cooled syrup over the hot baklava and let it soak for several hours."
     ]
   },
   {
-    title: "Kheer (Rice Pudding)",
+    title: "Opera Cake",
     category: "Dessert",
-    description: "Creamy rice slowly simmered in sweetened milk with cardamom and nuts — a gentle, fragrant dessert loved across South Asia.",
-    image: "https://loremflickr.com/400/300/kheer",
+    wiki: "Opéra cake",
+    image: "",
+    description: "Layers of almond sponge, coffee buttercream and chocolate ganache under a mirror glaze. A patisserie classic that demands precision.",
     ingredients: [
-      "1/2 cup rice",
-      "1 liter milk",
-      "1/2 cup sugar",
-      "Cardamom pods",
-      "Almonds and pistachios, chopped"
+      "Almond joconde sponge (3 thin layers)",
+      "Coffee syrup",
+      "300g coffee buttercream",
+      "300g dark chocolate ganache",
+      "Chocolate glaze",
+      "Gold leaf to finish"
     ],
     instructions: [
-      "Simmer the rice in milk over low heat, stirring occasionally.",
-      "Cook until the rice is very soft and the milk has thickened.",
-      "Stir in the sugar and cardamom.",
-      "Continue simmering until the pudding reaches a creamy consistency.",
-      "Garnish with chopped almonds and pistachios.",
-      "Serve warm or chilled."
+      "Bake three thin almond joconde sponge layers and cool completely flat.",
+      "Brush the first layer generously with coffee syrup.",
+      "Spread an even layer of coffee buttercream, then chill until firm.",
+      "Add the second sponge, syrup, and a layer of ganache; chill again.",
+      "Repeat with the third layer and finish with a smooth chocolate glaze.",
+      "Chill thoroughly, then trim the edges cleanly and cut into precise rectangles."
     ]
   },
   {
-    title: "Panna Cotta with Berry Coulis",
+    title: "Gulab Jamun",
     category: "Dessert",
-    description: "A silky Italian cream dessert that wobbles gently on the spoon, topped with a bright berry sauce.",
-    image: "https://loremflickr.com/400/300/pannacotta",
+    wiki: "Gulab jamun",
+    image: "",
+    description: "Milk-solid dumplings fried slowly and soaked in cardamom and rose syrup. No South Asian celebration is complete without them.",
     ingredients: [
-      "2 cups heavy cream",
-      "1/3 cup sugar",
-      "1 tsp vanilla extract",
-      "2 tsp gelatin",
-      "1 cup mixed berries"
+      "200g khoya or milk powder",
+      "3 tbsp flour",
+      "1 tsp semolina",
+      "400g sugar",
+      "400ml water",
+      "6 cardamom pods",
+      "1 tsp rose water",
+      "Ghee for frying"
     ],
     instructions: [
-      "Heat the cream with sugar and vanilla until warm but not boiling.",
-      "Dissolve the gelatin in a little water, then stir into the warm cream.",
-      "Pour into molds and refrigerate until fully set, about 4 hours.",
-      "Blend the mixed berries into a smooth coulis.",
-      "Unmold the panna cotta onto plates.",
-      "Spoon the berry coulis over the top and serve."
+      "Knead the khoya, flour and semolina into a smooth, crack-free dough.",
+      "Roll into perfectly smooth balls — any cracks will split during frying.",
+      "Fry very slowly in medium-warm ghee, turning constantly until evenly deep brown.",
+      "Simmer the sugar, water and cardamom into a light syrup and add rose water.",
+      "Drop the hot jamun into the warm syrup.",
+      "Let them soak for at least 2 hours until doubled and saturated."
     ]
   },
   {
-    title: "Churros with Chocolate Dip",
+    title: "Pistachio Kulfi",
     category: "Dessert",
-    description: "Crispy, cinnamon-sugar-coated fried dough sticks with a warm chocolate sauce for dipping.",
-    image: "https://loremflickr.com/400/300/churros",
+    wiki: "Kulfi",
+    image: "",
+    description: "Milk reduced for hours into something dense and intensely creamy, frozen with pistachio and cardamom. Richer than any ice cream.",
     ingredients: [
-      "1 cup water",
-      "1/2 cup butter",
-      "1 cup flour",
-      "2 eggs",
-      "Cinnamon sugar for coating",
-      "200g dark chocolate for dipping"
+      "2 litres full-cream milk",
+      "150g sugar",
+      "100g pistachios, ground",
+      "6 cardamom pods, crushed",
+      "Pinch of saffron"
     ],
     instructions: [
-      "Bring water and butter to a boil, then stir in flour until a dough forms.",
-      "Beat in the eggs one at a time until smooth and glossy.",
-      "Pipe the dough into hot oil in strips.",
-      "Fry until golden and crisp, then drain.",
-      "Roll the churros in cinnamon sugar while still warm.",
-      "Melt the chocolate and serve alongside for dipping."
+      "Simmer the milk over low heat, stirring often, until it reduces to about a third.",
+      "This takes an hour or more — the slow reduction is what creates the texture.",
+      "Stir in the sugar, ground pistachios, cardamom and saffron.",
+      "Cook a further 10 minutes until thick and fragrant.",
+      "Pour into kulfi moulds and freeze for at least 6 hours.",
+      "Dip the moulds briefly in warm water to release, then serve."
     ]
   },
   {
-    title: "Fruit Tart",
+    title: "Molten Chocolate Lava Cake",
     category: "Dessert",
-    description: "A buttery pastry shell filled with silky custard and topped with fresh, colorful fruit.",
-    image: "https://loremflickr.com/400/300/fruittart",
+    wiki: "Molten chocolate cake",
+    image: "",
+    description: "A cake with a deliberately unset centre that floods the plate the moment you cut it. Timing is everything, and the payoff is enormous.",
     ingredients: [
-      "1 baked tart shell",
-      "1.5 cups vanilla custard",
-      "Mixed berries and sliced kiwi",
-      "2 tbsp apricot jam, warmed"
+      "200g dark chocolate",
+      "200g butter",
+      "4 eggs",
+      "4 egg yolks",
+      "150g sugar",
+      "80g flour",
+      "Cocoa for dusting the moulds"
     ],
     instructions: [
-      "Let the baked tart shell cool completely.",
-      "Fill the shell with the cooled vanilla custard.",
-      "Arrange the fruit decoratively over the top.",
-      "Warm the apricot jam and brush it gently over the fruit for shine.",
-      "Chill for at least an hour before serving."
-    ]
-  },
-  {
-    title: "Kulfi",
-    category: "Dessert",
-    description: "A dense, creamy frozen dessert made from slowly reduced milk — South Asia's answer to ice cream.",
-    image: "https://loremflickr.com/400/300/kulfi",
-    ingredients: [
-      "1 liter full-cream milk",
-      "1/2 cup sugar",
-      "Cardamom pods",
-      "Pistachios, chopped"
-    ],
-    instructions: [
-      "Simmer the milk slowly, stirring often, until it reduces by about half.",
-      "Stir in the sugar and cardamom, continuing to simmer until thick.",
-      "Pour the mixture into kulfi molds or small cups.",
-      "Sprinkle with chopped pistachios.",
-      "Freeze for at least 6 hours, or overnight, until solid.",
-      "Unmold and serve immediately."
-    ]
-  },
-  {
-    title: "Red Velvet Cupcakes",
-    category: "Dessert",
-    description: "Moist, vividly colored cupcakes topped with tangy cream cheese frosting — a little indulgence in every bite.",
-    image: "https://loremflickr.com/400/300/redvelvet",
-    ingredients: [
-      "1.5 cups flour",
-      "2 tbsp cocoa powder",
-      "1 cup buttermilk",
-      "Red food coloring",
-      "1 cup cream cheese for frosting",
-      "1/2 cup butter"
-    ],
-    instructions: [
-      "Whisk together the flour and cocoa powder.",
-      "Cream the butter and sugar, then add eggs and buttermilk.",
-      "Stir in a small amount of red food coloring.",
-      "Combine wet and dry ingredients until smooth.",
-      "Bake in a lined muffin tin at 175°C for about 18 minutes.",
-      "Cool completely, then top with cream cheese frosting."
-    ]
-  },
-  {
-    title: "Chocolate Chip Cookies",
-    category: "Dessert",
-    description: "Crisp on the edges, soft in the middle, and loaded with melting chocolate chips — a timeless classic.",
-    image: "https://loremflickr.com/400/300/cookies",
-    ingredients: [
-      "2.25 cups flour",
-      "1 cup butter, softened",
-      "3/4 cup brown sugar",
-      "3/4 cup sugar",
-      "2 eggs",
-      "2 cups chocolate chips"
-    ],
-    instructions: [
-      "Cream the butter with brown sugar and sugar until fluffy.",
-      "Beat in the eggs one at a time.",
-      "Gradually mix in the flour until just combined.",
-      "Fold in the chocolate chips.",
-      "Drop spoonfuls of dough onto a baking sheet.",
-      "Bake at 175°C for 10-12 minutes until golden at the edges."
-    ]
-  },
-  {
-    title: "Milk Cake (Doodh Cake)",
-    category: "Dessert",
-    description: "A dense, sweet milk cake with a caramelized top — soaked in syrup and full of gentle cardamom warmth.",
-    image: "https://loremflickr.com/400/300/milkcake",
-    ingredients: [
-      "1 liter full-cream milk",
-      "1/2 cup semolina",
-      "3/4 cup sugar",
-      "2 tbsp ghee",
-      "Cardamom powder"
-    ],
-    instructions: [
-      "Simmer the milk until it thickens and reduces significantly.",
-      "Stir in the semolina and cook until the mixture thickens further.",
-      "Add ghee and cardamom, mixing well.",
-      "Pour into a greased tray and let it set.",
-      "Prepare a light sugar syrup and pour over the cooled cake.",
-      "Cut into squares once the syrup has soaked in."
+      "Butter and cocoa-dust the ramekins thoroughly so the cakes release cleanly.",
+      "Melt the chocolate and butter together until smooth.",
+      "Whisk the eggs, yolks and sugar until pale and thick.",
+      "Fold the chocolate into the eggs, then fold in the flour.",
+      "Fill the ramekins and bake at 200°C for exactly 10 to 12 minutes — the edges set, the centre must not.",
+      "Turn out onto plates immediately and serve with ice cream."
     ]
   },
   {
     title: "Rasmalai",
     category: "Dessert",
-    description: "Soft cheese dumplings soaked in sweetened, saffron-scented milk — a delicate, festive South Asian dessert.",
-    image: "https://loremflickr.com/400/300/rasmalai",
+    wiki: "Rasmalai",
+    image: "",
+    description: "Delicate cheese discs resting in saffron-thickened milk, scattered with pistachios. Light, fragrant and endlessly elegant.",
     ingredients: [
-      "1 liter milk (for chenna)",
-      "1 liter milk (for rabri)",
-      "Sugar",
-      "Saffron strands",
-      "Pistachios, chopped"
+      "2 litres milk (for chenna)",
+      "1 litre milk (for rabri)",
+      "400g sugar",
+      "Pinch of saffron",
+      "6 cardamom pods",
+      "Pistachios and almonds, slivered",
+      "2 tbsp lemon juice"
     ],
     instructions: [
-      "Curdle the first liter of milk to make chenna, then drain and knead until smooth.",
-      "Shape into small flat discs and boil gently in sugar syrup until they puff up.",
-      "Meanwhile, reduce the second liter of milk with sugar and saffron until thick (rabri).",
-      "Gently squeeze excess syrup from the chenna discs.",
-      "Soak the discs in the warm, thickened milk.",
-      "Chill and garnish with pistachios before serving."
+      "Curdle the first batch of milk with lemon juice, then drain the chenna through muslin.",
+      "Knead the chenna until completely smooth and shape into small flat discs.",
+      "Boil the discs in sugar syrup until they puff and almost double.",
+      "Separately reduce the second batch of milk with sugar, saffron and cardamom into rabri.",
+      "Gently squeeze the syrup from the discs and slip them into the warm rabri.",
+      "Chill thoroughly and garnish with slivered nuts before serving."
     ]
   },
   {
-    title: "Cannoli",
+    title: "New York Cheesecake",
     category: "Dessert",
-    description: "Crisp fried pastry tubes filled with sweet, creamy ricotta — a beloved Sicilian treat.",
-    image: "https://loremflickr.com/400/300/cannoli",
+    wiki: "Cheesecake",
+    image: "",
+    description: "Dense, tall and impossibly creamy on a buttery crumb base. Baked low and slow, then chilled overnight — patience is the recipe.",
     ingredients: [
-      "Cannoli shells (store-bought or homemade)",
-      "2 cups ricotta cheese",
-      "1/2 cup powdered sugar",
-      "Mini chocolate chips",
-      "Pistachios, chopped"
-    ],
-    instructions: [
-      "Beat the ricotta with powdered sugar until smooth and creamy.",
-      "Fold in mini chocolate chips.",
-      "Pipe the filling into each cannoli shell from both ends.",
-      "Dip the ends into chopped pistachios.",
-      "Serve immediately to keep the shells crisp."
-    ]
-  },
-  {
-    title: "Chocolate Brownies",
-    category: "Dessert",
-    description: "Dense, fudgy squares of chocolate that hit that perfect balance between cake and candy.",
-    image: "https://loremflickr.com/400/300/brownies",
-    ingredients: [
-      "200g dark chocolate",
-      "1 cup butter",
-      "1.5 cups sugar",
-      "3 eggs",
-      "1 cup flour",
-      "1/2 cup cocoa powder"
-    ],
-    instructions: [
-      "Melt the chocolate and butter together until smooth.",
-      "Whisk in the sugar, then the eggs one at a time.",
-      "Fold in the flour and cocoa powder until just combined.",
-      "Pour into a lined baking pan.",
-      "Bake at 175°C for 25-30 minutes, until just set in the center.",
-      "Cool completely before slicing into squares."
-    ]
-  },
-  {
-    title: "Halwa (Sooji Halwa)",
-    category: "Dessert",
-    description: "Warm, ghee-toasted semolina pudding — a simple dessert that feels like it's been made with love for generations.",
-    image: "https://loremflickr.com/400/300/halwa",
-    ingredients: [
-      "1 cup semolina",
-      "1/2 cup ghee",
-      "1 cup sugar",
-      "2 cups water",
-      "Cardamom powder",
-      "Almonds, sliced"
-    ],
-    instructions: [
-      "Toast the semolina in ghee over low heat until golden and fragrant.",
-      "In a separate pot, dissolve the sugar in water and bring to a simmer.",
-      "Slowly pour the sugar syrup into the toasted semolina, stirring constantly.",
-      "Add cardamom powder and continue cooking until thick.",
-      "Cook until the ghee separates slightly from the mixture.",
-      "Garnish with sliced almonds and serve warm."
-    ]
-  },
-  {
-    title: "Pavlova with Fresh Cream",
-    category: "Dessert",
-    description: "A crisp meringue shell with a soft, marshmallowy center, piled high with cream and fruit.",
-    image: "https://loremflickr.com/400/300/pavlova",
-    ingredients: [
-      "4 egg whites",
-      "1 cup sugar",
-      "1 tsp vinegar",
-      "1 cup whipped cream",
-      "Fresh strawberries and kiwi"
-    ],
-    instructions: [
-      "Whisk the egg whites to soft peaks, then gradually add sugar until stiff and glossy.",
-      "Fold in the vinegar gently.",
-      "Shape the meringue into a round on a lined tray.",
-      "Bake at low heat until crisp outside and soft inside, then cool completely.",
-      "Top with whipped cream just before serving.",
-      "Arrange fresh fruit over the cream and serve immediately."
-    ]
-  },
-  {
-    title: "Banana Bread",
-    category: "Dessert",
-    description: "Moist, sweet, and full of ripe banana flavor — the kind of bake that makes a kitchen smell like home.",
-    image: "https://loremflickr.com/400/300/bananabread",
-    ingredients: [
-      "3 ripe bananas, mashed",
-      "1/3 cup melted butter",
-      "3/4 cup sugar",
-      "1 egg",
-      "1.5 cups flour",
-      "1 tsp baking soda"
-    ],
-    instructions: [
-      "Mix the mashed bananas with melted butter.",
-      "Stir in sugar and the egg.",
-      "Sprinkle baking soda and a pinch of salt over the mixture and stir in.",
-      "Fold in the flour until just combined.",
-      "Pour into a greased loaf pan.",
-      "Bake at 175°C for about 50-60 minutes, until a toothpick comes out clean."
-    ]
-  },
-  {
-    title: "Carrot Cake with Cream Cheese Frosting",
-    category: "Dessert",
-    description: "Spiced, moist cake studded with grated carrot, finished with tangy cream cheese frosting.",
-    image: "https://loremflickr.com/400/300/carrotcake",
-    ingredients: [
-      "2 cups grated carrot",
-      "1.5 cups flour",
-      "1 cup sugar",
-      "3 eggs",
-      "1 cup oil",
-      "Cinnamon",
-      "1 cup cream cheese for frosting"
-    ],
-    instructions: [
-      "Whisk together flour, sugar, and cinnamon.",
-      "In another bowl, beat eggs and oil, then stir in grated carrot.",
-      "Combine wet and dry ingredients until just mixed.",
-      "Pour into a greased cake pan and bake at 175°C for about 35 minutes.",
-      "Cool completely before frosting.",
-      "Spread with cream cheese frosting and slice to serve."
-    ]
-  },
-  {
-    title: "Tres Leches Cake",
-    category: "Dessert",
-    description: "A soft sponge cake soaked in three kinds of milk — sweet, rich, and irresistibly moist.",
-    image: "https://loremflickr.com/400/300/tresleches",
-    ingredients: [
-      "1 sponge cake, baked",
-      "1 can evaporated milk",
-      "1 can condensed milk",
-      "1/2 cup heavy cream",
-      "Whipped cream for topping"
-    ],
-    instructions: [
-      "Poke holes all over the cooled sponge cake.",
-      "Combine the evaporated milk, condensed milk, and heavy cream.",
-      "Slowly pour the milk mixture over the cake, letting it soak in.",
-      "Refrigerate for at least 2 hours to fully absorb.",
-      "Top with a generous layer of whipped cream.",
-      "Slice and serve chilled."
-    ]
-  },
-  {
-    title: "Flan (Caramel Custard)",
-    category: "Dessert",
-    description: "Silky baked custard with a layer of soft caramel — simple ingredients turned into something elegant.",
-    image: "https://loremflickr.com/400/300/flan",
-    ingredients: [
-      "1 cup sugar (for caramel)",
+      "900g cream cheese, room temperature",
+      "200g caster sugar",
       "4 eggs",
-      "1 can condensed milk",
-      "1 can evaporated milk",
-      "1 tsp vanilla extract"
+      "200ml sour cream",
+      "1 tsp vanilla extract",
+      "200g digestive biscuits, crushed",
+      "100g melted butter"
     ],
     instructions: [
-      "Melt sugar in a pan until it turns a deep amber caramel, then pour into a baking dish.",
-      "Whisk together eggs, condensed milk, evaporated milk, and vanilla.",
-      "Pour the custard mixture over the caramel in the dish.",
-      "Bake in a water bath at 160°C until just set.",
-      "Cool completely, then chill for several hours.",
-      "Invert onto a plate to release the caramel over the custard before serving."
+      "Mix the biscuit crumbs with melted butter and press firmly into a lined springform tin.",
+      "Beat the cream cheese and sugar until completely smooth, scraping the bowl often.",
+      "Add the eggs one at a time on low speed — overbeating causes cracks.",
+      "Fold in the sour cream and vanilla.",
+      "Bake in a water bath at 160°C for about 70 minutes until the centre barely wobbles.",
+      "Cool in the turned-off oven with the door ajar, then chill overnight before slicing."
     ]
   },
   {
-    title: "Jalebi",
+    title: "Pavlova with Passionfruit",
     category: "Dessert",
-    description: "Crispy, syrup-soaked spirals of fermented batter — bright orange, sticky, and gloriously sweet.",
-    image: "https://loremflickr.com/400/300/jalebi",
+    wiki: "Pavlova (cake)",
+    image: "",
+    description: "A meringue shell that shatters into a marshmallow centre, heaped with cream and sharp passionfruit. Dramatic and surprisingly light.",
     ingredients: [
-      "1 cup flour",
-      "2 tbsp yogurt",
-      "1/2 tsp baking soda",
-      "2 cups sugar",
-      "Saffron strands",
-      "Oil for frying"
+      "6 egg whites",
+      "350g caster sugar",
+      "1 tsp white vinegar",
+      "1 tbsp cornflour",
+      "400ml whipped cream",
+      "4 passionfruit",
+      "Fresh berries"
     ],
     instructions: [
-      "Mix flour, yogurt, and a little water into a smooth batter; let it ferment for a few hours.",
-      "Stir in baking soda just before frying.",
-      "Make a warm sugar syrup with saffron.",
-      "Pipe the batter into hot oil in spiral shapes and fry until crisp.",
-      "Immediately dip the fried jalebi into the warm syrup.",
-      "Let them soak briefly before serving warm."
+      "Whisk the egg whites to soft peaks, then add sugar a spoonful at a time until stiff and glossy.",
+      "Fold in the vinegar and cornflour — these create the soft marshmallow centre.",
+      "Shape into a round with a slight dip in the middle on a lined tray.",
+      "Bake at 120°C for 90 minutes, then cool completely in the turned-off oven.",
+      "Pile whipped cream into the centre just before serving.",
+      "Spoon passionfruit pulp and berries over the top."
     ]
   },
   {
-    title: "Waffles with Maple Syrup",
-    category: "Breakfast",
-    description: "Crisp on the outside, fluffy within, with little pockets perfect for holding warm syrup — a weekend breakfast worth savoring slowly.",
-    image: "https://loremflickr.com/400/300/waffles",
+    title: "Sticky Toffee Pudding",
+    category: "Dessert",
+    wiki: "Sticky toffee pudding",
+    image: "",
+    description: "A dark date sponge drowned in hot toffee sauce. British comfort baking at its most generous — serve it warm, always.",
     ingredients: [
-      "2 cups flour",
-      "2 tbsp sugar",
+      "200g dates, chopped",
+      "250ml boiling water",
+      "1 tsp bicarbonate of soda",
+      "175g flour",
+      "150g brown sugar",
       "2 eggs",
-      "1.75 cups milk",
-      "1/2 cup melted butter",
-      "2 tsp baking powder"
+      "80g butter",
+      "300ml double cream and 200g brown sugar for the sauce"
     ],
     instructions: [
-      "Whisk together flour, sugar, and baking powder.",
-      "In another bowl, beat eggs, milk, and melted butter.",
-      "Combine the wet and dry ingredients until just mixed.",
-      "Pour batter into a preheated waffle iron.",
-      "Cook until golden and crisp.",
-      "Serve hot with maple syrup and butter."
+      "Soak the chopped dates in boiling water with the bicarbonate of soda until softened.",
+      "Cream the butter and sugar, then beat in the eggs.",
+      "Fold in the flour, then the date mixture with its liquid.",
+      "Bake at 180°C for 35 minutes until risen and firm.",
+      "Make the sauce by simmering cream, butter and brown sugar until glossy and thick.",
+      "Pour hot sauce over the warm sponge and serve with cream or ice cream."
     ]
   },
   {
     title: "Macarons",
     category: "Dessert",
-    description: "Delicate almond meringue shells sandwiched around a creamy filling — small, pretty, and a little bit magical to make.",
-    image: "https://loremflickr.com/400/300/macarons",
+    wiki: "Macaron",
+    image: "",
+    description: "Fragile almond shells with ruffled feet sandwiching ganache. The most temperamental thing in any pastry kitchen, and the most satisfying to get right.",
     ingredients: [
-      "1 cup almond flour",
-      "1.75 cups powdered sugar",
-      "3 egg whites",
-      "1/4 cup sugar",
-      "Buttercream filling"
+      "150g ground almonds",
+      "150g icing sugar",
+      "110g egg whites, aged",
+      "150g caster sugar",
+      "Gel food colouring",
+      "200g chocolate ganache filling"
     ],
     instructions: [
-      "Sift together almond flour and powdered sugar.",
-      "Whisk egg whites to soft peaks, gradually adding sugar until glossy and stiff.",
-      "Gently fold the almond mixture into the meringue.",
-      "Pipe small rounds onto a lined baking sheet and let them rest until a skin forms.",
-      "Bake at 150°C until set, then cool completely.",
-      "Sandwich pairs of shells together with buttercream filling."
+      "Sift the ground almonds and icing sugar together twice — texture depends on this.",
+      "Make an Italian meringue by whisking hot sugar syrup into the egg whites until stiff and cooled.",
+      "Fold the almond mixture in until the batter flows like slow lava, no further.",
+      "Pipe even rounds and rap the tray hard on the counter to release air bubbles.",
+      "Rest until a skin forms and the tops are dry to the touch, about 30 minutes.",
+      "Bake at 150°C for 14 minutes, cool completely, then sandwich with ganache."
+    ]
+  },
+  {
+    title: "Éclairs au Chocolat",
+    category: "Dessert",
+    wiki: "Éclair (pastry)",
+    image: "",
+    description: "Crisp choux shells filled with vanilla crème pâtissière and topped with chocolate fondant. A pâtisserie window classic.",
+    ingredients: [
+      "Choux pastry (water, butter, flour, eggs)",
+      "500ml crème pâtissière",
+      "200g dark chocolate",
+      "100ml cream",
+      "2 tbsp butter"
+    ],
+    instructions: [
+      "Make the choux by cooking flour into boiling butter and water, then beating in eggs one at a time.",
+      "Pipe even lengths onto a lined tray.",
+      "Bake at 200°C, then reduce to 180°C until deeply golden and hollow-sounding. Do not open the oven early.",
+      "Cool completely and pierce three holes in the base of each.",
+      "Pipe crème pâtissière in until the éclair feels heavy.",
+      "Dip the tops into warm chocolate glaze and let set before serving."
+    ]
+  },
+  {
+    title: "Kunafa with Cheese",
+    category: "Dessert",
+    wiki: "Kunafa",
+    image: "",
+    description: "Crisp shredded pastry over molten cheese, drenched in syrup and scattered with pistachios. Hot, stretchy and unforgettable.",
+    ingredients: [
+      "400g kataifi (shredded pastry)",
+      "400g akkawi or mozzarella cheese",
+      "200g butter, melted",
+      "300g sugar",
+      "200ml water",
+      "1 tbsp lemon juice",
+      "Pistachios, ground"
+    ],
+    instructions: [
+      "Toss the shredded pastry thoroughly with melted butter until every strand is coated.",
+      "Press half into a buttered tray as a firm base.",
+      "Layer the cheese evenly over it.",
+      "Cover with the remaining pastry and press down firmly.",
+      "Bake at 200°C until deeply golden and crisp on top.",
+      "Pour cooled syrup over the hot kunafa immediately and scatter with pistachios. Serve hot while the cheese stretches."
+    ]
+  },
+  {
+    title: "Panna Cotta with Berry Coulis",
+    category: "Dessert",
+    wiki: "Panna cotta",
+    image: "",
+    description: "A cream set just barely enough to hold its shape, with sharp berry coulis cutting through the richness. Elegant and deceptively simple.",
+    ingredients: [
+      "600ml double cream",
+      "100g caster sugar",
+      "1 vanilla pod",
+      "3 gelatine leaves",
+      "250g mixed berries",
+      "2 tbsp sugar for the coulis"
+    ],
+    instructions: [
+      "Soak the gelatine leaves in cold water until soft.",
+      "Heat the cream with sugar and the split vanilla pod until steaming, not boiling.",
+      "Squeeze the gelatine and stir into the warm cream until fully dissolved.",
+      "Strain into moulds and refrigerate at least 4 hours until just set — it should wobble.",
+      "Blend the berries with sugar and sieve into a smooth coulis.",
+      "Turn out each panna cotta and spoon the coulis around it."
     ]
   }
 ];
+
+/* ---------------------------------------------------------------
+   WIKIPEDIA IMAGE LOADER
+   Fetches each dish's real photo from its own Wikipedia article.
+   This replaces random keyword placeholder services, which returned
+   unrelated photos. Results are cached in memory so each dish is
+   only looked up once per page load.
+   --------------------------------------------------------------- */
+const __imgCache = {};
+
+async function fetchWikiImage(articleTitle) {
+  if (!articleTitle) return null;
+  if (__imgCache[articleTitle] !== undefined) return __imgCache[articleTitle];
+  try {
+    const url = "https://en.wikipedia.org/w/api.php"
+      + "?action=query&format=json&origin=*&prop=pageimages"
+      + "&pithumbsize=600&piprop=thumbnail"
+      + "&titles=" + encodeURIComponent(articleTitle);
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("wiki lookup failed");
+    const data = await res.json();
+    const pages = data && data.query && data.query.pages;
+    let src = null;
+    for (const key in pages) {
+      if (pages[key].thumbnail && pages[key].thumbnail.source) {
+        src = pages[key].thumbnail.source;
+        break;
+      }
+    }
+    __imgCache[articleTitle] = src;
+    return src;
+  } catch (err) {
+    console.warn("Image lookup failed for:", articleTitle, err);
+    __imgCache[articleTitle] = null;
+    return null;
+  }
+}
+
+/* Fills in images for any card currently on screen. */
+function hydrateCardImages() {
+  document.querySelectorAll("img[data-wiki]").forEach(async (img) => {
+    if (img.dataset.loaded === "1") return;
+    img.dataset.loaded = "1";
+    const src = await fetchWikiImage(img.dataset.wiki);
+    if (src) img.src = src;
+  });
+}
+
 
 let currentCategory = "All";
 let currentSearch = "";
@@ -2827,6 +2287,7 @@ function displayRecipes(list){
       <div class="card">
         <div class="card-img-wrap">
           <img class="card-img" src="${escapeAttr(safeImage)}" alt="${escapeAttr(recipe.title)}"
+               data-wiki="${escapeAttr(recipe.wiki || "")}"
                onerror="this.onerror=null; this.src='${FALLBACK_IMAGE}';">
           <span class="card-tag">${escapeHtml(recipe.category || "Recipe")}</span>
         </div>
@@ -2845,6 +2306,9 @@ function displayRecipes(list){
       </div>
     `;
   }).join("");
+
+  // Pull in the real Wikipedia photo for each dish now that cards exist.
+  hydrateCardImages();
 }
 
 function escapeHtml(str){
@@ -2867,6 +2331,13 @@ function viewRecipeByIndex(index){
   modalImage.onerror = function(){ this.onerror = null; this.src = FALLBACK_IMAGE; };
   modalImage.src = safeImage;
   modalImage.alt = recipe.title;
+
+  // Swap in the dish's real Wikipedia photo once it resolves.
+  if (recipe.wiki) {
+    fetchWikiImage(recipe.wiki).then((src) => {
+      if (src) modalImage.src = src;
+    });
+  }
 
   document.getElementById("modalTitle").textContent = recipe.title;
   document.getElementById("modalDescription").textContent = recipe.description || "";
