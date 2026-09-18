@@ -2474,6 +2474,68 @@ window.addEventListener("click", (event) => {
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+    const auth = getAuth(app);
+  let authMode = "login";
+
+  window.openAuthModal = function(mode){
+    authMode = mode;
+    document.getElementById("authModalTitle").textContent = mode === "login" ? "Log in" : "Sign up";
+    document.getElementById("authSubmitBtn").textContent = mode === "login" ? "Log in" : "Sign up";
+    document.getElementById("authNameField").hidden = mode !== "signup";
+    document.getElementById("authSwitchLink").textContent = mode === "login" ? "Don't have an account? Sign up" : "Already have an account? Log in";
+    document.getElementById("authStatus").textContent = "";
+    document.getElementById("authModal").classList.add("open");
+  };
+  window.closeAuthModal = function(){
+    document.getElementById("authModal").classList.remove("open");
+  };
+  window.logOutUser = function(){
+    signOut(auth);
+  };
+
+  document.getElementById("authSwitchLink").addEventListener("click", (e) => {
+    e.preventDefault();
+    openAuthModal(authMode === "login" ? "signup" : "login");
+  });
+
+  document.getElementById("authForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("authEmail").value.trim();
+    const password = document.getElementById("authPassword").value;
+    const name = document.getElementById("authName").value.trim();
+    const statusEl = document.getElementById("authStatus");
+    statusEl.textContent = "";
+    try {
+      if (authMode === "signup") {
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        if (name) await updateProfile(cred.user, { displayName: name });
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+      closeAuthModal();
+    } catch (error) {
+      statusEl.textContent = error.message.replace("Firebase: ", "").replace(/\(auth\/.*\)\.?/, "").trim();
+    }
+  });
+
+  onAuthStateChanged(auth, (user) => {
+    const greeting = document.getElementById("accountGreeting");
+    const loginBtn = document.getElementById("loginBtn");
+    const signupBtn = document.getElementById("signupBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (user) {
+      greeting.textContent = `Hi, ${user.displayName || user.email.split("@")[0]}`;
+      greeting.hidden = false;
+      loginBtn.hidden = true;
+      signupBtn.hidden = true;
+      logoutBtn.hidden = false;
+    } else {
+      greeting.hidden = true;
+      loginBtn.hidden = false;
+      signupBtn.hidden = false;
+      logoutBtn.hidden = true;
+    }
+  });
 
   // Active production model
   const ai = getAI(app, { backend: new GoogleAIBackend() });
