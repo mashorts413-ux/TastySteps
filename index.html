@@ -547,6 +547,14 @@
 </head>
 
 <body>
+  <div class="account-bar" id="accountBar">
+  <div class="account-bar-inner">
+    <span id="accountGreeting" hidden></span>
+    <button id="loginBtn" onclick="openAuthModal('login')">Log in</button>
+    <button id="signupBtn" onclick="openAuthModal('signup')">Sign up</button>
+    <button id="logoutBtn" onclick="logOutUser()" hidden>Log out</button>
+  </div>
+</div>
 
 <header class="hero">
   <div class="hero-inner">
