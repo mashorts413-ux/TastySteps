@@ -23,6 +23,52 @@
 
 <style>
   :root{
+    .account-bar{
+  background: var(--ink);
+  color: #fbf3e2;
+  padding: 10px 20px;
+}
+.account-bar-inner{
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.account-bar button{
+  background: var(--chili);
+  color: #fdf3e7;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+.account-bar button:hover{ background: var(--chili-dark); }
+.auth-input{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  margin: 4px 0 12px;
+}
+#authForm label{ font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+#authForm button[type="submit"]{
+  background: var(--ink);
+  color: #fbf3e2;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font: inherit;
+  width: 100%;
+  cursor: pointer;
+}
     --ink: #241c15;
     --ink-soft: #55493c;
     --paper: #f7f1e4;
