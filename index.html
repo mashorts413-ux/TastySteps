@@ -2423,7 +2423,12 @@ function displayRecipes(list){
   hydrateCardImages();
 }
 
-function escapeHtml(str){
+
+  function categoryEmoji(category){
+  const map = { Breakfast: "🍳", Lunch: "🍛", Dinner: "🍗", Dessert: "🍰" };
+  return map[category] || "🍽️";
+}
+  function escapeHtml(str){
   return String(str)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
