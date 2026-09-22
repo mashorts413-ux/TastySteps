@@ -2388,11 +2388,15 @@ function displayRecipes(list){
     return;
   }
 
-  container.innerHTML = list.map((recipe) => {
+    container.innerHTML = list.map((recipe) => {
     const index = recipes.indexOf(recipe);
     const safeImage = recipe.image ? recipe.image : FALLBACK_IMAGE;
     return `
       <div class="card">
+        <div class="post-header">
+          <div class="post-avatar">${categoryEmoji(recipe.category)}</div>
+          <div class="post-meta"><strong>TastySteps Kitchen</strong>${escapeHtml(recipe.category || "Recipe")}</div>
+        </div>
         <div class="card-img-wrap">
           <img class="card-img" src="${escapeAttr(safeImage)}" alt="${escapeAttr(recipe.title)}"
                data-wiki="${escapeAttr(recipe.wiki || "")}"
