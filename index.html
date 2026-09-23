@@ -511,6 +511,49 @@
     align-items: center;
     justify-content: center;
   }
+    
+  .social-bar{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  #likeBtn{
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  #likeBtn.liked{
+    background: #ffebe9;
+    border-color: var(--chili);
+    color: var(--chili);
+  }
+  #likeCount{ font-size: 13px; color: var(--ink-soft); }
+  .comments-list{ display: flex; flex-direction: column; gap: 12px; margin: 4px 0 14px; }
+  .comment-item{ background: var(--paper); border-radius: 10px; padding: 10px 14px; }
+  .comment-item strong{ display: block; font-size: 13px; color: var(--ink); margin-bottom: 2px; }
+  .comment-item p{ margin: 0; font-size: 14px; color: var(--ink-soft); }
+  .comment-empty{ font-size: 13px; color: var(--ink-soft); padding: 4px 0; }
+  #commentForm textarea{
+    width: 100%; min-height: 60px; padding: 10px 12px;
+    border: 1px solid var(--line); border-radius: 8px;
+    font: inherit; font-size: 14px; resize: vertical; margin-bottom: 8px;
+  }
+  #commentForm button{
+    background: var(--chili); color: #fdf3e7; border: none;
+    padding: 9px 16px; border-radius: 8px; cursor: pointer;
+    font: inherit; font-size: 14px; font-weight: 600;
+  }
+  #commentForm button:hover{ background: var(--chili-dark); }
 
   /* ---------- Community submission ---------- */
 
