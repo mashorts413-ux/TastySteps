@@ -2532,6 +2532,7 @@ function viewRecipeByIndex(index){
 function closeModal(){
   document.getElementById("recipeModal").classList.remove("open");
   document.body.style.overflow = "";
+  window.teardownRecipeSocial?.();
 }
 
 function toggleFavorite(button){
