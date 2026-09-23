@@ -23,87 +23,6 @@
 
 <style>
   :root{
-    .account-bar{
-  background: #1877f2;
-  color: #ffffff;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-}
-.account-bar-inner{
-  max-width: 1040px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-}
-.nav-logo{
-  font-family: "Fraunces", serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #ffffff;
-}
-.account-bar button{
-  background: rgba(255,255,255,0.15);
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.4);
-  padding: 7px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font: inherit;
-  font-size: 13px;
-}
-.account-bar button:hover{ background: rgba(255,255,255,0.28); }
-    
-.profile-header{
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 28px 0 10px;
-}
-.profile-avatar{
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  background: var(--saffron);
-  color: #ffffff;
-  font-family: "Fraunces", serif;
-  font-size: 34px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.profile-header h2{ font-size: 24px; margin-bottom: 2px; }
-.profile-email{ font-size: 14px; color: var(--ink-soft); margin: 0 0 4px; }
-.profile-count{ font-size: 13px; color: var(--ink-soft); margin: 0; }
-.auth-input{
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font: inherit;
-  font-size: 14px;
-  margin: 4px 0 12px;
-}
-#authForm label{ font-size: 13px; font-weight: 600; color: var(--ink-soft); }
-#authForm button[type="submit"]{
-  background: var(--ink);
-  color: #fbf3e2;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  font: inherit;
-  width: 100%;
-  cursor: pointer;
-}
-      :root{
     --ink: #050505;
     --ink-soft: #65676b;
     --paper: #f0f2f5;
@@ -117,6 +36,87 @@
     --shadow: 0 1px 2px rgba(0,0,0,0.15);
     --radius-card: 8px;
     --focus: 3px solid #1877f2;
+  }
+
+  .account-bar{
+    background: #1877f2;
+    color: #ffffff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  .account-bar-inner{
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .nav-logo{
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  .account-bar button{
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+  }
+  .account-bar button:hover{ background: rgba(255,255,255,0.28); }
+
+  .profile-header{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 0 10px;
+  }
+  .profile-avatar{
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--saffron);
+    color: #ffffff;
+    font-family: "Fraunces", serif;
+    font-size: 34px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .profile-header h2{ font-size: 24px; margin-bottom: 2px; }
+  .profile-email{ font-size: 14px; color: var(--ink-soft); margin: 0 0 4px; }
+  .profile-count{ font-size: 13px; color: var(--ink-soft); margin: 0; }
+  .auth-input{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    margin: 4px 0 12px;
+  }
+  #authForm label{ font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+  #authForm button[type="submit"]{
+    background: var(--ink);
+    color: #fbf3e2;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font: inherit;
+    width: 100%;
+    cursor: pointer;
   }
 
   *{ box-sizing: border-box; }
@@ -535,7 +535,7 @@
     align-items: center;
     justify-content: center;
   }
-    
+
   .social-bar{
     display: flex;
     align-items: center;
@@ -918,7 +918,7 @@ window.FALLBACK_IMAGE = FALLBACK_IMAGE;
   {
     title: "Filet Mignon with Red Wine Reduction",
     category: "Dinner",
-image: "fillet-menington.jpeg",
+    image: "fillet-menington.jpeg",
     description: "The most tender cut of beef there is, seared to a deep crust and finished with a glossy red wine sauce. Simple, expensive, and the kind of plate that makes an anniversary feel like an occasion.",
     ingredients: [
       "4 filet mignon steaks (200g each)",
@@ -2626,6 +2626,7 @@ window.addEventListener("click", (event) => {
   import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
   import { getFirestore, collection, addDoc, getDocs, serverTimestamp, doc, getDoc, setDoc, deleteDoc, onSnapshot, query, where, orderBy, increment } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
   import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-ai.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
   self.FIREBASE_APPCHECK_EXECUTION_TF_DEBUG_TOKEN = true;
   const firebaseConfig = {
@@ -3001,7 +3002,7 @@ window.addEventListener("click", (event) => {
 
   loadCommunityRecipes();
 </script>
-</body
+
   <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
   <div class="modal-box" style="max-width:400px;">
     <button class="close" onclick="closeAuthModal()" aria-label="Close">×</button>
@@ -3023,4 +3024,6 @@ window.addEventListener("click", (event) => {
     </p>
   </div>
 </div>
+
+</body>
 </html>
