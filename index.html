@@ -2521,10 +2521,12 @@ function viewRecipeByIndex(index){
   document.getElementById("instructions").innerHTML =
     (recipe.instructions || []).map(item => `<li>${escapeHtml(item)}</li>`).join("");
 
-  const modal = document.getElementById("recipeModal");
+    const modal = document.getElementById("recipeModal");
   modal.classList.add("open");
   document.body.style.overflow = "hidden";
   document.getElementById("modalTitle").focus?.();
+
+  window.loadRecipeSocial?.(recipe);
 }
 
 function closeModal(){
