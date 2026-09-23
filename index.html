@@ -2965,13 +2965,14 @@ window.addEventListener("click", (event) => {
       return;
     }
 
-    const newRecipe = {
+        const newRecipe = {
       title,
       category,
       description: `Submitted by ${author}`,
       ingredients,
       instructions,
       image,
+      uid: auth.currentUser.uid,
       createdAt: serverTimestamp()
     };
 
