@@ -681,9 +681,10 @@
 
 <body>
   <div class="account-bar" id="accountBar">
-    <div class="account-bar-inner">
-    <span class="nav-logo">🍲 TastySteps</span>
+      <div class="account-bar-inner">
+    <a href="#" class="nav-logo" onclick="location.hash=''; return false;">🍲 TastySteps</a>
     <span id="accountGreeting" hidden></span>
+    <button id="profileNavBtn" onclick="location.hash='profile'" hidden>My Profile</button>
     <button id="loginBtn" onclick="openAuthModal('login')">Log in</button>
     <button id="signupBtn" onclick="openAuthModal('signup')">Sign up</button>
     <button id="logoutBtn" onclick="logOutUser()" hidden>Log out</button>
