@@ -781,7 +781,26 @@
 </section>
 </div>
 
-<div class="modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<section id="profileView" class="container" hidden>
+  <div id="profileLoggedOut" hidden>
+    <p class="no-results"><strong>You're not logged in</strong>Log in to see your profile and the recipes you've shared.</p>
+  </div>
+  <div id="profileLoggedIn" hidden>
+    <div class="profile-header">
+      <div class="profile-avatar" id="profileAvatar"></div>
+      <div>
+        <h2 id="profileName"></h2>
+        <p id="profileEmail" class="profile-email"></p>
+        <p id="profileRecipeCount" class="profile-count"></p>
+      </div>
+    </div>
+    <div class="section-heading">
+      <h2>Recipes you've shared</h2>
+    </div>
+    <div class="recipes" id="profileRecipesList"></div>
+  </div>
+</section>
+  <div class="modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-box">
     <button class="close" onclick="closeModal()" aria-label="Close recipe">×</button>
     <img id="modalImage" alt="">
