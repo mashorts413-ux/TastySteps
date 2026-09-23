@@ -2542,8 +2542,7 @@ function escapeAttr(str){
   return escapeHtml(str).replace(/"/g, "&quot;");
 }
 
-function viewRecipeByIndex(index){
-  const recipe = recipes[index];
+function openRecipeModal(recipe){
   if (!recipe) return;
 
   const safeImage = recipe.image ? recipe.image : FALLBACK_IMAGE;
