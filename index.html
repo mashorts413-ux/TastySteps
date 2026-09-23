@@ -2646,6 +2646,135 @@ window.addEventListener("click", (event) => {
       logoutBtn.hidden = true;
     }
   });
+  
+  // ---------- Likes & comments ----------
+  function slugifyTitle(title){
+    return String(title).toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  let currentRecipeKey = null;
+  let unsubStats = null;
+  let unsubComments = null;
+  let userHasLiked = false;
+
+  window.loadRecipeSocial = function(recipe){
+    teardownRecipeSocial();
+    currentRecipeKey = slugifyTitle(recipe.title);
+    userHasLiked = false;
+
+    const likeBtn = document.getElementById("likeBtn");
+    const likeCountEl = document.getElementById("likeCount");
+    likeBtn.classList.remove("liked");
+    likeBtn.textContent = "🤍 Like";
+    likeCountEl.textContent = "0 likes";
+
+    const statsRef = doc(db, "recipeStats", currentRecipeKey);
+    unsubStats = onSnapshot(statsRef, (snap) => {
+      const count = snap.exists() ? (snap.data().likeCount || 0) : 0;
+      likeCountEl.textContent = count === 1 ? "1 like" : `${count} likes`;
+    });
+
+    if (auth.currentUser) {
+      const likeRef = doc(db, "recipeLikes", `${currentRecipeKey}_${auth.currentUser.uid}`);
+      getDoc(likeRef).then((snap) => {
+        userHasLiked = snap.exists();
+        likeBtn.classList.toggle("liked", userHasLiked);
+        likeBtn.textContent = userHasLiked ? "❤️ Liked" : "🤍 Like";
+      });
+    }
+
+    const commentsList = document.getElementById("commentsList");
+    const commentsQuery = query(
+      collection(db, "recipeComments"),
+      where("recipeKey", "==", currentRecipeKey),
+      orderBy("createdAt", "asc")
+    );
+    unsubComments = onSnapshot(commentsQuery, (snap) => {
+      if (snap.empty) {
+        commentsList.innerHTML = `<p class="comment-empty">No comments yet — be the first to say something.</p>`;
+        return;
+      }
+      commentsList.innerHTML = snap.docs.map((d) => {
+        const c = d.data();
+        return `<div class="comment-item"><strong>${escapeHtml(c.name || "Someone")}</strong><p>${escapeHtml(c.text || "")}</p></div>`;
+      }).join("");
+    }, (err) => {
+      console.error("Comments listener error:", err);
+      commentsList.innerHTML = `<p class="comment-empty">Couldn't load comments right now.</p>`;
+    });
+  };
+
+  function teardownRecipeSocial(){
+    if (unsubStats) { unsubStats(); unsubStats = null; }
+    if (unsubComments) { unsubComments(); unsubComments = null; }
+    currentRecipeKey = null;
+  }
+  window.teardownRecipeSocial = teardownRecipeSocial;
+
+  window.toggleLike = async function(){
+    if (!auth.currentUser) { openAuthModal("login"); return; }
+    if (!currentRecipeKey) return;
+
+    const likeBtn = document.getElementById("likeBtn");
+    likeBtn.disabled = true;
+    const likeRef = doc(db, "recipeLikes", `${currentRecipeKey}_${auth.currentUser.uid}`);
+    const statsRef = doc(db, "recipeStats", currentRecipeKey);
+
+    try {
+      if (userHasLiked) {
+        await deleteDoc(likeRef);
+        await setDoc(statsRef, { likeCount: increment(-1) }, { merge: true });
+        userHasLiked = false;
+      } else {
+        await setDoc(likeRef, { recipeKey: currentRecipeKey, uid: auth.currentUser.uid, createdAt: serverTimestamp() });
+        await setDoc(statsRef, { likeCount: increment(1) }, { merge: true });
+        userHasLiked = true;
+      }
+      likeBtn.classList.toggle("liked", userHasLiked);
+      likeBtn.textContent = userHasLiked ? "❤️ Liked" : "🤍 Like";
+    } catch (error) {
+      console.error("Like error:", error);
+    } finally {
+      likeBtn.disabled = false;
+    }
+  };
+
+  document.getElementById("commentForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const statusEl = document.getElementById("commentStatus");
+    statusEl.textContent = "";
+
+    if (!auth.currentUser) {
+      statusEl.textContent = "Log in to leave a comment.";
+      openAuthModal("login");
+      return;
+    }
+    if (!currentRecipeKey) return;
+
+    const input = document.getElementById("commentInput");
+    const text = input.value.trim();
+    if (!text) return;
+
+    const submitBtn = e.target.querySelector("button[type=submit]");
+    submitBtn.disabled = true;
+
+    try {
+      await addDoc(collection(db, "recipeComments"), {
+        recipeKey: currentRecipeKey,
+        uid: auth.currentUser.uid,
+        name: auth.currentUser.displayName || auth.currentUser.email.split("@")[0],
+        text,
+        createdAt: serverTimestamp()
+      });
+      await setDoc(doc(db, "recipeStats", currentRecipeKey), { commentCount: increment(1) }, { merge: true });
+      input.value = "";
+    } catch (error) {
+      console.error("Comment error:", error);
+      statusEl.textContent = "Couldn't post that comment. Please try again.";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 
   // Active production model
   const ai = getAI(app, { backend: new GoogleAIBackend() });
