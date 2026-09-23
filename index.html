@@ -2684,23 +2684,27 @@ window.addEventListener("click", (event) => {
     }
   });
 
-  onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, (user) => {
     const greeting = document.getElementById("accountGreeting");
     const loginBtn = document.getElementById("loginBtn");
     const signupBtn = document.getElementById("signupBtn");
     const logoutBtn = document.getElementById("logoutBtn");
+    const profileNavBtn = document.getElementById("profileNavBtn");
     if (user) {
       greeting.textContent = `Hi, ${user.displayName || user.email.split("@")[0]}`;
       greeting.hidden = false;
       loginBtn.hidden = true;
       signupBtn.hidden = true;
       logoutBtn.hidden = false;
+      profileNavBtn.hidden = false;
     } else {
       greeting.hidden = true;
       loginBtn.hidden = false;
       signupBtn.hidden = false;
       logoutBtn.hidden = true;
+      profileNavBtn.hidden = true;
     }
+    if (location.hash === "#profile") loadProfileData();
   });
   
   // ---------- Likes & comments ----------
