@@ -2929,9 +2929,15 @@ window.addEventListener("click", (event) => {
     }
   }
 
-  form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", async (e) => {
     e.preventDefault();
     setStatus("", "");
+
+    if (!auth.currentUser) {
+      setStatus("Please log in to publish a recipe.", "error");
+      openAuthModal("login");
+      return;
+    }
 
     const title = document.getElementById("postTitle").value.trim();
     const author = document.getElementById("postAuthor").value.trim();
