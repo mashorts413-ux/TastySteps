@@ -744,8 +744,21 @@
     <p class="modal-desc" id="modalDescription"></p>
     <h3>Ingredients</h3>
     <ul id="ingredients"></ul>
-    <h3>Instructions</h3>
+        <h3>Instructions</h3>
     <ol id="instructions"></ol>
+
+    <div class="social-bar">
+      <button id="likeBtn" onclick="toggleLike()">🤍 Like</button>
+      <span id="likeCount">0 likes</span>
+    </div>
+
+    <h3>Comments</h3>
+    <div id="commentsList" class="comments-list"></div>
+    <form id="commentForm">
+      <textarea id="commentInput" placeholder="Write a comment…" required></textarea>
+      <button type="submit">Post comment</button>
+    </form>
+    <p class="form-status" id="commentStatus" role="status" aria-live="polite"></p>
   </div>
 </div>
 
