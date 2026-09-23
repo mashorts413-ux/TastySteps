@@ -2572,8 +2572,15 @@ function openRecipeModal(recipe){
   document.body.style.overflow = "hidden";
   document.getElementById("modalTitle").focus?.();
 
-  window.loadRecipeSocial?.(recipe);
+    window.loadRecipeSocial?.(recipe);
 }
+
+function viewRecipeByIndex(index){
+  openRecipeModal(recipes[index]);
+}
+window.viewProfileRecipe = function(i){
+  openRecipeModal(window.profileRecipes[i]);
+};
 
 function closeModal(){
   document.getElementById("recipeModal").classList.remove("open");
