@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://mashorts413-ux.github.io/TastySteps/sitemap.xml
